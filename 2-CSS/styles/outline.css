@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+div.dotted {
+    outline-style: dotted;
+    outline-color: red;
+    /* outline-width: 5px; */
+    outline-width: thin;
+}
+
+div.dashed {
+    outline-style: dashed;
+    outline-color: blue;
+    /* outline-width: 5px; */
+    outline-width: medium;
+}
+
+div.solid {
+    outline-style: solid;
+    outline-color: green;
+    /* outline-width: 5px; */
+    outline-width: thick;
+}
+
+div.double {
+    outline-style: double;
+    outline-color: yellow;
+    /* outline-width: 5px; */
+    outline-width: 5px 10px;
+}
+
+div.groove {
+    outline-style: groove;
+    outline-color: orange;
+    /* outline-width: 5px; */
+    outline-width: 5px 10px 15px;
+}
+
+div.ridge {
+    outline-style: ridge;
+    outline-color: purple;
+    /* outline-width: 5px; */
+    outline-width: thin medium thick;
+}
+
+div.inset {
+    margin: 30px;
+    border: 1px solid black;
+    outline: 1px inset green;
+    outline-offset: 15px;
+}
+
+div.outset {
+    margin: 30px;
+    border: 1px solid black;
+    outline: 1px outset red;
+    outline-offset: 15px;
+}
+
+div {
+    padding: 20px;
+}
+
+.container span {
+    display: block;
+    margin: 20px 0;
+    font-weight: bold;
+}

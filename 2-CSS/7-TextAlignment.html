@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Alignment in CSS</title>
+    <style>
+        .bidi {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+
+        img.a {
+            vertical-align: baseline;
+        }
+
+        img.b {
+            vertical-align: text-bottom;
+        }
+
+        img.c {
+            vertical-align: text-top;
+        }
+
+        img.d {
+            vertical-align: sub;
+        }
+
+        img.e {
+            vertical-align: super;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Text Direction with unicode bidi:</h2>
+    <p class="bidi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error nesciunt quos totam voluptatem
+        fugiat, obcaecati
+        labore minima vitae quibusdam enim voluptatum atque! Libero velit quas molestiae delectus! Mollitia, nostrum
+        facilis!</p>
+
+    <h1>The vertical-align Property</h1>
+    <h2>vertical-align: baseline (default):</h2>
+    <p>An <img class="a"
+            src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width="9" height="9"> image with a default alignment.</p>
+    <h2>vertical-align: text-top:</h2>
+    <p>An <img class="b"
+            src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width="9" height="9"> image with a text-top alignment.</p>
+    <h2>vertical-align: text-bottom:</h2>
+    <p>An <img class="c"
+            src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width="9" height="9"> image with a text-bottom alignment.</p>
+    <h2>vertical-align: sub:</h2>
+    <p>An <img class="d"
+            src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width="9" height="9"> image with a sub alignment.</p>
+    <h2>vertical-align: sup:</h2>
+    <p>An <img class="e"
+            src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width="9" height="9"> image with a super alignment.</p>
+</body>
+
+</html>
