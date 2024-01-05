@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 2rem;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .para {
+            width: 300px;
+            height: 100px;
+            margin: 20px;
+            outline: 2px dotted black;
+            border: 2px solid red;
+            outline-offset: 5px;
+        }
+
+        .para1 {
+            background-color: lightblue;
+            overflow: auto;
+        }
+
+        .para2 {
+            background-color: lightcoral;
+            overflow: hidden;
+        }
+
+        .para3 {
+            background-color: lightcyan;
+            overflow: scroll;
+        }
+
+        .para4 {
+            background-color: lightgoldenrodyellow;
+            overflow: visible;
+        }
+
+        .para5 {
+            background-color: lightgray;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Overflow Property</h2>
+    <p class="para para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vero odit ab, dolor fuga
+        aspernatur placeat optio odio laudantium, temporibus sequi sit, saepe unde quam repellendus ipsam laboriosam
+        quis. Commodi?</p>
+    <p class="para para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vero odit ab, dolor fuga
+        aspernatur placeat optio odio laudantium, temporibus sequi sit, saepe unde quam repellendus ipsam laboriosam
+        quis. Commodi?</p>
+    <p class="para para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vero odit ab, dolor fuga
+        aspernatur placeat optio odio laudantium, temporibus sequi sit, saepe unde quam repellendus ipsam laboriosam
+        quis. Commodi?</p>
+    <p class="para para4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vero odit ab, dolor fuga
+        aspernatur placeat optio odio laudantium, temporibus sequi sit, saepe unde quam repellendus ipsam laboriosam
+        quis. Commodi?</p>
+    <p class="para para5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti vero odit ab, dolor fuga
+        aspernatur placeat optio odio laudantium, temporibus sequi sit, saepe unde quam repellendus ipsam laboriosam
+        quis. Commodi?</p>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        section {
+            margin: 1rem 0;
+        }
+
+        .eg {
+            float: left;
+            padding: 15px;
+        }
+
+        .div1 {
+            background: red;
+        }
+
+        .div2 {
+            background: yellow;
+        }
+
+        .div3 {
+            background: green;
+        }
+
+        .left {
+            float: left;
+            background-color: lightgray;
+            width: 50%;
+        }
+
+        .right {
+            float: right;
+            background-color: lightpink;
+            width: 50%;
+        }
+
+        .sec2>div {
+            padding: 1rem;
+        }
+
+        @media screen and (max-width: 774px) {
+            .eg {
+                /* clear: left; */
+                float: none;
+            }
+
+            .sec2>div {
+                float: none;
+                /* clear: left;
+                clear: right; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sec1">
+        <h2>Float Next To Each Other</h2>
+        <p>In this example, the three divs will float next to each other.</p>
+        <div class="eg div1">Div 1</div>
+        <div class="eg div2">Div 2</div>
+        <div class="eg div3">Div 3</div>
+    </section>
+
+    <section class="sec2">
+        <h2>Float Left and Right</h2>
+        <div class="left">Left Hand Side Text</div>
+        <div class="right">Right Hand Side Text</div>
+    </section>
+</body>
+
+</html>

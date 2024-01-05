@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property in CSS</title>
+    <style>
+        div.display {
+            display: none;
+        }
+
+        div.visibility {
+            visibility: hidden;
+        }
+
+        @media screen and (max-width: 700px) {
+            div.display {
+                display: block;
+            }
+
+            div.visibility {
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Display Property</h2>
+        <div class="display">
+            <h3>This is a heading!</h3>
+        </div>
+        <div class="visibility">
+            <h3>This is another heading!</h3>
+        </div>
+    </div>
+</body>
+
+</html>

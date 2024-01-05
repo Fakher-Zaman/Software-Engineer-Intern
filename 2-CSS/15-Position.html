@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFFFFF;
+        }
+
+        .container {
+            margin: 2rem;
+            background-color: bisque;
+        }
+
+        .container>h2 {
+            text-align: center;
+            padding: 20px 0 10px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .box1 {
+            background-color: red;
+            position: sticky;
+            top: 0;
+        }
+
+        .box2 {
+            background-color: blue;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        .box3 {
+            background-color: green;
+            /* position: fixed; */
+        }
+
+        .box4 {
+            background-color: blueviolet;
+            /* position: absolute; */
+            top: 100px;
+        }
+
+        .box5 {
+            background-color: salmon;
+            /* position: sticky; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Positioning of boxes in css</h2>
+        <div class="box box1"><span>Box One</span></div>
+        <div class="box box2"><span>Box Two</span></div>
+        <div class="box box3"><span>Box Three</span></div>
+        <div class="box box4"><span>Box Four</span></div>
+        <div class="box box5"><span>Box Five</span></div>
+    </div>
+</body>
+
+</html>

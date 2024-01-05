@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: beige;
+            padding: 4rem;
+        }
+
+        .container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            height: 2rem;
+            text-align: center;
+            vertical-align: center;
+        }
+
+        th {
+            background-color: rgb(19, 143, 19);
+            color: rgb(255, 255, 255);
+        }
+
+        table>caption {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem;
+        }
+
+        tr:hover {
+            background-color: #f6eded;
+            cursor: s-resize;
+        }
+
+        /* table tr:nth-child(even) {
+            background-color: rgb(221, 224, 224);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tables in HTML/CSS:</h2>
+        <table>
+            <caption>Students Table</caption>
+            <tr>
+                <th>Name</th>
+                <th>RollNo</th>
+                <th>Major</th>
+            </tr>
+            <tr>
+                <td>Fakher Zaman</td>
+                <td>578</td>
+                <td>BS Information Technology</td>
+            </tr>
+            <tr>
+                <td>Hammad Asif</td>
+                <td>582</td>
+                <td>BS Information Technology</td>
+            </tr>
+            <tr>
+                <td>Muhammad Shaban</td>
+                <td>552</td>
+                <td>BS Information Technology</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
