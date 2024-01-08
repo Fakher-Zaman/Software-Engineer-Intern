@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Elements in CSS</title>
+    <style>
+        .para1::first-line {
+            color: blueviolet;
+            font-variant: small-caps;
+        }
+
+        p.para2::first-letter {
+            color: brown;
+            font-size: xx-large;
+        }
+
+        p.para3::first-line {
+            color: darkcyan;
+            font-variant: small-caps;
+        }
+
+        p.para3::first-letter {
+            color: darkgoldenrod;
+            font-size: xx-large;
+        }
+
+        .before-after::before {
+            content: "<h2>";
+        }
+
+        .before-after::after {
+            content: "</h2>";
+        }
+
+        ::marker {
+            color: red;
+            font-size: 1.4rem;
+        }
+
+        ::selection {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Pseudo Elements</h2>
+    <div class="container">
+        <h2>The ::first-line Pseudo-element</h2>
+        <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur a nulla at temporibus
+            blanditiis ullam velit quibusdam nisi praesentium eligendi enim, dolorem hic explicabo reprehenderit eaque
+            ratione rerum optio possimus!</p>
+        <h2>Pseudo-elements and HTML Classes</h2>
+        <p class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eius, quis pariatur expedita
+            exercitationem illum blanditiis repellat officiis, architecto voluptatem laborum accusantium veritatis
+            voluptas! Nobis quae excepturi aut inventore vel?</p>
+        <h2 class="before-after">Multiple Pseudo-elements</h2>
+        <p class="para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odio praesentium expedita
+            aut possimus ex
+            iste quaerat magni, ipsam laudantium similique accusantium quis. Obcaecati cum nisi minus porro. Qui,
+            deleniti!</p>
+        <div>
+            <h2>CSS - The ::marker Pseudo-element</h2>
+            <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+            <br>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

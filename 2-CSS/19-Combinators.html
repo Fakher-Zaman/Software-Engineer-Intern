@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinators in CSS</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .container1 {
+            background-color: lightblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid gold;
+            outline: 2px solid green;
+            outline-offset: 5px;
+            padding: 10px;
+        }
+
+        .container2 {
+            background-color: lightyellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid gray;
+            outline: 2px solid red;
+            outline-offset: 5px;
+            padding: 10px;
+        }
+
+        .container3 {
+            background-color: rgb(208, 185, 156);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid saddlebrown;
+            outline: 2px solid yellow;
+            outline-offset: 5px;
+            padding: 10px;
+        }
+
+        .container1 h2 {
+            color: brown;
+        }
+
+        .container2>h2 {
+            color: blueviolet;
+        }
+
+        h2+p {
+            color: grey;
+        }
+
+        .siblings~P {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Combinators in CSS</h1>
+    <div class="container1">
+        <h2>First Heading:</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam provident recusandae, facilis fugiat sequi
+            neque ea labore eius quas soluta, quidem corrupti eligendi praesentium autem repellat harum et
+            necessitatibus tempore!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique laboriosam, exercitationem reiciendis
+            doloribus facilis quo illum, quibusdam nam sed, ut obcaecati odit! Deserunt necessitatibus nihil
+            voluptatibus architecto, a ipsam optio.</p>
+        <div class="container2">
+            <h2>Second Heading:</h2>
+            <p class="siblings">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum hic delectus ad! Porro
+                adipisci esse sunt
+                velit laborum, accusantium recusandae nostrum excepturi consectetur, aliquam id earum aperiam, quis iure
+                ipsam?</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, obcaecati aliquam odit doloribus doloremque
+                suscipit maxime veritatis fugiat autem labore impedit tenetur quisquam beatae, quasi quidem quae saepe.
+                Commodi, officia.</p>
+            <div class="container3">
+                <h2>Third Heading:</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur nisi magni ex repellat quasi
+                    nemo sapiente blanditiis, dicta adipisci? Molestiae rem sint non consectetur aspernatur? Id eaque
+                    quae deleniti vero.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur eaque possimus recusandae
+                    nesciunt cumque, voluptate facilis saepe qui perferendis aliquid modi quidem culpa earum officia
+                    veritatis repellendus est eligendi magni!</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

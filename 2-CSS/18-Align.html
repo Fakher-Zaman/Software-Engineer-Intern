@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align in CSS</title>
+    <style>
+        .center1 {
+            height: 200px;
+            position: relative;
+            border: 3px solid gold;
+        }
+
+        .center1 p {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            border: 2px solid yellowgreen;
+        }
+
+        .center2 p {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Vertically or Horizontally Aligned by using position and transform</h2>
+        <div class="center1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, molestias ullam dolores
+                reprehenderit natus dicta. Ratione eos amet magnam tempore asperiores corporis laboriosam placeat
+                doloribus unde, vero officiis voluptatum.</p>
+        </div>
+
+        <h2>Vertically or Horizontally Aligned by using Flexbox</h2>
+        <div class="center2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quae, molestias ullam dolores
+                reprehenderit natus dicta. Ratione eos amet magnam tempore asperiores corporis laboriosam
+                placeat
+                doloribus unde, vero officiis voluptatum.</p>
+        </div>
+    </div>
+</body>
+
+</html>

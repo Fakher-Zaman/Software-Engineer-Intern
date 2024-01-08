@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 2rem;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 20px 0;
+            background-color: #f1f1f1;
+            border: 1px solid #555;
+        }
+
+        .vertical {
+            width: 200px;
+        }
+
+        .vertical a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .vertical a:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        .vertical a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .vertical a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+        .vertical li {
+            border-bottom: 1px solid #555;
+            text-align: center;
+        }
+
+        .vertical li:last-child {
+            border-bottom: none;
+        }
+
+        .horizontal {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .horizontal li {
+            float: left;
+        }
+
+        .horizontal li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .horizontal a:hover {
+            background-color: #111;
+        }
+
+        .horizontal a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .horizontal a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .horizontal li {
+            border-right: 1px solid #bbb;
+        }
+
+        .horizontal li:last-child {
+            border-right: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>NavLinks in Web</h2>
+        <ul class="vertical">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <ul class="horizontal">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li style="float: right;"><a href="#about">About</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

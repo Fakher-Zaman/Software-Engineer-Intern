@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PseudoClasses in CSS</title>
+    <style>
+        .selector p {
+            display: none;
+            background-color: lightgoldenrodyellow;
+            font-size: 1.2rem;
+            padding: 20px;
+        }
+
+        .selector:hover p {
+            display: block;
+        }
+
+        section div:first-child {
+            background-color: lightgoldenrodyellow;
+        }
+
+        section h2:first-child {
+            background-color: lightcoral;
+        }
+
+        q:lang(no) {
+            quotes: "~" "~";
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pseudo Classes:</h1>
+    <div class="selector">Hover over this div element to show the p element
+        <p>Simple Tooltip Hover</p>
+    </div>
+    <section>
+        <div class="selector1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, sapiente!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, explicabo!</p>
+        </div>
+        <div class="selector2">
+            <h2>First Heading</h2>
+            <h2>Second Heading</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, architecto.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, nam.</p>
+        </div>
+        <div class="selector3">
+            <div class="selector4">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, cumque.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, repellat.</p>
+            </div>
+            <h2>Third Heading</h2>
+            <h2>Fourth Heading</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, odio?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, hic.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, neque!</p>
+        </div>
+    </section>
+    <h2>CSS - The :lang Pseudo-class</h2>
+    <div>
+        <q lang="no">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam natus optio ex quibusdam quas sint,
+            ea ab
+            ducimus rem tempora et harum tenetur. Adipisci suscipit in explicabo illum fugiat cumque.</q>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opacity in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 2rem;
+        }
+
+        .container h2 {
+            text-align: center;
+        }
+
+        .container>img {
+            opacity: 0.5;
+            width: 300px;
+            margin: 1rem;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        article {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        article>p {
+            width: 25%;
+            height: 200px;
+            padding: 1rem;
+            color: white;
+            background-color: brown;
+        }
+
+        .para1 {
+            opacity: 1;
+        }
+
+        .para2 {
+            opacity: 0.8;
+        }
+
+        .para3 {
+            opacity: 0.6;
+        }
+
+        .para4 {
+            opacity: 0.4;
+        }
+
+        .similar {
+            background: rgb(4, 170, 109);
+            padding: 10px;
+        }
+
+        div.first {
+            background: rgba(4, 170, 109, 0.1);
+        }
+
+        div.second {
+            background: rgba(4, 170, 109, 0.3);
+        }
+
+        div.third {
+            background: rgba(4, 170, 109, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <h2>Opacity in CSS</h2>
+        <img src="https://images.unsplash.com/photo-1704186502060-247ad4c77626?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Sea">
+        <article>
+            <p class="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, voluptates!</p>
+            <p class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, illum.</p>
+            <p class="para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, tempora!</p>
+            <p class="para4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, libero.</p>
+        </article>
+        <div class="first similar">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt architecto vero,
+            sequi
+            assumenda eius tenetur dolore, ex repellat quae ipsam velit quasi illo inventore atque at. Nisi
+            exercitationem eum omnis.</div>
+        <div class="second similar">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus facilis
+            voluptate eum
+            quis officiis dolorum veritatis ipsam molestiae ab, ducimus quam nisi dolor placeat omnis, modi impedit?
+            Consectetur, cupiditate nulla!</div>
+        <div class="third similar">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum quis dicta ipsam eum
+            fuga
+            modi maxime, quibusdam odit, esse molestias amet quam quas et. Dolorum magnam perspiciatis fugit earum
+            deserunt?</div>
+    </section>
+</body>
+
+</html>
