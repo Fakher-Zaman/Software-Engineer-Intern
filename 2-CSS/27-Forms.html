@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: lightcyan;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            margin: 2rem;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.3rem;
+            border: 1px solid rgb(195, 192, 192);
+            border-radius: 5px;
+        }
+
+        input[type="text"] {
+            border: none;
+            border-bottom: 1px solid red;
+        }
+
+        input:focus {
+            background-color: rgb(253, 249, 249);
+        }
+
+        form~h2 {
+            margin: 1rem;
+        }
+
+        input[type="search"] {
+            width: 130px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url("./images/search.png");
+            background-position: 200px 200px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            transition: width 0.4s ease-in-out;
+        }
+
+        input[type="search"]:focus {
+            width: 100%;
+        }
+
+        textarea {
+            display: block;
+            margin: 1rem 0;
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+        select {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Forms in CSS</h2>
+        <form action="" method="">
+            <label for="name">First Name:</label>
+            <input type="text" placeholder="Enter Your First Name">
+            <label for="name">Last Name:</label>
+            <input type="text" placeholder="Enter Your Last Name">
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Enter Your Email">
+        </form>
+        <h2 class="animated">Animated Search Input</h2>
+        <form action="" method="">
+            <input type="search" name="search" id="search" placeholder="Search">
+            <select name="country" id="country">
+                <option value="pk">Pakistan</option>
+                <option value="au">Australia</option>
+                <option value="in">India</option>
+            </select>
+            <textarea name="text" id="" cols="30" rows="10">Some Text Here...</textarea>
+        </form>
+    </div>
+</body>
+
+</html>

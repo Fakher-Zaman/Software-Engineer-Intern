@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counters in CSS</title>
+    <style>
+        body {
+            counter-reset: section;
+        }
+
+        h1 {
+            counter-reset: subsection;
+        }
+
+        h1::before {
+            counter-increment: section;
+            content: "Section " counter(section) ": ";
+        }
+
+        h2::before {
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) " "
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <h1>Counters</h1>
+        <h2>First Heading</h2>
+        <h2>Second Heading</h2>
+        <h2>Third Heading</h2>
+        <h2>Fourth Heading</h2>
+        <h2>Fifth Heading</h2>
+
+        <h1>Courses</h1>
+        <h2>Web Development</h2>
+        <h2>Android Development</h2>
+        <h2>Machine Learning</h2>
+        <h2>Artifical Intelligence</h2>
+
+        <h1>Fruits</h1>
+        <h2>Banana</h2>
+        <h2>Mango</h2>
+        <h2>Orange</h2>
+        <h2>Apple</h2>
+
+        <h1>Vegetables</h1>
+        <h2>Onion</h2>
+        <h2>Potato</h2>
+        <h2>Tomato</h2>
+        <h2>Ginger</h2>
+    </div>
+</body>
+
+</html>

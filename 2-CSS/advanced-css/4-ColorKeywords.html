@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Keywords in CSS</title>
+    <style>
+        body {
+            background: url(../images/paper.avif);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .para1 {
+            padding: 1rem;
+            color: darkcyan;
+            background-color: lightyellow;
+            border: 10px solid currentColor;
+        }
+
+        .para2 {
+            padding: 1rem;
+            color: darkred;
+            background-color: transparent;
+            border: 10px solid currentColor;
+        }
+
+        .para {
+            margin: 1rem 0;
+        }
+
+        span {
+            border: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Color Keywords</h2>
+    <div class="container">
+        <div class="para para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio harum animi voluptas
+            eligendi, <span>This will inherit the property color</span>
+            quis, perferendis tempore tenetur mollitia delectus repellendus at sequi ullam et iste in provident
+            recusandae non excepturi.</div>
+        <div class="para para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, amet. Id, cum?
+            Incidunt
+            aliquid, <span>This will inherit the property color</span> aliquam esse eum dolore expedita ullam inventore
+            quis blanditiis sed cum. Adipisci voluptate
+            aperiam cupiditate optio!</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradients in CSS</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        .para {
+            margin: 4rem 1rem;
+            padding: 1rem;
+            outline: 5px inset brown;
+            outline-offset: 1rem;
+        }
+
+        section>#para1 {
+            background-image: linear-gradient(red, yellow);
+        }
+
+        section>#para2 {
+            background-image: linear-gradient(to right, red, yellow);
+        }
+
+        section>#para3 {
+            background-image: linear-gradient(to right bottom, red, yellow);
+        }
+
+        section>#para4 {
+            background-image: linear-gradient(180deg, red, yellow);
+        }
+
+        section>#para5 {
+            background-image: linear-gradient(red, yellow, green);
+        }
+
+        section>#para6 {
+            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+        }
+
+        #rainbow {
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            color: white;
+        }
+
+        .radial {
+            height: 200px;
+            margin: 4rem 1rem;
+            padding: 1rem;
+            outline: 5px inset green;
+            outline-offset: 1rem;
+        }
+
+        .radial1 {
+            background-image: radial-gradient(red, yellow, green);
+        }
+
+        .radial2 {
+            background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+        }
+
+        .radial3 {
+            background-image: radial-gradient(circle, blue, gray, purple);
+            width: 200px;
+        }
+
+        .radial4 {
+            background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Linear Gradients</h2>
+        <section class="section1">
+            <p class="para" id="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores error eaque eum
+                placeat
+                officia
+                quisquam, consectetur, ea dicta nihil nesciunt voluptates nostrum nobis, labore soluta? Cupiditate
+                veniam commodi nostrum nesciunt.</p>
+            <p class="para" id="para2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptatum
+                quis nisi
+                nobis fuga, eligendi quo illo repudiandae consectetur sint nulla incidunt doloribus quae, similique in
+                impedit excepturi minima facere.</p>
+            <p class="para" id="para3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam recusandae
+                laboriosam soluta
+                nam! Ab saepe accusamus ipsam mollitia ratione, sed soluta harum doloribus amet repudiandae sapiente
+                nemo voluptas earum esse?</p>
+            <p class="para" id="para4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati enim odit
+                officiis nemo qui eius, commodi corporis impedit quasi! Eius natus saepe nemo cum nobis blanditiis
+                ducimus. Veritatis, beatae labore!</p>
+            <p class="para" id="para5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, hic consequatur
+                fugiat at, illo porro repellendus neque tempore minus suscipit eum obcaecati eos, error dolorum
+                molestias magnam repudiandae nobis in.</p>
+            <p class="para" id="para6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint ratione distinctio
+                odit odio, ab dolor. Error corporis dicta nisi temporibus quibusdam perspiciatis provident minus
+                pariatur repudiandae! Quod tempore tempora molestiae?</p>
+            <p class="para" id="rainbow">Rainbow Type Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum,
+                debitis
+                nemo veniam impedit quaerat incidunt recusandae eius assumenda aspernatur, soluta commodi totam quisquam
+                praesentium vero quibusdam dolor! Laudantium, dicta dolorem?</p>
+        </section>
+
+        <h2>Radial Gradients</h2>
+        <section class="section2">
+            <p class="radial radial1"></p>
+            <p class="radial radial2"></p>
+            <p class="radial radial3"></p>
+            <p class="radial radial4"></p>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rounded Corners in CSS</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        p {
+            /* display: inline-block; */
+            width: 200px;
+            height: 200px;
+            margin: 2rem;
+        }
+
+        #rcorners1 {
+            background-color: lightcoral;
+            border-radius: 0 10px 10px 0;
+        }
+
+        #rcorners2 {
+            border: 2px solid brown;
+            border-radius: 10px 0 0 10px;
+        }
+
+        #rcorners3 {
+            background: url("../images/search.png");
+            background-repeat: no-repeat;
+            background-position: static;
+            background-size: 200px 200px;
+            border: 2px dotted red;
+            border-radius: 10px 0 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The border-radius Property</h1>
+    <div class="container">
+        <p id="rcorners1" class="rcorners">Rounded corners!</p>
+        <p id="rcorners2" class="rcorners">Rounded corners!</p>
+        <p id="rcorners3" class="rcorners">Rounded corners!</p>
+    </div>
+</body>
+
+</html>

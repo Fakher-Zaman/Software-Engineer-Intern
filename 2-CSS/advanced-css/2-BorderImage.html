@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Image in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            margin: 1rem;
+        }
+
+        #border-img1 {
+            border: 10px solid transparent;
+            padding: 15px;
+            border-image: url("../images/sketchy-gifts-pattern.avif") 30 stretch;
+        }
+
+        #border-img2 {
+            border: 10px solid transparent;
+            padding: 15px;
+            border-image: url("../images/sketchy-gifts-pattern.avif") 30 round;
+        }
+
+        #border-img3 {
+            border: 10px solid transparent;
+            padding: 15px;
+            border-image: url("../images/sketchy-gifts-pattern.avif") 20% round;
+        }
+
+        #border-img4 {
+            border: 10px solid transparent;
+            padding: 15px;
+            border-image: url("../images/sketchy-gifts-pattern.avif") 30% round;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>The border-image Property</h2>
+    <p id="border-img1">border-image: url(border.png) 30 stretch;</p>
+    <p id="border-img2">border-image: url(border.png) 30 round;</p>
+    <p id="border-img3">border-image: url(border.png) 20% round;</p>
+    <p id="border-img4">border-image: url(border.png) 30% round;</p>
+</body>
+
+</html>

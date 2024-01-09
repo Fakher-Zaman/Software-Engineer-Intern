@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selectors in CSS</title>
+    <style>
+        a[target] {
+            background-color: yellow;
+        }
+
+        a[target="_blank"] {
+            background-color: aqua;
+        }
+
+        img[alt="laptop"] {
+            border: 2px solid yellow;
+        }
+
+        [class|="text"] {
+            background-color: lightcyan;
+        }
+
+        [class^="text"] {
+            background-color: lightgray;
+        }
+
+        [class$="para"] {
+            background-color: bisque;
+        }
+
+        [class*="t3"] {
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Attribute Selector</h2>
+        <p class="text-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis molestiae, atque labore,
+            natus repellat voluptate necessitatibus quo reprehenderit blanditiis soluta sed autem deleniti maxime
+            repellendus nam, nostrum libero laborum.</p>
+        <p class="text-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis molestiae, atque labore,
+            natus repellat voluptate necessitatibus quo reprehenderit blanditiis soluta sed autem deleniti maxime
+            repellendus nam, nostrum libero laborum.</p>
+        <p class="text3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut omnis molestiae, atque labore,
+            natus repellat voluptate necessitatibus quo reprehenderit blanditiis soluta sed autem deleniti maxime
+            repellendus nam, nostrum libero laborum.</p>
+        <nav>
+            <a href="#" target="_blank">Home</a>
+            <a href="#">Services</a>
+            <a href="#" target="_blank">Testimonials</a>
+            <a href="#">About</a>
+            <a href="#" target="_self">FAQ's</a>
+        </nav>
+        <div class="images">
+            <img src="https://images.unsplash.com/photo-1617395440873-63f6e7f25139?q=80&w=2531&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="laptop" title="laptop" width="25%" height="auto">
+            <img src="https://images.unsplash.com/photo-1488998427799-e3362cec87c3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="laptop" title="laptop" width="25%" height="auto">
+            <img src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="stationary" title="stationary" width="25%" height="auto">
+        </div>
+        <p class="ok-para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, omnis aliquid.
+            Necessitatibus
+            itaque pariatur quasi veniam reiciendis cum iusto. Fugit pariatur sit laborum possimus sint. Sint cum maxime
+            labore odio!</p>
+        <p class="OK_para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, omnis aliquid.
+            Necessitatibus
+            itaque pariatur quasi veniam reiciendis cum iusto. Fugit pariatur sit laborum possimus sint. Sint cum maxime
+            labore odio!</p>
+        <p class="para3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, omnis aliquid. Necessitatibus
+            itaque pariatur quasi veniam reiciendis cum iusto. Fugit pariatur sit laborum possimus sint. Sint cum maxime
+            labore odio!</p>
+    </div>
+</body>
+
+</html>
