@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltips</title>
+    <style>
+        .tooltip1 {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip1 .tooltiptext1 {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .tooltip1 .tooltiptext1::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+        }
+
+        .tooltip1:hover .tooltiptext1 {
+            visibility: visible;
+        }
+
+        .tooltip2 {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip2 .tooltiptext2 {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 150%;
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .tooltip2 .tooltiptext2::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+
+        .tooltip2:hover .tooltiptext2 {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body style="text-align:center;">
+    <h2>Bottom Tooltip w/ Top Arrow</h2>
+    <div class="tooltip1">Hover over me
+        <span class="tooltiptext1">Tooltip text</span>
+    </div>
+    <h2>Bottom Tooltip w/ Bottom Arrow</h2>
+    <div class="tooltip2">Hover over me
+        <span class="tooltiptext2">Tooltip text</span>
+    </div>
+</body>
+
+</html>

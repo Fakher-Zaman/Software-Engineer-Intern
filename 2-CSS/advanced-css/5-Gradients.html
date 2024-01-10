@@ -70,6 +70,49 @@
         .radial4 {
             background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
         }
+
+        .conic {
+            width: 100px;
+            height: 100px;
+            margin: 2rem 1rem;
+            padding: 0.5rem;
+            outline: 5px inset rgb(49, 0, 128);
+            outline-offset: 1rem;
+        }
+
+        .section3 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .conic1 {
+            background-image: conic-gradient(red, yellow, green);
+        }
+
+        .conic2 {
+            background-image: conic-gradient(red, yellow, green, blue, black);
+        }
+
+        .conic3 {
+            background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+        }
+
+        .conic4 {
+            background-image: conic-gradient(red, yellow, green, blue, black);
+            border-radius: 50%;
+        }
+
+        .conic5 {
+            background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+            border-radius: 50%;
+        }
+
+        .conic6 {
+            background-image: repeating-conic-gradient(purple 10%, orange 20%);
+            border-radius: 50%;
+        }
     </style>
 </head>
 
@@ -111,6 +154,16 @@
             <p class="radial radial2"></p>
             <p class="radial radial3"></p>
             <p class="radial radial4"></p>
+        </section>
+
+        <h2>Conic Gradients</h2>
+        <section class="section3">
+            <p class="conic conic1"></p>
+            <p class="conic conic2"></p>
+            <p class="conic conic3"></p>
+            <p class="conic conic4"></p>
+            <p class="conic conic5"></p>
+            <p class="conic conic6"></p>
         </section>
     </div>
 </body>

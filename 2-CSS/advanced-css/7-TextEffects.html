@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Effects in CSS</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        p.test {
+            white-space: nowrap;
+            width: 200px;
+            border: 1px solid #000000;
+            overflow: hidden;
+        }
+
+        p.test1 {
+            text-overflow: clip;
+        }
+
+        p.test2 {
+            text-overflow: ellipsis;
+        }
+
+        p.test:hover {
+            overflow: visible;
+            cursor: pointer;
+        }
+
+        p.test3 {
+            width: 11em;
+            border: 1px solid #000000;
+            word-wrap: break-word;
+        }
+
+        p.test4 {
+            width: 140px;
+            border: 1px solid #000000;
+            word-break: keep-all;
+        }
+
+        p.test5 {
+            width: 140px;
+            border: 1px solid #000000;
+            word-break: break-all;
+        }
+
+        p.test6 {
+            writing-mode: horizontal-tb;
+        }
+
+        span.test7 {
+            writing-mode: vertical-rl;
+        }
+
+        p.test8 {
+            writing-mode: vertical-rl;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Text Effects</h1>
+    <div class="container">
+        <p>The following two paragraphs contains a long text that will not fit in the box.</p>
+
+        <h2>text-overflow: clip:</h2>
+        <p class="test test1">This is some long text that will not fit in the box</p>
+
+        <h2>text-overflow: ellipsis:</h2>
+        <p class="test test2">This is some long text that will not fit in the box</p>
+
+        <h2>The word-wrap Property</h2>
+        <p class="test3">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The
+            long
+            word
+            will break and wrap to the next line.</p>
+        <p class="test4">This paragraph contains some text. This line will-break-at-hyphens.</p>
+        <p class="test5">This paragraph contains some text. The lines will break at any character.</p>
+
+        <h2>The writing-mode Property</h2>
+        <p class="test6">Some text with default writing-mode.</p>
+        <p>Some text with a span element with a <span class="test7">vertical-rl</span> writing-mode.</p>
+        <p class="test8">Some text with writing-mode: vertical-rl.</p>
+    </div>
+</body>
+
+</html>

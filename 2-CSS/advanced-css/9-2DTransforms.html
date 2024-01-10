@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Transforms in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 2rem;
+            border: 2px solid brown;
+            padding: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: 5px 5px 3px red;
+            /* text-decoration: line-through; */
+        }
+
+        h2 {
+            /* text-align: left; */
+            padding: 1rem;
+        }
+
+        .container1>.para1 {
+            width: 300px;
+            height: 100px;
+            background-color: lightcyan;
+            border: 2px solid salmon;
+            transform: translate(50px, 20px);
+        }
+
+        .para {
+            width: 300px;
+            height: 100px;
+            background-color: lightgray;
+            border: 2px solid darkgreen;
+        }
+
+        .container1>.para2 {
+            transform: rotate(20deg);
+        }
+
+        .container1>.para3 {
+            transform: rotate(-20deg);
+        }
+
+        .box {
+            margin: 10px;
+            width: 300px;
+            height: 300px;
+            background-color: lightpink;
+            border: 2px solid dimgray;
+        }
+
+        #box1 {
+            transform: scale(1, 1);
+        }
+
+        #box2 {
+            transform: scale(1, 3);
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #box3 {
+            transform: scale(0.5, 0.5);
+        }
+
+        #box4 {
+            transform: scaleX(2);
+        }
+
+        #box5 {
+            transform: scaleY(2);
+        }
+
+        h2+p {
+            background-color: aqua;
+        }
+
+        #para4 {
+            transform: skew(20deg, 30deg);
+        }
+
+        #para5 {
+            transform: skewX(20deg);
+        }
+
+        #para6 {
+            transform: skewY(20deg);
+        }
+
+        #para7 {
+            transform: matrix(1, -0.3, 0, 1, 0, 0);
+        }
+
+        #para8 {
+            transform: matrix(1, 0, 0.5, 1, 150, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>2D Transforms</h1>
+    <div class="container1">
+        <h2>Translate() Method</h2>
+        <p class="para1">The translate() method moves an element from its current position:</p>
+
+        <h2>Rotate() Method</h2>
+        <p class="para para2">The rotate() method moves an element from its current position:</p>
+        <p class="para para3">The rotate() method moves an element from its current position:</p>
+
+        <h2>Scale() Method</h2>
+        <div class="flex">
+            <p class="box" id="box1">The current para is 1 time of its origin width and height.</p>
+            <p class="box" id="box2">The current para is 1 time of its origin width and 3 times of its original height.
+            </p>
+            <p class="box" id="box3">The current para is 0.5 time of its origin width and 0.5 times of its original
+                height.
+            </p>
+        </div>
+
+        <h2>ScaleX() Method</h2>
+        <p class="box" id="box4">The current para is 2 time scale from its width.</p>
+
+        <h2>ScaleY() Method</h2>
+        <p class="box" id="box5">The current para is 2 time scale from its height.</p>
+
+        <h2>Skew() Method</h2>
+        <p class="para" id="para4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        <h2>SkewX() Method</h2>
+        <p class="para" id="para5">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+
+        <h2>SkewY() Method</h2>
+        <p class="para" id="para6">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+
+        <h2>Matrix() Method</h2>
+        <p class="para" id="para7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, libero.</p>
+        <p class="para" id="para8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, libero.</p>
+    </div>
+</body>
+
+</html>

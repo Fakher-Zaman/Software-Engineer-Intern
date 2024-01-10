@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Face in CSS</title>
+    <style>
+        @font-face {
+            font-family: myFirstFont;
+            src: url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+            font-weight: bold;
+        }
+
+        * {
+            font-family: myFirstFont;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The @font-face Rule</h1>
+    <div>
+        With CSS, websites can use <b>fonts other than the pre-selected "web-safe" fonts</b>.
+    </div>
+</body>
+
+</html>

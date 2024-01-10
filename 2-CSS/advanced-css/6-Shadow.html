@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 2rem;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .section1,
+        .section2 {
+            margin: 1rem;
+        }
+
+        .section1>h3 {
+            letter-spacing: 2px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        div>.text1 {
+            text-shadow: 2px 2px;
+        }
+
+        div>.text2 {
+            text-shadow: 2px 2px red;
+        }
+
+        div>.text3 {
+            text-shadow: 2px 3px 4px orangered;
+        }
+
+        div>.text4 {
+            text-shadow: 2px 2px 4px #000000;
+            color: white;
+        }
+
+        div>.text5 {
+            text-shadow: 0 0 3px #FF0000;
+        }
+
+        div>.text6 {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+
+        div>.text7 {
+            color: coral;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+
+        .section2>div {
+            width: 300px;
+            height: 100px;
+            margin: 2rem;
+            padding: 15px;
+        }
+
+        div>.para1 {
+            background-color: coral;
+            box-shadow: 10px 10px;
+        }
+
+        div>.para2 {
+            background-color: darkcyan;
+            color: white;
+            box-shadow: 10px 10px 5px lightblue;
+        }
+
+        div>.para3 {
+            background-color: darkgoldenrod;
+            color: white;
+            box-shadow: 10px 10px 5px lightgoldenrodyellow inset;
+        }
+
+        div>.para4 {
+            background-color: darkblue;
+            color: white;
+            box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+        }
+
+        div>.para5 {
+            background-color: darkred;
+            color: white;
+            box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+        }
+
+        div.card {
+            width: 250px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+        }
+
+        div.header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 40px;
+        }
+
+        div.container-1 {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Shadow Effects</h2>
+        <div class="section1">
+            <h3 class="text1">Text Shadow Effect # 1</h3>
+            <h3 class="text2">Text Shadow Effect # 2</h3>
+            <h3 class="text3">Text Shadow Effect # 3</h3>
+            <h3 class="text4">Text Shadow Effect # 4</h3>
+            <h3 class="text5">Text Shadow Effect # 5</h3>
+            <h3 class="text6">Text Shadow Effect # 6</h3>
+            <h3 class="text7">Text Shadow Effect # 7</h3>
+        </div>
+
+        <h2>Box Shadow</h2>
+        <div class="section2">
+            <div class="para1">This is a div element with a box shadow</div>
+            <div class="para2">This is a div element with a box shadow</div>
+            <div class="para3">This is a div element with a box shadow</div>
+            <div class="para4">This is a div element with a box shadow</div>
+            <div class="para5">This is a div element with a box shadow</div>
+        </div>
+
+        <h2>Create Cards</h2>
+        <div class="card">
+            <div class="header">
+                <h1>1</h1>
+            </div>
+            <div class="container-1">
+                <p>January 10, 2024</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

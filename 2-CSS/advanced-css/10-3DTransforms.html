@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Transforms in CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 2rem;
+            border: 2px solid brown;
+            padding: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: 5px 5px 3px purple;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container>p {
+            width: 50%;
+            height: auto;
+            margin: 1rem;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        p.para1 {
+            background-color: lightblue;
+            transition: 1s all ease-in;
+        }
+
+        p.para1:hover {
+            transform: rotateX(90deg);
+            cursor: pointer;
+        }
+
+        p.para2 {
+            background-color: bisque;
+            transition: 1s all ease-out;
+        }
+
+        p.para2:hover {
+            transform: rotateY(180deg);
+            cursor: pointer;
+        }
+
+        p.para3 {
+            background-color: lightgray;
+            transition: 1s all ease-in-out;
+        }
+
+        p.para3:hover {
+            transform: rotateZ(270deg);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>3D Transforms</h1>
+    <div class="container">
+        <p class="para1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque vero et aut, officiis laborum
+            earum, quas animi debitis at molestias porro voluptatem quam iusto accusantium quisquam similique eos, vitae
+            dignissimos.</p>
+        <p class="para2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea veritatis aut rerum aliquid sequi
+            adipisci officiis enim itaque cupiditate, voluptatem tempore deleniti tenetur quibusdam molestias eaque,
+            neque eum, ex necessitatibus?</p>
+        <p class="para3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita harum blanditiis sunt illum
+            sit doloribus dolorum amet, tenetur, explicabo aspernatur quas debitis optio. Exercitationem soluta cumque
+            praesentium est amet pariatur.</p>
+    </div>
+</body>
+
+</html>

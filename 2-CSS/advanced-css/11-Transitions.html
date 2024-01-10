@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions in CSS</title>
+    <style>
+        h1 {
+            text-align: center;
+            text-shadow: 2px 4px 5px blueviolet;
+        }
+
+        p.para1 {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            background: olivedrab;
+            color: white;
+            transition: width 2s, linear 1s;
+        }
+
+        p.para1:hover {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .section1>div {
+            width: 100px;
+            height: 100px;
+            background: purple;
+            transition: width 2s, height 2s, transform 2s;
+        }
+
+        .section1>div:hover {
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+        }
+
+        .para {
+            width: 100px;
+            height: 100px;
+            color: white;
+            text-align: center;
+        }
+
+        .para2 {
+            background-color: darkblue;
+            transition: width 2s linear;
+        }
+
+        .para2:hover {
+            width: 300px;
+        }
+
+
+        .para3 {
+            background-color: darkcyan;
+            transition: width 2s ease;
+        }
+
+        .para3:hover {
+            width: 300px;
+        }
+
+        .para4 {
+            background-color: darkgoldenrod;
+            transition: width 2s ease-in;
+        }
+
+        .para4:hover {
+            width: 300px;
+        }
+
+        .para5 {
+            background-color: darkgreen;
+            transition: width 2s ease-out;
+        }
+
+        .para5:hover {
+            width: 300px;
+        }
+
+        .para6 {
+            background-color: darkmagenta;
+            transition: width 2s ease-in-out;
+        }
+
+        .para6:hover {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transitions</h1>
+    <p>Hover over the div element below:</p>
+    <div class="section1">
+        <p class="para1">BOX-1</p>
+        <h2>Transition + Transform</h2>
+        <div></div>
+    </div>
+    <div class="section2">
+        <p class="para para2">Flexible</p>
+        <p class="para para3">Ease</p>
+        <p class="para para4">Ease-In</p>
+        <p class="para para5">Ease-Out</p>
+        <p class="para para6">Ease-In-Out</p>
+    </div>
+</body>
+
+</html>
