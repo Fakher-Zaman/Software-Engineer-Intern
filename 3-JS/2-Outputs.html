@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outputs in JavaScript</title>
+</head>
+
+<body>
+    <h1>Outputs</h1>
+
+    <h2>By Using Inner HTML:</h2>
+    <p id="demo1"></p>
+
+    <h2>Using document.write()</h2>
+    <p>For testing purposes, it is convenient to use document.write():</p>
+
+    <button type="button" onclick="document.write(10 + 5)">Try it!</button>
+
+    <h2>Using window.alert()</h2>
+    <button type="button" onclick="myFunction()">Alert</button>
+
+    <h2>Using console.log()</h2>
+    <button type="button" onclick="sum()">Check Console</button>
+
+    <h2>Using Print</h2>
+    <button onclick="window.print()">Print this page</button>
+
+    <script>
+        document.getElementById("demo1").innerHTML = 5 + 5;
+        document.write("Hello World!");
+
+        function myFunction() {
+            window.alert("Alert the User");
+        }
+
+        function sum() {
+            console.log("Hello World!");
+        }
+    </script>
+</body>
+
+</html>

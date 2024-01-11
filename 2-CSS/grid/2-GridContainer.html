@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Container in CSS</title>
+    <style>
+        h1 {
+            text-align: center;
+            text-shadow: 0 2px 4px red, 1px 4px 2px lightgreen;
+        }
+
+        .grid-container1 {
+            display: grid;
+            grid-template-columns: 80px 200px auto 30px;
+            row-gap: 1rem;
+            column-gap: 1.5rem;
+            background-color: darkgoldenrod;
+            padding: 1rem;
+        }
+
+        .grid-container2 {
+            display: grid;
+            grid-template-columns: auto 70px 100px 80px;
+            grid-template-rows: 120px auto;
+            row-gap: 1rem;
+            column-gap: 1.5rem;
+            background-color: darkgreen;
+            padding: 1rem;
+        }
+
+        .grid-container1>div {
+            background-color: lightgoldenrodyellow;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2rem;
+        }
+
+        .grid-container2>div {
+            background-color: lightskyblue;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2rem;
+        }
+
+        .grid-container3 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 1rem;
+            justify-content: right;
+            background-color: darkred;
+            padding: 1.2rem;
+        }
+
+        .grid-container3>div {
+            background-color: lightcoral;
+            border: 1px solid black;
+            width: 200px;
+            padding: 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .grid-container4 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 1rem;
+            height: 400px;
+            justify-content: left;
+            align-content: start;
+            background-color: darkkhaki;
+            padding: 1.2rem;
+        }
+
+        .grid-container4>div {
+            background-color: lightseagreen;
+            border: 1px solid black;
+            width: 200px;
+            padding: 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Grid Container</h1>
+    <h2>The grid-template-columns Property:</h2>
+    <div class="grid-container1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+    <h2>The grid-template-rows Property:</h2>
+    <div class="grid-container2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+    <h2>The justify-content Property</h2>
+    <div class="grid-container3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <h2>The align-content Property</h2>
+    <div class="grid-container4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+</body>
+
+</html>

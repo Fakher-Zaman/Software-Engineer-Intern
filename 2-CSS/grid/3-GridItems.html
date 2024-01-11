@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Items in CSS</title>
+    <style>
+        h1 {
+            text-align: center;
+            text-shadow: 0px 1px 2px palevioletred, 0px 2px 4px lightblue;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .item1 {
+            grid-area: header;
+        }
+
+        .item2 {
+            grid-area: nav;
+        }
+
+        .item3 {
+            grid-area: main;
+        }
+
+        .item4 {
+            grid-area: aside;
+        }
+
+        .item5 {
+            grid-area: footer;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas: 'header header header header header header'
+                'nav main main main aside aside'
+                'nav footer footer footer footer footer';
+            gap: 1rem;
+            background-color: darkmagenta;
+            padding: 1rem;
+        }
+
+        .grid-container>div {
+            background-color: lightgreen;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 2rem;
+            padding: 1rem;
+            font-weight: 500;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Grid Items</h1>
+    <p>This grid layout contains six columns and three rows:</p>
+    <div class="grid-container">
+        <div class="item1">Header</div>
+        <div class="item2">Navbar</div>
+        <div class="item3">Main</div>
+        <div class="item4">Aside</div>
+        <div class="item5">Footer</div>
+    </div>
+</body>
+
+</html>

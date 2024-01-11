@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JavaScript</title>
+</head>
+
+<body>
+    <h2>What can JavaScript do?</h2>
+    <p id="demo">Date Display Here</p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = Date()'>Click Me!</button>
+    <p id="change-css">Change the Color of the Text</p>
+    <button type="button" onclick='document.getElementById("change-css").style = "background-color: yellow;"'>Click
+        Me!</button>
+    <div class="container">
+        <p id="change">Hello JavaScript</p>
+        <button type="button" onclick="document.getElementById('change').style = 'display: none'">Hide Element!</button>
+        <button type="button" onclick="document.getElementById('change').style = 'display: block'">Show
+            Element!</button>
+    </div>
+</body>
+
+</html>
