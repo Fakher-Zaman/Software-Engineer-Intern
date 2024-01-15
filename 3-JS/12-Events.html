@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+    <style>
+        h1 {
+            text-align: center;
+            text-shadow: 2px 1px 3px brown;
+        }
+
+        #demo {
+            text-align: center;
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript HTML Events</h1>
+    <h2>The onclick Attribute</h2>
+
+    <p>Click the button to display the date.</p>
+    <button onclick="displayDate()">The time is?</button>
+    <div id="demo"></div>
+
+    <script>
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+    </script>
+</body>
+
+</html>
