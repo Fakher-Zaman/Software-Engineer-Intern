@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEach() Method in JS</title>
+</head>
+
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The forEach() Method</h2>
+
+    <p>Call a function once for each array element:</p>
+
+    <p id="demo0"></p>
+
+    <script>
+        const numbers = [10, 20, 30, 40, 50];
+        let txt = "";
+        numbers.forEach(myFunction);
+        document.getElementById("demo0").innerHTML = txt;
+
+        function myFunction(value, index, array) {
+            txt += value += "<br>";
+        }
+    </script>
+    <br>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The map() Method</h2>
+
+    <p>Create a new array by performing a function on each array element:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        const numbers1 = [2, 4, 6, 8, 10];
+        const numbers2 = numbers1.map(myFunction2);
+        document.getElementById("demo1").innerHTML = numbers2;
+
+        function myFunction2(value, index, array) {
+            return value * 2;
+        }
+    </script>
+    <br>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The flatMap() Method</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+        const myArr = [10, 20, 30, 40, 50];
+        const newArr = myArr.flatMap((val) => val / 10);
+        document.getElementById("demo2").innerHTML = newArr;
+    </script>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The filter() Method</h2>
+
+    <p>Create a new array from all array elements that passes a test:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        const values = [45, -2, 4, 9, 16, 25, -1];
+        const filterValues = values.filter(myFunction3);
+        document.getElementById("demo3").innerHTML = filterValues;
+
+        function myFunction3(value) {
+            return value < 0;
+        }
+    </script>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The find() Method</h2>
+
+    <p>Create a new array from all array elements that passes a test:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        const nums = [45, -2, 4, 9, 16, 25, -1];
+        const findNums = values.find(myFunction4);
+        document.getElementById("demo4").innerHTML = findNums;
+
+        function myFunction4(value) {
+            return value < 0;
+        }
+    </script>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The reduce() Method</h2>
+
+    <p>Find the sum of all numbers in an array:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        const vals = [1, 2, 3, 4, 5];
+        const reduceVals = vals.reduce(myFunction5);
+        document.getElementById("demo5").innerHTML = reduceVals;
+
+        function myFunction5(total, value, index, array) {
+            return total += value;
+        }
+    </script>
+
+    <h1>JavaScript Spread(...)</h1>
+    <h2>The spread(...) Method</h2>
+
+    <p id="demo6"></p>
+
+    <script>
+        const q1 = ["Jan", "Feb", "Mar"];
+        const q2 = ["Apr", "May", "Jun"];
+        const q3 = ["Jul", "Aug", "Sep"];
+        const q4 = ["Oct", "Nov", "May"];
+        const years = [...q1, ...q2, ...q3, ...q4];
+        document.getElementById("demo6").innerHTML = years;
+    </script>
+
+    <img src="./assets/array-iteration.jpg" alt="array-iteration">
+</body>
+
+</html>
