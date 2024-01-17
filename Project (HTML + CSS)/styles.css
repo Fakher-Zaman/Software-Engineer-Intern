@@ -40,6 +40,7 @@
 
     /* rest of the vars */
     --transition: 0.3s ease-in-out all;
+    --transition-overly: .45s ease-in-out;
     --box-shadow-1: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     --box-shadow-2: 0 5px 5px 0 rgb(0 0 0 / 20%), 0 0 0 1px #141c3a;
 }
@@ -365,7 +366,12 @@ hr {
     justify-content: center;
 }
 
+.work {
+    position: relative;
+}
+
 .work>img {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 12px;
@@ -400,6 +406,67 @@ hr {
 .work-btn>a:hover {
     color: var(--white);
     background-color: var(--secondary-color);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: var(--transition-overly);
+    background-color: var(--active-color);
+    border-radius: 12px;
+}
+
+.overlay>h1 {
+    color: var(--white);
+    padding: 3rem 2rem 1rem;
+    line-height: 1.1;
+}
+
+.overlay-btn {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-btn span {
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.overlay-btn svg {
+    color: var(--white);
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}
+
+.overlay-btn>a {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 70px;
+    transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.overlay-btn>a:hover {
+    color: var(--white);
+    background-color: var(--secondary-color);
+}
+
+.work:hover .overlay {
+    opacity: 1;
 }
 
 /* section 5 */
@@ -529,6 +596,7 @@ hr {
 }
 
 /* section 8 */
+
 .section8 {
     padding: 9rem 4.5rem;
 }
@@ -630,6 +698,7 @@ p.quote {
 }
 
 /* footer */
+
 .footer {
     padding: 4rem 1.5rem 4rem;
     background-color: var(--secondary-color);
@@ -714,6 +783,8 @@ p.quote {
 .copyright>img {
     margin-top: 8px;
 }
+
+/* responsiveness */
 
 @media screen and (min-width: 1408px) {
     .container {
