@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch in JavaScript</title>
+</head>
+
+<body>
+    <h1>Try Catch Finally in JS</h1>
+    <p id="p01"></p>
+    <p id="demo">Hello World!</p>
+    <button onclick="myFunction()">Try it!</button>
+    <script>
+        function myFunction() {
+            const message = document.getElementById("p01");
+            message.innerHTML = "";
+            let x = document.getElementById("demo").value;
+            try {
+                if (x.trim() == "") throw "is empty";
+                if (isNaN(x)) throw "is not a number";
+                x = Number(x);
+                if (x > 10) throw "is too high";
+                if (x < 5) throw "is too low";
+            }
+            catch (err) {
+                message.innerHTML = "Error: " + err + ".";
+            }
+            finally {
+                document.getElementById("demo").value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
