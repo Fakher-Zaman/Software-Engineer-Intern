@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master DOM Manipulation: Part 5</title>
+    <style>
+        *::after::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(238, 174, 202);
+            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 3rem;
+        }
+
+        #main-heading {
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        button {
+            padding: 4rem 1rem;
+            width: 100%;
+            border: 2px solid white;
+            border-radius: 5px;
+            background: transparent;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s all ease-in-out;
+        }
+
+        .hidden-content {
+            margin-top: 1rem;
+            padding: 1rem;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 5px;
+            color: white;
+            display: none;
+        }
+
+        .hidden-content.reveal-btn {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="main-heading">Event Listeners</h1>
+    <div class="container">
+        <button class="reveal-btn boxes">Reveal More</button>
+        <div class="hidden-content boxes">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit natus ipsam a vitae dolorem quam dolore
+            temporibus facilis quo corporis! Corporis officia quibusdam temporibus exercitationem porro sint harum
+            laudantium ea expedita perspiciatis dolores, qui ut fugiat voluptate corrupti non est? Cumque fuga officia,
+            similique nobis velit ad provident consequuntur enim, veniam ipsam amet inventore architecto magnam. Ex fuga
+            necessitatibus eaque perferendis voluptatem nulla cumque minima quaerat deleniti distinctio.
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

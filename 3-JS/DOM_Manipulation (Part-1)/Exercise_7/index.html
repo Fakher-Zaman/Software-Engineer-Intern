@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master DOM Manipulation: Part 7</title>
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(238, 174, 202);
+            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+            font-family: Arial, Helvetica, sans-serif;
+            border: 5px solid white;
+            padding: 3.5rem 1rem;
+        }
+
+        ul {
+            border: 3px solid white;
+            border-radius: 10px;
+            width: 300px;
+            margin: 0 auto;
+            padding: 1.2rem;
+        }
+
+        ul>li {
+            list-style: none;
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: white;
+            margin: 4px;
+            text-align: center;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="sports">
+        <li id="football">Football</li>
+        <li id="basketball">Basketball</li>
+        <li id="boxing">Boxing</li>
+        <li id="tennis">Tennis</li>
+        <li id="golf">Golf</li>
+    </ul>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
