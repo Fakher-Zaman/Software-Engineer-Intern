@@ -1,6 +1,9 @@
 # Ignore Notes directories
 /Notes
 /4-TS/Week1/Notes
+/4-TS/Week2/Notes
+/4-TS/Week3/Notes
+/4-TS/Week4/Notes
 /5-Git_Github/Notes
 
 # Ignore TS_Run_Practice directory
@@ -8,3 +11,5 @@
 
 # ignore node_modules directory
 /4-TS/Week1/10-Number_Types/node_modules
+/4-TS/Week2/8-Enum_Types_Challenge/node_modules
+/4-TS/Week2/9-Any_Types/node_modules
