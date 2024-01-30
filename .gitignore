@@ -1,7 +1,10 @@
-./Notes
+# Ignore Notes directories
+/Notes
+/4-TS/Week1/Notes
+/5-Git_Github/Notes
 
-./4-TS/Notes
+# Ignore TS_Run_Practice directory
+/TS_Run_Practice
 
-./TS_Run_Practice
-
-./5-Git_Github/Notes
+# ignore node_modules directory
+/4-TS/Week1/10-Number_Types/node_modules
