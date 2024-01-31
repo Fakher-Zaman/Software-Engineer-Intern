@@ -1,15 +1,29 @@
 # Ignore Notes directories
 /Notes
-/4-TS/Week1/Notes
-/4-TS/Week2/Notes
-/4-TS/Week3/Notes
-/4-TS/Week4/Notes
+/4-TS_Scrimba/Week1/Notes
+/4-TS_Scrimba/Week2/Notes
+/4-TS_Scrimba/Week3/Notes
+/4-TS_Scrimba/Week4/Notes
 /5-Git_Github/Notes
 
 # Ignore TS_Run_Practice directory
 /TS_Run_Practice
 
 # ignore node_modules directory
-/4-TS/Week1/10-Number_Types/node_modules
-/4-TS/Week2/8-Enum_Types_Challenge/node_modules
-/4-TS/Week2/9-Any_Types/node_modules
+/4-TS_Scrimba/Week1/10-Number_Types/node_modules
+
+/4-TS_Scrimba/Week2/8-Enum_Types_Challenge/node_modules
+/4-TS_Scrimba/Week2/9-Any_Types/node_modules
+/4-TS_Scrimba/Week2/10-Union_Types/node_modules
+/4-TS_Scrimba/Week2/11-Union_Types_Challenge/node_modules
+/4-TS_Scrimba/Week2/12-Literal_Types/node_modules
+/4-TS_Scrimba/Week2/13-Function+Void_Types/node_modules
+
+/4-TS_Scrimba/Week3/2-Function_Types_Challenge/node_modules
+/4-TS_Scrimba/Week3/3-Interfaces/node_modules
+/4-TS_Scrimba/Week3/4-Modules/node_modules
+/4-TS_Scrimba/Week3/5-Classes/node_modules
+/4-TS_Scrimba/Week3/6-Interface_And_Classes/node_modules
+
+/4-TS_Scrimba/Week4/1-Manage_Website/node_modules
+/4-TS_Scrimba/Week4/2-Final_Product/node_modules
