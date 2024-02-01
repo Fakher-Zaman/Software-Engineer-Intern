@@ -5,11 +5,12 @@
 /4-TS_Scrimba/Week3/Notes
 /4-TS_Scrimba/Week4/Notes
 /5-Git_Github/Notes
+/6-TS_FreeCodeCamp/Notes
 
 # Ignore TS_Run_Practice directory
 /TS_Run_Practice
 
-# ignore node_modules directory
+# Ignore node_modules directory
 /4-TS_Scrimba/Week1/10-Number_Types/node_modules
 
 /4-TS_Scrimba/Week2/8-Enum_Types_Challenge/node_modules
@@ -27,3 +28,7 @@
 
 /4-TS_Scrimba/Week4/1-Manage_Website/node_modules
 /4-TS_Scrimba/Week4/2-Final_Product/node_modules
+
+# Ignore Course Link File
+/4-TS_Scrimba/Course_Link.txt
+/6-TS_FreeCodeCamp/Course_Link.txt
