@@ -29,6 +29,9 @@
 /4-TS_Scrimba/Week4/1-Manage_Website/node_modules
 /4-TS_Scrimba/Week4/2-Final_Product/node_modules
 
+/6-TS_FreeCodeCamp/03-PureTS/node_modules
+
 # Ignore Course Link File
 /4-TS_Scrimba/Course_Link.txt
 /6-TS_FreeCodeCamp/Course_Link.txt
+/6-TS_FreeCodeCamp/TS_Docs_Link.txt
