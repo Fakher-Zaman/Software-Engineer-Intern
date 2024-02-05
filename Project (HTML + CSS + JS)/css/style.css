@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+:root {
+    /* for width */
+    --max-width: 1400px;
+    --fixed-width: 500px;
+    --fluid-width: 90%;
+
+    /* for color */
+    --primary-color: #141c3a;
+
+    --primary-color-1: #3498db;
+    --primary-color-2: #4d8ec7;
+    --primary-color-3: #6694b3;
+    --primary-color-4: #7f8aa0;
+    --primary-color-5: #988087;
+
+    --secondary-color-1: #34495e;
+    --secondary-color-2: #4d5e72;
+    --secondary-color-3: #667187;
+    --secondary-color-4: #7f857c;
+    --secondary-color-5: #989c91;
+
+    --white: #ffffff;
+    --black: #000000;
+
+    /* for background */
+    --background-image: linear-gradient(to right top, #3498db, #3983ba, #3a6f9a, #385c7b, #34495e);
+
+    /* box shadows */
+    --box-shadow-1: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('../fonts/Roboto-Black.ttf');
+}
+
+@font-face {
+    font-family: Roboto-BlackItalic;
+    src: url('../fonts/Roboto-BlackItalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url('../fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: Roboto-BoldItalic;
+    src: url('../fonts/Roboto-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Italic;
+    src: url('../fonts/Roboto-Italic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-LightItalic;
+    src: url('../fonts/Roboto-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: Roboto-MediumItalic;
+    src: url('../fonts/Roboto-MediumItalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Thin;
+    src: url('../fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+    font-family: Roboto-ThinItalic;
+    src: url('../fonts/Roboto-ThinItalic.ttf');
+}
+
+body {
+    font-family: Roboto-Regular;
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Roboto-Bold;
+}
+
+.container {
+    width: var(--fluid-width);
+    margin: 0 auto;
+}
+
+/* responsiveness */
+
+@media screen and (min-width: 1408px) {
+    .container {
+        max-width: var(--max-width);
+    }
+}
