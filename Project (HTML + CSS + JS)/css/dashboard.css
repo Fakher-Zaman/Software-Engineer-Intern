@@ -1,0 +1,35 @@
+.dashboard-header {
+    box-shadow: var(--box-shadow-1);
+}
+
+.dashboard-header>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.topnav {
+    margin-left: 2rem;
+    margin-right: 10px;
+}
+
+.topnav>a {
+    color: var(--secondary-color-1);
+    /* list-style: none; */
+    text-decoration: none;
+    font-family: Roboto-Bold;
+    padding: 1.04rem;
+}
+
+.active {
+    background-color: var(--primary-color-1);
+    color: var(--white) !important;
+}

@@ -13,7 +13,7 @@
     /* for width */
     --max-width: 1400px;
     --fixed-width: 500px;
-    --fluid-width: 90%;
+    --fluid-width: 95%;
 
     /* for color */
     --primary-color: #141c3a;
@@ -33,11 +33,17 @@
     --white: #ffffff;
     --black: #000000;
 
+    --input-border-color: #ccc;
+    --btn-hover-1: #2fa9fb;
+
     /* for background */
     --background-image: linear-gradient(to right top, #3498db, #3983ba, #3a6f9a, #385c7b, #34495e);
 
     /* box shadows */
     --box-shadow-1: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    /* transition */
+    --transition-1: .2s all ease-in-out;
 }
 
 @font-face {
