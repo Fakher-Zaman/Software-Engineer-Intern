@@ -32,18 +32,21 @@
 
     --white: #ffffff;
     --black: #000000;
+    --red-dark: #842029;
 
     --input-border-color: #ccc;
     --btn-hover-1: #2fa9fb;
 
     /* for background */
     --background-image: linear-gradient(to right top, #3498db, #3983ba, #3a6f9a, #385c7b, #34495e);
+    --text-bg: #a4d8fa;
 
     /* box shadows */
     --box-shadow-1: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    --box-shadow-2: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 
     /* transition */
-    --transition-1: .2s all ease-in-out;
+    --transition-1: .3s all ease-in-out;
 }
 
 @font-face {
