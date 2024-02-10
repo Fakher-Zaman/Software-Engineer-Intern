@@ -1,5 +1,8 @@
 const apiEndpoint = 'https://dummyjson.com/users';
 const display = document.querySelector("#display-users");
+const userCountDisplay = document.getElementById('user-count');
+const displayUserProfile = document.querySelector('.user-data');
+
 
 const activePage = window.location.pathname;
 const navlinks = document.querySelectorAll('nav a').forEach(link => {
@@ -17,13 +20,15 @@ const getData = async () => {
 const displayUsers = async () => {
     const payload = await getData();
 
+    userCountDisplay.innerHTML = `Locating ${payload.users.length} User Accounts`;
+
     let dataDisplay = payload.users.map((user) => {
         console.log(user);
         const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
 
         return `
         <div class="get-users">
-        <div class="part1-info">
+            <div class="part1-info">
                 <!-- <img src="${image}" alt="img" width="50" height="auto"> -->
                 <p class="avatar">${firstName.charAt(0) + lastName.charAt(0)}</p>
                 <div class="contact-info">
@@ -51,3 +56,23 @@ const displayUsers = async () => {
     display.innerHTML = dataDisplay;
 }
 displayUsers();
+
+displayUserProfile.innerHTML = `
+    <div class="user-profile">
+        <p id="user-profile">${localStorage.userFirstName} ${localStorage.userLastName} <i class="fa-solid fa-angle-down"></i></p>
+        <img src="${localStorage.userProfile}" alt="profile" width="40" height="auto" />
+        <button id="logout-btn" class="logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    </div>
+`;
+
+const userProfile = document.getElementById('user-profile');
+const logoutBtn = document.getElementById('logout-btn');
+
+userProfile.addEventListener('click', () => {
+    logoutBtn.style.display = logoutBtn.style.display === 'block' ? 'none' : 'block';
+});
+
+logoutBtn.addEventListener('click', () => {
+    localStorage.clear();
+    window.location.href = "../index.html";
+});

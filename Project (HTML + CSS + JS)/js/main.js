@@ -14,18 +14,34 @@ function setData(event) {
 
     const apiURL = "https://dummyjson.com/auth/login";
 
-    localStorage.setItem('userName', username);
-    localStorage.setItem('userPass', password);
-
     fetch(apiURL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             username: username,
             password: password,
-            // expiresInMins: 60, // optional
         })
     })
-        .then(res => res.json())
-        .then(console.log);
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            } else {
+                throw new Error('Invalid username or password');
+            }
+        })
+        .then(data => {
+            localStorage.setItem('userId', data.id);
+            localStorage.setItem('userName', username);
+            localStorage.setItem('userPass', password);
+            localStorage.setItem('userProfile', data.image);
+            localStorage.setItem('userFirstName', data.firstName);
+            localStorage.setItem('userLastName', data.lastName);
+            console.log(data);
+
+            // Redirect to home page
+            window.location.href = '../components/home.html'
+        })
+        .catch(error => {
+            alert(error.message);
+        });
 };

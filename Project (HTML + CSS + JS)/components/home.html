@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/dashboard.css">
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <title>CRUDify - Home</title>
 </head>
 
 <body>
@@ -15,25 +16,25 @@
             <div class="img-links">
                 <img src="../img/logo.png" alt="logo" width="200" height="auto">
                 <nav class="topnav">
-                    <a href="./dashboard.html" class="active">All Users</a>
+                    <a href="./dashboard.html" class="active">All User</a>
                     <a href="./add-user.html">Add User</a>
                     <a href="./my-tasks.html">My Tasks</a>
                 </nav>
             </div>
-            <div class="user-data">
-                <p>name</p>
-            </div>
+            <div class="user-data"></div>
         </div>
     </header>
-    <section id="display-users" class="container"></section>
-
+    <section id="section1" class="container">
+        <p id="user-count"></p>
+        <div id="display-users"></div>
+    </section>
     <footer class="dashboard-footer">
         <div class="container">
             <p>All Rights Reserved &copy; 2024 CRUDify.am</p>
         </div>
     </footer>
 
-    <script src="../js/dashboard.js"></script>
+    <script src="../js/home.js"></script>
     <script src="https://kit.fontawesome.com/b43da9d28e.js" crossorigin="anonymous"></script>
 </body>
 
