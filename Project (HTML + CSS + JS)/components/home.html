@@ -16,15 +16,15 @@
             <div class="img-links">
                 <img src="../img/logo.png" alt="logo" width="200" height="auto">
                 <nav class="topnav">
-                    <a href="./dashboard.html" class="active">All User</a>
-                    <a href="./add-user.html">Add User</a>
-                    <a href="./my-tasks.html">My Tasks</a>
+                    <a href="#" onclick="loadPage('./all-user.html', 'section', this)">All User</a>
+                    <a href="#" onclick="loadPage('./add-user.html', 'section', this)">Add User</a>
+                    <a href="#" onclick="loadPage('./my-tasks.html', 'section', this)">My Tasks</a>
                 </nav>
             </div>
             <div class="user-data"></div>
         </div>
     </header>
-    <section id="section1" class="container">
+    <section id="section" class="container">
         <p id="user-count"></p>
         <div id="display-users"></div>
     </section>
@@ -36,6 +36,32 @@
 
     <script src="../js/home.js"></script>
     <script src="https://kit.fontawesome.com/b43da9d28e.js" crossorigin="anonymous"></script>
+    <script>
+        function loadPage(url, containerId, clickedLink) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(containerId).innerHTML = html;
+                    // Remove the 'active' class from all links
+                    document.querySelectorAll('.topnav a').forEach(link => link.classList.remove('active'));
+                    // Add the 'active' class to the clicked link
+                    clickedLink.classList.add('active');
+                })
+                .catch(error => console.error('Error loading page:', error));
+        }
+
+        // Add onload event listener to set the active link on page load
+        window.addEventListener('load', function () {
+            // Get the current page URL
+            var currentPage = window.location.pathname.split('/').pop();
+            // Select the link corresponding to the current page
+            var activeLink = document.querySelector('.topnav a[href="' + currentPage + '"]');
+            // Add the 'active' class to the link
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        });
+    </script>
 </body>
 
 </html>
