@@ -2,6 +2,7 @@ const apiEndpoint = 'https://dummyjson.com/users';
 const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
 const displayUserProfile = document.querySelector('.user-data');
+const toggleData = document.querySelector('.toggle-data');
 
 const getData = async () => {
     const res = await fetch(apiEndpoint);
@@ -51,6 +52,17 @@ displayUsers();
 
 displayUserProfile.innerHTML = `
     <div class="user-profile">
+        <p id="user-profile">${localStorage.userFirstName} ${localStorage.userLastName} <i class="fa-solid fa-angle-down"></i></p>
+        <img src="${localStorage.userProfile}" alt="profile" width="40" height="auto" />
+        <button id="logout-btn" class="logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    </div>
+    <div class="nav-bar-btn">
+        <i class="fa-solid fa-bars" id="bars"></i>
+    </div>
+`;
+
+toggleData.innerHTML = `
+    <div class="toggle-profile">
         <p id="user-profile">${localStorage.userFirstName} ${localStorage.userLastName} <i class="fa-solid fa-angle-down"></i></p>
         <img src="${localStorage.userProfile}" alt="profile" width="40" height="auto" />
         <button id="logout-btn" class="logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
