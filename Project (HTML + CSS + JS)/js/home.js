@@ -3,14 +3,6 @@ const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
 const displayUserProfile = document.querySelector('.user-data');
 
-
-const activePage = window.location.pathname;
-const navlinks = document.querySelectorAll('nav a').forEach(link => {
-    if (link.href.includes(`${activePage}`)) {
-        link.classList.add('active');
-    }
-});
-
 const getData = async () => {
     const res = await fetch(apiEndpoint);
     const data = await res.json();
