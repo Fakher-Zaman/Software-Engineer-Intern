@@ -2,7 +2,6 @@ const apiEndpoint = 'https://dummyjson.com/users';
 const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
 const displayUserProfile = document.querySelector('.user-data');
-const toggleData = document.querySelector('.toggle-data');
 
 const getData = async () => {
     const res = await fetch(apiEndpoint);
@@ -56,21 +55,13 @@ displayUserProfile.innerHTML = `
         <img src="${localStorage.userProfile}" alt="profile" width="40" height="auto" />
         <button id="logout-btn" class="logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
     </div>
-    <div class="nav-bar-btn">
-        <i class="fa-solid fa-bars" id="bars"></i>
-    </div>
-`;
-
-toggleData.innerHTML = `
-    <div class="toggle-profile">
-        <p id="user-profile">${localStorage.userFirstName} ${localStorage.userLastName} <i class="fa-solid fa-angle-down"></i></p>
-        <img src="${localStorage.userProfile}" alt="profile" width="40" height="auto" />
-        <button id="logout-btn" class="logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
-    </div>
+    <i class="fa-solid fa-bars" id="bars"></i>
 `;
 
 const userProfile = document.getElementById('user-profile');
 const logoutBtn = document.getElementById('logout-btn');
+const toggleBar = document.getElementById('bars');
+const toggleSection = document.getElementById('toggle-section');
 
 userProfile.addEventListener('click', () => {
     logoutBtn.style.display = logoutBtn.style.display === 'block' ? 'none' : 'block';
@@ -79,4 +70,8 @@ userProfile.addEventListener('click', () => {
 logoutBtn.addEventListener('click', () => {
     localStorage.clear();
     window.location.href = "../index.html";
+});
+
+toggleBar.addEventListener('click', () => {
+    toggleSection.style.display = toggleSection.style.display === 'block' ? 'none' : 'block';
 });
