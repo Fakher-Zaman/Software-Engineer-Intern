@@ -110,3 +110,37 @@ crossBar.addEventListener('click', () => {
 toggleTopnav.addEventListener('click', () => {
     toggleSection.style.left = '-100%';
 });
+
+// Add this JavaScript code at the end of your home.js file
+// Get the modal
+const modal = document.getElementById('editModal');
+
+// Get the button that opens the modal
+const editButtons = document.querySelectorAll('.part4-btns button#edit');
+
+// Get the <span> element that closes the modal
+const closeSpan = document.querySelector('.modal-content .close');
+
+// When the user clicks on the edit button, open the modal
+editButtons.forEach(button => {
+    button.onclick = function () {
+        modal.style.display = 'block';
+    }
+});
+
+// When the user clicks on <span> (x), close the modal
+closeSpan.onclick = function () {
+    modal.style.display = 'none';
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Handle cancel edit button
+document.getElementById('cancelEdit').onclick = function () {
+    modal.style.display = 'none';
+}
