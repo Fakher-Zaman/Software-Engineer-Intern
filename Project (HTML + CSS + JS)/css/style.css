@@ -53,6 +53,7 @@
     /* transition */
     --transition-1: .3s all ease-in-out;
     --transition-2: left 0.3s ease;
+    --transition-3: top 0.3s ease-in-out;
 }
 
 @font-face {
