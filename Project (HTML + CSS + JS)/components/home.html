@@ -71,6 +71,24 @@
                 activeLink.classList.add('active');
             }
         });
+
+        var lastScrollTop = 0;
+        var headerHeight = document.querySelector('.dashboard-header').offsetHeight;
+
+        window.addEventListener("scroll", function () {
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
+                document.querySelector('.dashboard-header').classList.add("scroll-down");
+                document.querySelector('.dashboard-header').classList.remove("scroll-up");
+            } else {
+                document.querySelector('.dashboard-header').classList.remove("scroll-down");
+                document.querySelector('.dashboard-header').classList.add("scroll-up");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        }, false);
+
     </script>
 </body>
 

@@ -1,7 +1,29 @@
 /* header */
 .dashboard-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--white);
+    transition: top 0.3s ease-in-out;
+
     box-shadow: var(--box-shadow-1);
-    padding: 0.7rem 0;
+    padding: 0.6rem 0;
+}
+
+.sticky {
+    top: -100px;
+    /* Change this value based on your header height */
+}
+
+.scroll-down {
+    top: -100px;
+    /* Hide header when scrolling down */
+}
+
+.scroll-up {
+    top: 0;
+    /* Show header when scrolling up */
 }
 
 .dashboard-header>div {
@@ -184,6 +206,10 @@
 }
 
 /* section 1 */
+#section {
+    margin-top: 5.2rem;
+}
+
 #display-users {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -352,6 +378,10 @@
 }
 
 @media screen and (max-width: 774px) {
+    #section {
+        margin-top: 0;
+    }
+
     #display-users {
         grid-template-columns: 1fr;
     }
