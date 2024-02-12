@@ -23,8 +23,8 @@
             </div>
             <div class="user-data"></div>
         </div>
-        <div id="toggle-section"></div>
     </header>
+    <div id="toggle-section"></div>
     <section id="section" class="container">
         <p id="user-count"></p>
         <div id="display-users"></div>
@@ -45,6 +45,7 @@
                     document.getElementById(containerId).innerHTML = html;
                     // Remove the 'active' class from all links
                     document.querySelectorAll('.topnav a').forEach(link => link.classList.remove('active'));
+                    document.querySelectorAll('.toggle-topnav a').forEach(link => link.classList.remove('active'));
                     // Add the 'active' class to the clicked link
                     clickedLink.classList.add('active');
                 })

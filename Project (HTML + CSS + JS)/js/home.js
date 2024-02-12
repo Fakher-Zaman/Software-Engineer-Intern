@@ -62,6 +62,21 @@ const userProfile = document.getElementById('user-profile');
 const logoutBtn = document.getElementById('logout-btn');
 const toggleBar = document.getElementById('bars');
 const toggleSection = document.getElementById('toggle-section');
+const topNavbar = document.querySelector('.top-nav');
+const userProfileClass = document.querySelector('.user-profile');
+
+toggleSection.innerHTML = `
+    <div class="toggle-img-links">
+        <p id="toggle-user-profile">${localStorage.userFirstName} ${localStorage.userLastName}</p>
+        <img src="${localStorage.userProfile}" alt="profile" width="100" height="auto" />
+        <nav class="toggle-topnav">
+            <a href="#" onclick="loadPage('./all-user.html', 'section', this)">All User</a>
+            <a href="#" onclick="loadPage('./add-user.html', 'section', this)">Add User</a>
+            <a href="#" onclick="loadPage('./my-tasks.html', 'section', this)">My Tasks</a>
+        </nav>
+        <button id="toggle-logout-btn" class="toggle-logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    </div>
+`;
 
 userProfile.addEventListener('click', () => {
     logoutBtn.style.display = logoutBtn.style.display === 'block' ? 'none' : 'block';
