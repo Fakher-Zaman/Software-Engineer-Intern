@@ -59,14 +59,17 @@ displayUserProfile.innerHTML = `
 `;
 
 const userProfile = document.getElementById('user-profile');
+const userProfileClass = document.querySelector('.user-profile');
 const logoutBtn = document.getElementById('logout-btn');
+
+// for navbar toggle functionality
 const toggleBar = document.getElementById('bars');
 const toggleSection = document.getElementById('toggle-section');
 const topNavbar = document.querySelector('.top-nav');
-const userProfileClass = document.querySelector('.user-profile');
 
 toggleSection.innerHTML = `
     <div class="toggle-img-links">
+        <i class="fa-solid fa-xmark" id="cross-mark"></i>
         <p id="toggle-user-profile">${localStorage.userFirstName} ${localStorage.userLastName}</p>
         <img src="${localStorage.userProfile}" alt="profile" width="100" height="auto" />
         <nav class="toggle-topnav">
@@ -78,6 +81,10 @@ toggleSection.innerHTML = `
     </div>
 `;
 
+const toggleLogoutBtn = document.getElementById('toggle-logout-btn');
+const crossBar = document.getElementById('cross-mark');
+const toggleTopnav = document.querySelector('.toggle-topnav');
+
 userProfile.addEventListener('click', () => {
     logoutBtn.style.display = logoutBtn.style.display === 'block' ? 'none' : 'block';
 });
@@ -87,6 +94,19 @@ logoutBtn.addEventListener('click', () => {
     window.location.href = "../index.html";
 });
 
+toggleLogoutBtn.addEventListener('click', () => {
+    localStorage.clear();
+    window.location.href = "../index.html";
+});
+
 toggleBar.addEventListener('click', () => {
-    toggleSection.style.display = toggleSection.style.display === 'block' ? 'none' : 'block';
+    toggleSection.style.left = '0';
+});
+
+crossBar.addEventListener('click', () => {
+    toggleSection.style.left = '-100%';
+});
+
+toggleTopnav.addEventListener('click', () => {
+    toggleSection.style.left = '-100%';
 });
