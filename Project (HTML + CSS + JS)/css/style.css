@@ -37,10 +37,14 @@
     --input-border-color: #ccc;
     --btn-hover-1: #2fa9fb;
     --link-hover-2: #edf3f7;
+    --modal-border-color: #888;
+    --modal-close-color: #aaaaaa;
 
     /* for background */
     --background-image: linear-gradient(to right top, #3498db, #3983ba, #3a6f9a, #385c7b, #34495e);
     --text-bg: #a4d8fa;
+    --modal-background: rgba(0, 0, 0, 0.4);
+    --modal-content-background: #fefefe;
 
     /* box shadows */
     --box-shadow-1: rgba(0, 0, 0, 0.1) 0px 4px 12px;
