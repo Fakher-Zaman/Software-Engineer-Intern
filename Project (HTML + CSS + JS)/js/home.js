@@ -132,6 +132,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const currentLocation = window.location.href;
+    const navLinks = document.querySelectorAll(".topnav a");
+
+    navLinks.forEach(link => {
+        if (link.href === currentLocation) {
+            link.classList.add("active");
+        }
+    });
+});
+
 var lastScrollTop = 0;
 var headerHeight = document.querySelector('.dashboard-header').offsetHeight;
 
