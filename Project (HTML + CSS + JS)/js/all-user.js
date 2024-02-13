@@ -37,8 +37,8 @@ const displayUsers = async () => {
                 <p><span>Age:</span>${age}</p>
             </div>
             <div class="part4-btns">
-                <button id="edit" type="button">Edit</button>
-                <button id="delete" type="button" style="margin-left: 10px;">Delete</button>
+                <button id="edit" class="edit" type="button">Edit</button>
+                <button id="delete" class="delete" type="button" style="margin-left: 10px;">Delete</button>
             </div>
         </div>
         `
@@ -46,4 +46,29 @@ const displayUsers = async () => {
 
     display.innerHTML = dataDisplay;
 }
-displayUsers();
+
+// Function to show the modal when an edit button is clicked
+const showModal = () => {
+    const modal = document.getElementById('editModal');
+    modal.style.display = 'block';
+};
+
+// Function to hide the modal
+const hideModal = () => {
+    const modal = document.getElementById('editModal');
+    modal.style.display = 'none';
+};
+
+document.addEventListener('click', event => {
+    const target = event.target;
+    if (target.classList.contains('edit')) {
+        showModal();
+    }
+    if (target.classList.contains('close') || target.id === 'cancelEdit') {
+        hideModal();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    displayUsers();
+});

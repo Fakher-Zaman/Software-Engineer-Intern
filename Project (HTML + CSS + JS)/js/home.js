@@ -1,24 +1,3 @@
-// Get the modal
-document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('editModal');
-    const editButtons = document.querySelectorAll('.part4-btns button#edit');
-    const closeSpan = document.querySelector('.modal-content .close');
-
-    editButtons.forEach(button => {
-        button.onclick = function () {
-            modal.style.display = 'block';
-        }
-    });
-
-    closeSpan.onclick = function () {
-        modal.style.display = 'none';
-    }
-
-    document.getElementById('cancelEdit').onclick = function () {
-        modal.style.display = 'none';
-    }
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const currentLocation = window.location.href;
     const navLinks = document.querySelectorAll(".topnav a");
