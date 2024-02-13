@@ -206,10 +206,14 @@
     font-size: 2.5rem;
 }
 
-/* section 1 */
-#section {
+
+#home-section,
+#task-section,
+#add-section {
     margin-top: 5.2rem;
 }
+
+/* Home Section */
 
 #display-users {
     display: grid;
@@ -381,6 +385,13 @@
 }
 
 @media screen and (max-width: 774px) {
+
+    #home-section,
+    #task-section,
+    #add-section {
+        margin-top: 0;
+    }
+
     #section {
         margin-top: 0;
     }

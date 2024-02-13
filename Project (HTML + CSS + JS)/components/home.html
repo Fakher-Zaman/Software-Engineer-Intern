@@ -16,16 +16,16 @@
             <div class="img-links">
                 <img src="../img/logo.png" alt="logo" width="200" height="auto">
                 <nav class="topnav">
-                    <a href="#" onclick="loadPage('./all-user.html', 'section', this)">All User</a>
-                    <a href="#" onclick="loadPage('./add-user.html', 'section', this)">Add User</a>
-                    <a href="#" onclick="loadPage('./my-tasks.html', 'section', this)">My Tasks</a>
+                    <a href="./home.html">All User</a>
+                    <a href="./add-user.html">Add User</a>
+                    <a href="./my-tasks.html">My Tasks</a>
                 </nav>
             </div>
             <div class="user-data"></div>
         </div>
     </header>
     <div id="toggle-section"></div>
-    <section id="section" class="container">
+    <section id="home-section" class="container">
         <p id="user-count"></p>
         <div id="display-users"></div>
         <div id="editModal" class="modal">
@@ -45,51 +45,6 @@
 
     <script src="../js/home.js"></script>
     <script src="https://kit.fontawesome.com/b43da9d28e.js" crossorigin="anonymous"></script>
-    <script>
-        function loadPage(url, containerId, clickedLink) {
-            fetch(url)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById(containerId).innerHTML = html;
-                    // Remove the 'active' class from all links
-                    document.querySelectorAll('.topnav a').forEach(link => link.classList.remove('active'));
-                    document.querySelectorAll('.toggle-topnav a').forEach(link => link.classList.remove('active'));
-                    // Add the 'active' class to the clicked link
-                    clickedLink.classList.add('active');
-                })
-                .catch(error => console.error('Error loading page:', error));
-        }
-
-        // Add onload event listener to set the active link on page load
-        window.addEventListener('load', function () {
-            // Get the current page URL
-            var currentPage = window.location.pathname.split('/').pop();
-            // Select the link corresponding to the current page
-            var activeLink = document.querySelector('.topnav a[href="' + currentPage + '"]');
-            // Add the 'active' class to the link
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
-        });
-
-        var lastScrollTop = 0;
-        var headerHeight = document.querySelector('.dashboard-header').offsetHeight;
-
-        window.addEventListener("scroll", function () {
-            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > lastScrollTop && currentScroll > headerHeight) {
-                document.querySelector('.dashboard-header').classList.add("scroll-down");
-                document.querySelector('.dashboard-header').classList.remove("scroll-up");
-            } else {
-                document.querySelector('.dashboard-header').classList.remove("scroll-down");
-                document.querySelector('.dashboard-header').classList.add("scroll-up");
-            }
-
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-        }, false);
-
-    </script>
 </body>
 
 </html>
