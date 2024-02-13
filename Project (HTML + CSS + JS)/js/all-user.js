@@ -1,9 +1,8 @@
-const apiEndpoint = 'https://dummyjson.com/users';
 const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
 
 const getData = async () => {
-    const res = await fetch(apiEndpoint);
+    const res = await fetch('https://dummyjson.com/users');
     const data = await res.json();
     return data;
 }
@@ -20,8 +19,8 @@ const displayUsers = async () => {
         return `
         <div class="get-users">
             <div class="part1-info">
-                <!-- <img src="${image}" alt="img" width="50" height="auto"> -->
-                <p class="avatar">${firstName.charAt(0) + lastName.charAt(0)}</p>
+                <img src="${image}" alt="img" width="50" height="auto">
+                <!-- <p class="avatar">${firstName.charAt(0) + lastName.charAt(0)}</p> -->
                 <div class="contact-info">
                     <p><span>${phone}</span><i class="fa-solid fa-square-phone-flip"></i></p>
                     <p><span>${email}</span><i class="fa-solid fa-square-envelope"></i></p>

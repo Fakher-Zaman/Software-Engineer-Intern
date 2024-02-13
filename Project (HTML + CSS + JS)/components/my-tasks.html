@@ -25,10 +25,32 @@
             <div class="user-data"></div>
         </div>
     </header>
+
     <div id="toggle-section"></div>
+
     <section id="task-section" class="container">
-        <h2>All Todos</h2>
+        <div class="label">
+            <span>My Todos</span>
+            <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+        <form>
+            <input type="text" class='todo-inputs' placeholder='Enter Here...'>
+            <button class='todo-button'>
+                <i class='fas fa-plus-square'></i>
+            </button>
+            <div class="select">
+                <select name="todos" class='filter-todos'>
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+            </div>
+        </form>
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+        </div>
     </section>
+
     <footer class="dashboard-footer">
         <div class="container">
             <p>All Rights Reserved &copy; 2024 CRUDify.am</p>
