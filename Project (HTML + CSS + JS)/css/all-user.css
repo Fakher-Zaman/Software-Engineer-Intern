@@ -185,9 +185,32 @@ form>.first-type {
     margin-left: 5px;
 }
 
-.third-type>button#cancelEdit:hover {
-    background-color: var(--secondary-color-1);
+.delete-btns {
+    margin: 1.5rem 0 0.7rem;
+}
+
+.delete-btns>button {
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+
+.delete-btns>button#confirmDelete {
+    color: var(--red-dark);
+    border: 2px solid var(--red-dark);
+}
+
+.delete-btns>button#confirmDelete:hover {
+    background-color: var(--red-dark);
     color: var(--white);
+}
+
+.delete-btns>button#cancelDelete {
+    color: var(--secondary-color-1);
+    border: 2px solid var(--secondary-color-1);
+    margin-left: 5px;
 }
 
 /* Get the Modal */
@@ -209,6 +232,10 @@ form>.first-type {
     padding: 20px;
     border: 1px solid var(--modal-border-color);
     width: 80%;
+}
+
+#deleteModal p {
+    color: var(--red-dark);
 }
 
 #deleteModal>.modal-content {
@@ -257,6 +284,6 @@ form>.first-type {
 
 @media screen and (max-width: 600px) {
     #deleteModal>.modal-content {
-        width: 300px;
+        width: 70%;
     }
 }
