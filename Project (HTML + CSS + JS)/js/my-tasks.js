@@ -25,7 +25,7 @@ const displayTasks = async () => {
                     <i class="fa-solid fa-check" style="font-size: 1.8rem;"></i>
                 </span>
                 <span class="trash-btn">
-                    <i class="fa-regular fa-trash-can" style="font-size: 1.5rem;"></i>
+                    <i class="fa-regular fa-trash-can" id="tash-btn" style="font-size: 1.5rem;"></i>
                 </span>
             </div>
         `;
@@ -44,7 +44,6 @@ const filterOption = document.querySelector(".filter-todos");
 document.addEventListener("DOMContentLoaded", getTodos);
 todoButton.addEventListener("click", addTodos);
 todoList.addEventListener("click", deleteCheck);
-filterOption.addEventListener("click", filterTodo);
 
 function addTodos(e) {
     e.preventDefault();
@@ -72,18 +71,19 @@ function addTodos(e) {
 function deleteCheck(e) {
     const items = e.target;
 
-    if (items.classList[0] === "trash-btn") {
-        const todo = items.parentElement;
+    if (items.classList.contains("trash-btn") || items.parentElement.classList.contains("trash-btn")) {
+        const todo = items.closest('.todo');
         const localTodos = JSON.parse(localStorage.getItem('todos')) || [];
         todo.classList.add("fall");
         todo.addEventListener("transitionend", function () {
             todo.remove();
-            localTodos.pop(todo);
-            localStorage.setItem('todos', JSON.stringify(localTodos));
+            const todoText = todo.querySelector('.todo-item').textContent;
+            const updatedTodos = localTodos.filter(item => item.todo !== todoText);
+            localStorage.setItem('todos', JSON.stringify(updatedTodos));
         });
     }
 
-    if (items.classList[0] === "complete-btn") {
+    if (items.classList[0] === "complete-btn" || items.classList[0] === "") {
         const todo = items.parentElement;
         todo.classList.toggle("completed");
     }
