@@ -74,9 +74,12 @@ function deleteCheck(e) {
 
     if (items.classList[0] === "trash-btn") {
         const todo = items.parentElement;
+        const localTodos = JSON.parse(localStorage.getItem('todos')) || [];
         todo.classList.add("fall");
         todo.addEventListener("transitionend", function () {
             todo.remove();
+            localTodos.pop(todo);
+            localStorage.setItem('todos', JSON.stringify(localTodos));
         });
     }
 
