@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const currentLocation = window.location.href;
+    console.log(currentLocation);
     const navLinks = document.querySelectorAll(".topnav a");
     const toggleNavLinks = document.querySelectorAll(".toggle-topnav a");
 
