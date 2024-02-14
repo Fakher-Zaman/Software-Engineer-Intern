@@ -25,10 +25,57 @@
             <div class="user-data"></div>
         </div>
     </header>
+
     <div id="toggle-section"></div>
+
     <section id="add-section" class="container">
-        <h2>Add User</h2>
+        <div class="label">
+            <span>Add User</span>
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+        <form action="">
+            <div class="first-type">
+                <label for="image">Image URL:</label>
+                <input type="url" id="image" name="image" placeholder="e.g. https://robohash.org/Maurine.png"
+                    value="https://robohash.org/Maurine.png?set=set4">
+            </div>
+            <div class="first-type">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="e.g. Fakher">
+            </div>
+            <div class="first-type">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lname" name="lastName" placeholder="e.g. Zaman">
+            </div>
+            <div class="first-type">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. +92 316 0441719">
+            </div>
+            <div class="first-type">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="e.g. fakherzamanofficial@gmail.com">
+            </div>
+            <div class="first-type">
+                <label for="address">Address:</label>
+                <input type="address" id="address" name="address" placeholder="e.g. Shahdara 4th Street G.T Road">
+            </div>
+            <div class="first-type">
+                <label for="birthDate">Date Of Birth:</label>
+                <input type="date" id="birthDate" name="birthDate">
+            </div>
+            <div class="first-type">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0" max="150" step="10" placeholder="e.g. 23">
+            </div>
+            <div class="second-type">
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="male"> <span>Male</span>
+                <input type="radio" name="gender" value="female"> <span>Female</span>
+            </div>
+            <p class="third-type"><input type="submit" value="Add User"></p>
+        </form>
     </section>
+
     <footer class="dashboard-footer">
         <div class="container">
             <p>All Rights Reserved &copy; 2024 CRUDify.am</p>

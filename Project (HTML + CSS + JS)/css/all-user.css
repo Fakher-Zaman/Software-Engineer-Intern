@@ -113,6 +113,83 @@
     color: white;
 }
 
+/* Edit form css */
+form {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+form>.first-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-type>label {
+    margin-bottom: 5px;
+}
+
+.first-type>input {
+    padding: 5px 10px;
+    border: 2px solid var(--secondary-color-1);
+    border-radius: 2px;
+}
+
+.second-type>label {
+    display: block;
+}
+
+.second-type>input {
+    margin-top: 10px;
+    width: 17px;
+    height: 17px;
+}
+
+.second-type>span {
+    font-size: 1.1rem !important;
+    margin-top: -10px;
+    position: relative;
+    bottom: 2px;
+}
+
+.second-type>input[value="female"] {
+    margin-left: 20px;
+}
+
+.third-type {
+    margin: 2rem 0 1rem;
+}
+
+.third-type>button {
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+
+.third-type>button#saveChanges {
+    color: var(--primary-color-1);
+    border: 2px solid var(--primary-color-1);
+}
+
+.third-type>button#saveChanges:hover {
+    background-color: var(--primary-color-1);
+    color: var(--white);
+}
+
+.third-type>button#cancelEdit {
+    color: var(--secondary-color-1);
+    border: 2px solid var(--secondary-color-1);
+    margin-left: 5px;
+}
+
+.third-type>button#cancelEdit:hover {
+    background-color: var(--secondary-color-1);
+    color: var(--white);
+}
+
 /* Get the Modal */
 .modal {
     display: none;
@@ -154,10 +231,18 @@
     #display-users {
         grid-template-columns: 1fr 1fr;
     }
+
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (max-width: 774px) {
     #display-users {
+        grid-template-columns: 1fr;
+    }
+
+    form {
         grid-template-columns: 1fr;
     }
 }

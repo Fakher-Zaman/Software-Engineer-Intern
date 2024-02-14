@@ -35,8 +35,51 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>Edit User</h2>
-                <button id="saveChanges">Save Changes</button>
-                <button id="cancelEdit">Cancel</button>
+                <form action="">
+                    <div class="first-type">
+                        <label for="image">Image URL:</label>
+                        <input type="url" id="image" name="image" placeholder="e.g. https://robohash.org/Maurine.png"
+                            value="https://robohash.org/Maurine.png?set=set4">
+                    </div>
+                    <div class="first-type">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="e.g. Fakher">
+                    </div>
+                    <div class="first-type">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lname" name="lastName" placeholder="e.g. Zaman">
+                    </div>
+                    <div class="first-type">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. +92 316 0441719">
+                    </div>
+                    <div class="first-type">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="e.g. fakherzamanofficial@gmail.com">
+                    </div>
+                    <div class="first-type">
+                        <label for="address">Address:</label>
+                        <input type="address" id="address" name="address"
+                            placeholder="e.g. Shahdara 4th Street G.T Road">
+                    </div>
+                    <div class="first-type">
+                        <label for="birthDate">Date Of Birth:</label>
+                        <input type="date" id="birthDate" name="birthDate">
+                    </div>
+                    <div class="first-type">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="0" max="150" step="10" placeholder="e.g. 23">
+                    </div>
+                    <div class="second-type">
+                        <label for="gender">Gender:</label>
+                        <input type="radio" name="gender" value="male"> <span>Male</span>
+                        <input type="radio" name="gender" value="female"> <span>Female</span>
+                    </div>
+                </form>
+                <div id="edit-modal-btns" class="third-type">
+                    <button id="saveChanges">Save Changes</button>
+                    <button id="cancelEdit">Cancel</button>
+                </div>
             </div>
         </div>
     </section>

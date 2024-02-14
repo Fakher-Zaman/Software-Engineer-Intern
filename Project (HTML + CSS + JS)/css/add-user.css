@@ -1,0 +1,105 @@
+/* Add User Section */
+
+#add-section {
+    padding: 1rem 0;
+    min-height: 100vh;
+}
+
+div.label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color-1);
+}
+
+#add-section span {
+    font-size: 2rem;
+    font-family: Roboto-Bold;
+}
+
+#add-section i {
+    margin-left: 10px;
+    font-size: 2rem;
+}
+
+/* form css */
+form {
+    margin: 2rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    background-color: var(--secondary-color-1);
+    color: var(--white);
+}
+
+form>.first-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-type>label {
+    margin-bottom: 5px;
+}
+
+.first-type>input {
+    padding: 5px 10px;
+    border: 2px solid var(--white);
+    border-radius: 2px;
+}
+
+.second-type>label {
+    display: block;
+}
+
+.second-type>input {
+    margin-top: 10px;
+    width: 17px;
+    height: 17px;
+}
+
+.second-type>span {
+    font-size: 1.1rem !important;
+    margin-top: -10px;
+    position: relative;
+    bottom: 2px;
+}
+
+.second-type>input[value="female"] {
+    margin-left: 20px;
+}
+
+.third-type {
+    margin-top: 1rem;
+}
+
+.third-type input {
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--white);
+    color: var(--white);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+
+.third-type input:hover {
+    background-color: var(--primary-color-1);
+    border: 2px solid var(--primary-color-1);
+}
+
+/* responsiveness */
+@media screen and (max-width: 774px) {
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        margin: 1rem;
+        padding: 1rem;
+        grid-template-columns: 1fr;
+    }
+}
