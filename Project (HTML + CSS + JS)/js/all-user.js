@@ -46,25 +46,39 @@ const displayUsers = async () => {
     display.innerHTML = dataDisplay;
 }
 
-// Function to show the modal when an edit button is clicked
-const showModal = () => {
+const showEditModal = () => {
     const modal = document.getElementById('editModal');
     modal.style.display = 'block';
 };
 
-// Function to hide the modal
-const hideModal = () => {
+const hideEditModal = () => {
     const modal = document.getElementById('editModal');
+    modal.style.display = 'none';
+};
+
+const showDeleteModal = () => {
+    const modal = document.getElementById('deleteModal');
+    modal.style.display = 'block';
+};
+
+const hideDeleteModal = () => {
+    const modal = document.getElementById('deleteModal');
     modal.style.display = 'none';
 };
 
 document.addEventListener('click', event => {
     const target = event.target;
     if (target.classList.contains('edit')) {
-        showModal();
+        showEditModal();
+    }
+    if (target.classList.contains('delete')) {
+        showDeleteModal();
     }
     if (target.classList.contains('close') || target.id === 'cancelEdit') {
-        hideModal();
+        hideEditModal();
+    }
+    if (target.classList.contains('close') || target.id === 'cancelDelete') {
+        hideDeleteModal();
     }
 });
 

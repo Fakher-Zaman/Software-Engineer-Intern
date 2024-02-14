@@ -203,12 +203,20 @@ form>.first-type {
     background-color: var(--modal-background);
 }
 
-.modal-content {
+#editModal>.modal-content {
     background-color: var(--modal-content-background);
     margin: 70px auto;
     padding: 20px;
     border: 1px solid var(--modal-border-color);
     width: 80%;
+}
+
+#deleteModal>.modal-content {
+    background-color: var(--modal-content-background);
+    margin: 140px auto;
+    padding: 20px;
+    border: 1px solid var(--modal-border-color);
+    width: 400px;
 }
 
 .close {
@@ -244,5 +252,11 @@ form>.first-type {
 
     form {
         grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #deleteModal>.modal-content {
+        width: 300px;
     }
 }
