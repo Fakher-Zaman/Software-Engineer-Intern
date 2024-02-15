@@ -4,7 +4,12 @@ const userCountDisplay = document.getElementById('user-count');
 const getData = async () => {
     const res = await fetch('https://dummyjson.com/users');
     const data = await res.json();
-    return data;
+
+    // Merged local users with fetched users
+    const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const mergedUsers = [...data.users, ...localUsers]
+
+    return { users: mergedUsers };
 }
 
 const displayUsers = async () => {

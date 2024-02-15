@@ -18,6 +18,11 @@ function addUser(e) {
     // Retrieve existing data from local storage
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
+    // Create an address object
+    const address = {
+        address: userAddressInput.value
+    };
+
     fetch('https://dummyjson.com/users/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -27,7 +32,7 @@ function addUser(e) {
             lastName: userLNameInput.value,
             phone: userPhoneInput.value,
             email: userEmailInput.value,
-            address: userAddressInput.value,
+            address: address,
             birthDate: userBirthDateInput.value,
             age: userAgeInput.value,
             gender: userGenderInput.value,
@@ -44,20 +49,6 @@ function addUser(e) {
             users.push(data);
             localStorage.setItem('users', JSON.stringify(users));
         });
-
-    // const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-    // localUsers.push(newTodo);
-    // localStorage.setItem('users', JSON.stringify(res));
-
-    // console.log(userImgInput.value);
-    // console.log(userFNameInput.value);
-    // console.log(userLNameInput.value);
-    // console.log(userPhoneInput.value);
-    // console.log(userEmailInput.value);
-    // console.log(userAddressInput.value);
-    // console.log(userBirthDateInput.value);
-    // console.log(userAgeInput.value);
-    // console.log(userGenderInput.value);
 
     // Clear input fields
     userFNameInput.value = "";
