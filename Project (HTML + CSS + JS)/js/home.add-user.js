@@ -68,6 +68,7 @@ function addUser(e) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+            id: Date.now(),
             image: userImgInput.value,
             firstName: userFNameInput.value,
             lastName: userLNameInput.value,
@@ -87,8 +88,10 @@ function addUser(e) {
             }
         })
         .then(data => {
+            data.id = Date.now(); // Generate a new unique ID
             users.push(data);
             localStorage.setItem('users', JSON.stringify(users));
+            displayUsers(); // Display the updated users list
         });
 
     // Clear input fields

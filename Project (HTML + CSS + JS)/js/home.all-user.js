@@ -41,7 +41,7 @@ const displayUsers = async () => {
                 <p><span>Age:</span>${age}</p>
             </div>
             <div class="part4-btns">
-                <button id="edit" class="edit" type="button">Edit</button>
+                <button id="edit" class="edit" type="button" onclick="editUser(${user.id})">Edit</button>
                 <button id="delete" class="delete" type="button" style="margin-left: 10px;">Delete</button>
             </div>
         </div>
@@ -49,6 +49,28 @@ const displayUsers = async () => {
     }).join("");
 
     display.innerHTML = dataDisplay;
+}
+
+const editUser = async (userId) => {
+    console.log(userId);
+    const res = await fetch('https://dummyjson.com/users');
+    const data = await res.json();
+
+    // Merged local users with fetched users
+    const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const mergedUsers = [...data.users, ...localUsers]
+
+    const user = mergedUsers.find(user => user.id === userId);
+
+    document.getElementById('image').value = user.image;
+    document.getElementById('firstName').value = user.firstName;
+    document.getElementById('lname').value = user.lastName;
+    document.getElementById('phone').value = user.phone;
+    document.getElementById('email').value = user.email;
+    document.getElementById('address').value = user.address.address;
+    document.getElementById('birthDate').value = user.birthDate;
+    document.getElementById('age').value = user.age;
+    document.getElementById('gender').value = user.gender;
 }
 
 const showEditModal = () => {
