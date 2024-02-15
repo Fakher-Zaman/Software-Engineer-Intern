@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/add-user.css">
+    <link rel="stylesheet" href="../css/home.add-user.css">
     <title>CRUDify - Add User</title>
 </head>
 
@@ -70,8 +70,11 @@
             </div>
             <div class="second-type">
                 <label for="gender">Gender:</label>
-                <input type="radio" id="gender" name="gender" value="male" required> <span>Male</span>
-                <input type="radio" id="gender" name="gender" value="female" required> <span>Female</span>
+                <select name="cars" id="gender" aria-placeholder="Male" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
             </div>
             <p class="third-type" id="add-user-btn">
                 <button type="submit">Add User</button>

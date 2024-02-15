@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/all-user.css">
+    <link rel="stylesheet" href="../css/home.all-user.css">
     <title>CRUDify - Home</title>
 </head>
 
@@ -72,8 +72,11 @@
                     </div>
                     <div class="second-type">
                         <label for="gender">Gender:</label>
-                        <input type="radio" name="gender" value="male"> <span>Male</span>
-                        <input type="radio" name="gender" value="female"> <span>Female</span>
+                        <select name="cars" id="gender" aria-placeholder="Male" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
                 </form>
                 <div class="third-type">

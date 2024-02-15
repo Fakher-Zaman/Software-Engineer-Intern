@@ -15,6 +15,9 @@ function addUser(e) {
     e.preventDefault();
     console.log("Add User Here");
 
+    // Retrieve existing data from local storage
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
     fetch('https://dummyjson.com/users/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -30,8 +33,21 @@ function addUser(e) {
             gender: userGenderInput.value,
         })
     })
-        .then(res => res.json())
-        .then(console.log);
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            } else {
+                throw new Error('Error While Adding a User');
+            }
+        })
+        .then(data => {
+            users.push(data);
+            localStorage.setItem('users', JSON.stringify(users));
+        });
+
+    // const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+    // localUsers.push(newTodo);
+    // localStorage.setItem('users', JSON.stringify(res));
 
     // console.log(userImgInput.value);
     // console.log(userFNameInput.value);

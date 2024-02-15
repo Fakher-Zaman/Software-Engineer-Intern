@@ -136,25 +136,17 @@ form>.first-type {
     border-radius: 2px;
 }
 
-.second-type>label {
+.first-type>input[type="date"] {
+    padding: 4px 10px;
+}
+
+.second-type>select {
     display: block;
-}
-
-.second-type>input {
-    margin-top: 10px;
-    width: 17px;
-    height: 17px;
-}
-
-.second-type>span {
-    font-size: 1.1rem !important;
-    margin-top: -10px;
-    position: relative;
-    bottom: 2px;
-}
-
-.second-type>input[value="female"] {
-    margin-left: 20px;
+    width: 100%;
+    margin-top: 5px;
+    padding: 4px 10px;
+    border: 2px solid var(--secondary-color-1);
+    border-radius: 2px;
 }
 
 .third-type {
