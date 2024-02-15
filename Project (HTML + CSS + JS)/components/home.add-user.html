@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/home.add-user.css">
+    <link rel="stylesheet" href="../css/home.all-user.css">
     <title>CRUDify - Add User</title>
 </head>
 
@@ -37,7 +38,7 @@
             <div class="first-type">
                 <label for="image">Image URL:</label>
                 <input type="url" id="image" name="image" placeholder="e.g. https://robohash.org/Maurine.png"
-                    value="https://robohash.org/Maurine.png?set=set4" required>
+                    value="https://robohash.org/Trace.png?set=set4" required>
             </div>
             <div class="first-type">
                 <label for="firstName">First Name:</label>
@@ -80,6 +81,10 @@
                 <button type="submit">Add User</button>
             </p>
         </form>
+
+        <p id="user-count"></p>
+        <div id="display-users"></div>
+
     </section>
 
     <footer class="dashboard-footer">

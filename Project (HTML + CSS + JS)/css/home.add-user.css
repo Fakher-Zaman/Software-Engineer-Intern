@@ -13,12 +13,12 @@ div.label {
     color: var(--secondary-color-1);
 }
 
-#add-section span {
+.label>span {
     font-size: 2rem;
     font-family: Roboto-Bold;
 }
 
-#add-section i {
+.label>i {
     margin-left: 10px;
     font-size: 2rem;
 }
