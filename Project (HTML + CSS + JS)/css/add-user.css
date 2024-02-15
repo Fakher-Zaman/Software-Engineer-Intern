@@ -74,7 +74,7 @@ form>.first-type {
     margin-top: 1rem;
 }
 
-.third-type input {
+.third-type button {
     background: transparent;
     padding: 0.5rem 1rem;
     border: 2px solid var(--white);
@@ -84,7 +84,7 @@ form>.first-type {
     transition: var(--transition-1);
 }
 
-.third-type input:hover {
+.third-type button:hover {
     background-color: var(--primary-color-1);
     border: 2px solid var(--primary-color-1);
 }
