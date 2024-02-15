@@ -1,5 +1,5 @@
 // Fetch and inject sign-in content
-fetch('components/sign-in.html')
+fetch('components/main.sign-in.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('sign-in-content').innerHTML = html;
@@ -39,7 +39,7 @@ function setData(event) {
             console.log(data);
 
             // Redirect to home page
-            window.location.href = '../components/home.html'
+            window.location.href = '../components/home.all-user.html'
         })
         .catch(error => {
             alert(error.message);

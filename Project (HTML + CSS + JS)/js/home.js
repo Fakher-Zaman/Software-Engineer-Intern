@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const currentLocation = window.location.href;
-    console.log(currentLocation);
+    // console.log(currentLocation);
     const navLinks = document.querySelectorAll(".topnav a");
     const toggleNavLinks = document.querySelectorAll(".toggle-topnav a");
 
@@ -43,9 +43,9 @@ toggleSection.innerHTML = `
         <p id="toggle-user-profile">${localStorage.userFirstName} ${localStorage.userLastName}</p>
         <img src="${localStorage.userProfile}" alt="profile" width="100" height="auto" />
         <nav class="toggle-topnav">
-            <a href="./home.html">All User</a>
-            <a href="./add-user.html">Add User</a>
-            <a href="./my-tasks.html">My Tasks</a>
+            <a href="./home.all-user.html">All User</a>
+            <a href="./home.add-user.html">Add User</a>
+            <a href="./home.my-tasks.html">My Tasks</a>
         </nav>
         <button id="toggle-logout-btn" class="toggle-logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
     </div>

@@ -17,9 +17,9 @@
             <div class="img-links">
                 <img src="../img/logo.png" alt="logo" width="200" height="auto">
                 <nav class="topnav">
-                    <a href="./home.html">All User</a>
-                    <a href="./add-user.html">Add User</a>
-                    <a href="./my-tasks.html">My Tasks</a>
+                    <a href="./home.all-user.html">All User</a>
+                    <a href="./home.add-user.html">Add User</a>
+                    <a href="./home.my-tasks.html">My Tasks</a>
                 </nav>
             </div>
             <div class="user-data"></div>
@@ -41,23 +41,24 @@
             </div>
             <div class="first-type">
                 <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" placeholder="e.g. Fakher">
+                <input type="text" id="firstName" name="firstName" placeholder="e.g. Fakher" required>
             </div>
             <div class="first-type">
                 <label for="lastName">Last Name:</label>
-                <input type="text" id="lname" name="lastName" placeholder="e.g. Zaman">
+                <input type="text" id="lname" name="lastName" placeholder="e.g. Zaman" required>
             </div>
             <div class="first-type">
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" placeholder="e.g. +92 316 0441719">
+                <input type="tel" id="phone" name="phone" placeholder="e.g. +92 316 0441719" required>
             </div>
             <div class="first-type">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="e.g. fakherzamanofficial@gmail.com">
+                <input type="email" id="email" name="email" placeholder="e.g. fakherzamanofficial@gmail.com" required>
             </div>
             <div class="first-type">
                 <label for="address">Address:</label>
-                <input type="address" id="address" name="address" placeholder="e.g. Shahdara 4th Street G.T Road">
+                <input type="address" id="address" name="address" placeholder="e.g. Shahdara 4th Street G.T Road"
+                    required>
             </div>
             <div class="first-type">
                 <label for="birthDate">Date Of Birth:</label>
@@ -72,7 +73,7 @@
                 <input type="radio" name="gender" value="male"> <span>Male</span>
                 <input type="radio" name="gender" value="female"> <span>Female</span>
             </div>
-            <p class="third-type"><input type="submit" value="Add User"></p>
+            <p class="third-type" id="add-user-btn"><input type="submit" value="Add User"></p>
         </form>
     </section>
 
@@ -82,9 +83,9 @@
         </div>
     </footer>
 
-    <script src="../js/home.js"></script>
-    <script src="../js/add-user.js"></script>
     <script src="https://kit.fontawesome.com/b43da9d28e.js" crossorigin="anonymous"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/home.add-user.js"></script>
 </body>
 
 </html>
