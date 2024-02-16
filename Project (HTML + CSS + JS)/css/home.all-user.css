@@ -217,7 +217,7 @@ form>.first-type {
     left: 0;
     top: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     overflow: auto;
     background-color: var(--modal-background);
 }
