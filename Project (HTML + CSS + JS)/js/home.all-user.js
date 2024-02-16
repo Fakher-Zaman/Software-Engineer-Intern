@@ -2,9 +2,20 @@ const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
 const updateUserButton = document.querySelector('#saveChanges');
 
+function showLoader() {
+    document.getElementById('loaderContainer').style.display = 'block';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    document.getElementById('loaderContainer').style.display = 'none';
+}
+
 const getData = async () => {
+    showLoader();
     const res = await fetch('https://dummyjson.com/users');
     const data = await res.json();
+    hideLoader();
 
     // Merged local users with fetched users
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
