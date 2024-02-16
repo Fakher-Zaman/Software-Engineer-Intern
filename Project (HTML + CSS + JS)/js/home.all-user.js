@@ -52,6 +52,7 @@ const displayUsers = async () => {
     display.innerHTML = dataDisplay;
 }
 
+let userIdToUpdate;
 const editUser = async (userId) => {
     console.log(userId);
     const res = await fetch('https://dummyjson.com/users');
@@ -72,48 +73,63 @@ const editUser = async (userId) => {
     document.getElementById('birthDate').value = user.birthDate;
     document.getElementById('age').value = user.age;
     document.getElementById('gender').value = user.gender;
+
+    // Store the user ID in the variable
+    userIdToUpdate = userId;
 }
 
+const updateUser = async (e) => {
+    e.preventDefault();
+    console.log("Update User Here");
+
+    const res = await fetch('https://dummyjson.com/users');
+    const data = await res.json();
+
+    const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const mergedUsers = [...data.users, ...localUsers]
+    console.log(mergedUsers.id);
+
+    fetch(`https://dummyjson.com/users/${userIdToUpdate}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            lastName: 'Owais'
+        })
+    })
+        .then(res => res.json())
+        .then(console.log);
+}
+updateUserButton.addEventListener('click', updateUser);
+
+let userIdToDelete;
 const deleteUser = async (userId) => {
     console.log(userId);
     const res = await fetch('https://dummyjson.com/users');
     const data = await res.json();
 
-    // Merged local users with fetched users
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
     const mergedUsers = [...data.users, ...localUsers]
 
     const user = mergedUsers.find(user => user.id === userId);
-
     document.getElementById('user-name').innerHTML = user.firstName + " " + user.lastName;
+
+    // Store the user ID in the variable
+    userIdToDelete = userId;
 }
 
-// const updateUser = async (e) => {
-//     e.preventDefault();
-//     console.log("Update User Here");
+// Function to confirm deletion of a user
+const confirmDeleteUser = async (userId) => {
+    console.log('Deleting user with ID:', userId);
+    fetch(`https://dummyjson.com/users/${userId}`, {
+        method: 'DELETE',
+    })
+        .then(res => res.json())
+        .then(console.log);
+}
 
-//     const res = await fetch('https://dummyjson.com/users');
-//     const data = await res.json();
-
-//     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-//     const mergedUsers = [...data.users, ...localUsers]
-//     console.log(mergedUsers.id);
-
-//     fetch(`https://dummyjson.com/users/${mergedUsers.id}`, {
-//         method: 'PUT',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//             lastName: 'Owais'
-//         })
-//     })
-//         .then(res => res.json())
-//         .then(console.log);
-// }
-
-// updateUserButton.addEventListener('click', updateUser);
-
-// Event listener for form submission
-// updateUserButton.addEventListener('click', updateUser);
+document.getElementById('confirmDelete').addEventListener('click', () => {
+    confirmDeleteUser(userIdToDelete);
+});
 
 const showEditModal = () => {
     const modal = document.getElementById('editModal');
