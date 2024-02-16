@@ -82,13 +82,6 @@ const updateUser = async (e) => {
     e.preventDefault();
     console.log("Update User Here");
 
-    const res = await fetch('https://dummyjson.com/users');
-    const data = await res.json();
-
-    const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const mergedUsers = [...data.users, ...localUsers]
-    console.log(mergedUsers.id);
-
     fetch(`https://dummyjson.com/users/${userIdToUpdate}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
