@@ -11,8 +11,26 @@ const userGenderInput = document.getElementById('gender');
 const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
 
+function showLoader() {
+    document.getElementById('loaderContainer').style.display = 'block';
+    document.getElementById('add-section').style.display = 'none';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    document.getElementById('loaderContainer').style.display = 'none';
+    document.getElementById('add-section').style.display = 'block';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    displayUsers();
+    // Show loader when page loads
+    showLoader();
+
+    // Display users after 2 seconds
+    setTimeout(function () {
+        displayUsers();
+        hideLoader();
+    }, 1000);
 });
 
 function displayUsers() {
