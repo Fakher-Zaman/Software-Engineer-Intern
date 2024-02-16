@@ -1,5 +1,6 @@
 const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
+const updateUserButton = document.querySelector('#saveChanges');
 
 const getData = async () => {
     const res = await fetch('https://dummyjson.com/users');
@@ -42,7 +43,7 @@ const displayUsers = async () => {
             </div>
             <div class="part4-btns">
                 <button id="edit" class="edit" type="button" onclick="editUser(${user.id})">Edit</button>
-                <button id="delete" class="delete" type="button" style="margin-left: 10px;">Delete</button>
+                <button id="delete" class="delete" type="button" onclick="deleteUser(${user.id})" style="margin-left: 10px;">Delete</button>
             </div>
         </div>
         `
@@ -72,6 +73,47 @@ const editUser = async (userId) => {
     document.getElementById('age').value = user.age;
     document.getElementById('gender').value = user.gender;
 }
+
+const deleteUser = async (userId) => {
+    console.log(userId);
+    const res = await fetch('https://dummyjson.com/users');
+    const data = await res.json();
+
+    // Merged local users with fetched users
+    const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const mergedUsers = [...data.users, ...localUsers]
+
+    const user = mergedUsers.find(user => user.id === userId);
+
+    document.getElementById('user-name').innerHTML = user.firstName + " " + user.lastName;
+}
+
+// const updateUser = async (e) => {
+//     e.preventDefault();
+//     console.log("Update User Here");
+
+//     const res = await fetch('https://dummyjson.com/users');
+//     const data = await res.json();
+
+//     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+//     const mergedUsers = [...data.users, ...localUsers]
+//     console.log(mergedUsers.id);
+
+//     fetch(`https://dummyjson.com/users/${mergedUsers.id}`, {
+//         method: 'PUT',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({
+//             lastName: 'Owais'
+//         })
+//     })
+//         .then(res => res.json())
+//         .then(console.log);
+// }
+
+// updateUserButton.addEventListener('click', updateUser);
+
+// Event listener for form submission
+// updateUserButton.addEventListener('click', updateUser);
 
 const showEditModal = () => {
     const modal = document.getElementById('editModal');

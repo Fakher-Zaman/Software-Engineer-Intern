@@ -1,4 +1,3 @@
-const addUserButton = document.querySelector('#add-user-btn');
 const userImgInput = document.getElementById('image');
 const userFNameInput = document.getElementById('firstName');
 const userLNameInput = document.getElementById('lastName');
