@@ -7,11 +7,15 @@
     <link rel="icon" type="image/x-icon" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/loader.css">
     <link rel="stylesheet" href="../css/home.my-tasks.css">
     <title>CRUDify - My Tasks</title>
 </head>
 
 <body>
+    <!-- Include the loader -->
+    <div id="loaderContainer"></div>
+
     <header class="dashboard-header">
         <div class="container">
             <div class="img-links">
@@ -51,8 +55,9 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/b43da9d28e.js" crossorigin="anonymous"></script>
-    <script src="../js/home.my-tasks.js"></script>
     <script src="../js/home.js"></script>
+    <script type="module" src="../js/loader.js"></script>
+    <script src="../js/home.my-tasks.js"></script>
 </body>
 
 </html>

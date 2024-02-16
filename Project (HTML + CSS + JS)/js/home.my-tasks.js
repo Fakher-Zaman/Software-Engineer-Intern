@@ -1,5 +1,16 @@
 const userTodoItems = document.querySelector('.todo-list');
 
+function showLoader() {
+    document.getElementById('loaderContainer').style.display = 'block';
+    document.getElementById('task-section').style.display = 'none';
+}
+
+// Function to hide the loader
+function hideLoader() {
+    document.getElementById('loaderContainer').style.display = 'none';
+    document.getElementById('task-section').style.display = 'block';
+}
+
 const getData = async () => {
     const res = await fetch(`https://dummyjson.com/users/${localStorage.userId}/todos`);
     console.log(res);
@@ -14,7 +25,9 @@ const getData = async () => {
 };
 
 const displayTasks = async () => {
+    showLoader();
     const payload = await getData();
+    hideLoader();
     let dataDisplay = payload.todos.map((task) => {
         const { id, todo, completed, userId } = task;
 
