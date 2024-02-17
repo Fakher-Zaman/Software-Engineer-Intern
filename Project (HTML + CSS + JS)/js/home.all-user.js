@@ -136,7 +136,14 @@ const updateUser = async (userId) => {
             .then(res => res.json())
             .then(data => {
                 const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
-                updatedUsers.push(data);
+                const existingIndex = updatedUsers.findIndex(user => user.id === data.id);
+                if (existingIndex !== -1) {
+                    // If data for the same user ID exists, replace it with the new data
+                    updatedUsers[existingIndex] = data;
+                } else {
+                    updatedUsers.push(data);
+                }
+
                 localStorage.setItem('updated-users', JSON.stringify(updatedUsers));
             })
             .catch(error => {
