@@ -47,15 +47,15 @@ function displayUsers() {
     });
 
     // Filter out deleted users
-    const activeUsers = updatedUsers.filter(user => !deletedUsers.some(deletedUser => deletedUser.id === user.id));
+    const activeUsers = localUsers.filter(user => !deletedUsers.some(deletedUser => deletedUser.id === user.id));
 
-    userCountDisplay.innerHTML = `Locating ${localUsers.length} User Accounts`;
+    userCountDisplay.innerHTML = `Locating ${activeUsers.length} User Accounts`;
 
     let dataDisplay = activeUsers.map((user) => {
-        const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
+        const { id, image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
 
         return `
-        <div class="get-users">
+        <div class="get-users" data-user-id="${id}">
             <div class="part1-info">
                 <img src="${image}" alt="img" width="50" height="auto">
                 <div class="contact-info">
@@ -99,7 +99,6 @@ function addUser(e) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            id: Date.now(),
             image: userImgInput.value,
             firstName: userFNameInput.value,
             lastName: userLNameInput.value,

@@ -205,7 +205,18 @@ const deleteUser = async (userId) => {
     const data = await res.json();
 
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const mergedUsers = [...data.users, ...localUsers]
+    const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
+    const mergedUsers = [...data.users, ...localUsers];
+
+    const indexToUpdate = mergedUsers.findIndex(user => user.id === userId);
+
+    // If the user is found in the mergedUsers array, update it with the corresponding updated user
+    if (indexToUpdate !== -1) {
+        const updatedUser = updatedUsers.find(user => user.id === userId);
+        if (updatedUser) {
+            mergedUsers[indexToUpdate] = updatedUser;
+        }
+    }
 
     const user = mergedUsers.find(user => user.id === userId);
     document.getElementById('user-name').innerHTML = user.firstName + " " + user.lastName;
