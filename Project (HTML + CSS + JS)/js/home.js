@@ -23,7 +23,11 @@ displayUserProfile.innerHTML = `
     <div class="user-profile">
         <p id="user-profile">${localStorage.userFirstName} ${localStorage.userLastName} <i class="fa-solid fa-angle-down"></i></p>
         <img src="${localStorage.userProfile}" alt="profile" width="40" height="auto" />
-        <button id="logout-btn" class="logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        <button id="logout-btn" class="logout-btn">
+            <span id="logout-loader" class="loader"></span>
+            <span>Logout</span>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
     </div>
     <i class="fa-solid fa-bars" id="bars"></i>
 `;
@@ -47,7 +51,10 @@ toggleSection.innerHTML = `
             <a href="./home.add-user.html">Add User</a>
             <a href="./home.my-tasks.html">My Tasks</a>
         </nav>
-        <button id="toggle-logout-btn" class="toggle-logout-btn">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        <button id="toggle-logout-btn" class="toggle-logout-btn">
+            <span id="toggle-logout-loader"></span>
+            Logout<i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
     </div>
 `;
 
@@ -60,13 +67,25 @@ userProfile.addEventListener('click', () => {
 });
 
 logoutBtn.addEventListener('click', () => {
-    localStorage.clear();
-    window.location.href = "../index.html";
+    const logoutLoader = document.getElementById('logout-loader');
+    logoutBtn.style.display = 'flex';
+    logoutBtn.style.alignItems = 'center';
+    logoutLoader.style.display = 'inline-block';
+
+    setTimeout(() => {
+        localStorage.clear();
+        window.location.href = "../index.html";
+    }, 1500);
 });
 
 toggleLogoutBtn.addEventListener('click', () => {
-    localStorage.clear();
-    window.location.href = "../index.html";
+    const logoutLoader = document.getElementById('toggle-logout-loader');
+    logoutLoader.style.display = 'inline-block';
+
+    setTimeout(() => {
+        localStorage.clear();
+        window.location.href = "../index.html";
+    }, 1500);
 });
 
 toggleBar.addEventListener('click', () => {
