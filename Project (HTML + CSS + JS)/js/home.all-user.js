@@ -140,7 +140,7 @@ const confirmDeleteUser = async (userId) => {
                 deletedUsers.push(data);
                 localStorage.setItem('deleted-users', JSON.stringify(deletedUsers));
 
-                // displayUsers();
+                displayUsers();
             });
     } else {
         // Store the user data in the 'deleted-users' local storage
@@ -150,6 +150,8 @@ const confirmDeleteUser = async (userId) => {
             const deletedUsers = JSON.parse(localStorage.getItem('deleted-users')) || [];
             deletedUsers.push(deletedUser);
             localStorage.setItem('deleted-users', JSON.stringify(deletedUsers));
+
+            displayUsers();
             console.log('User data stored in deleted-users local storage:', deletedUser);
         } else {
             console.error('User not found in local storage:', userId);
