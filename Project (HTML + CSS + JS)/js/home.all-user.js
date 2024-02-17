@@ -82,7 +82,7 @@ const editUser = async (userId) => {
 
     document.getElementById('image').value = user.image;
     document.getElementById('firstName').value = user.firstName;
-    document.getElementById('lname').value = user.lastName;
+    document.getElementById('lastName').value = user.lastName;
     document.getElementById('phone').value = user.phone;
     document.getElementById('email').value = user.email;
     document.getElementById('address').value = user.address.address;
@@ -94,21 +94,48 @@ const editUser = async (userId) => {
     userIdToUpdate = userId;
 }
 
-const updateUser = async (e) => {
-    e.preventDefault();
+const updateUser = async (userId) => {
     console.log("Update User Here");
 
-    fetch(`https://dummyjson.com/users/${userIdToUpdate}`, {
+    // Get the updated values from the form fields
+    const updatedFirstName = document.getElementById('firstName').value;
+    const updatedLastName = document.getElementById('lastName').value;
+    const updatedPhone = document.getElementById('phone').value;
+    const updatedEmail = document.getElementById('email').value;
+    const updatedAddress = document.getElementById('address').value;
+    const updatedBirthDate = document.getElementById('birthDate').value;
+    const updatedAge = document.getElementById('age').value;
+    const updatedGender = document.getElementById('gender').value;
+
+    // Construct the body of the PUT request
+    const requestBody = JSON.stringify({
+        firstName: updatedFirstName,
+        lastName: updatedLastName,
+        phone: updatedPhone,
+        email: updatedEmail,
+        address: { address: updatedAddress },
+        birthDate: updatedBirthDate,
+        age: updatedAge,
+        gender: updatedGender
+    });
+
+    fetch(`https://dummyjson.com/users/${userId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            lastName: 'Owais'
-        })
+        body: requestBody
     })
         .then(res => res.json())
-        .then(console.log);
+        .then(updatedUser => {
+            console.log('User updated successfully:', updatedUser);
+        })
+        .catch(error => {
+            console.error('Error updating user:', error);
+        });
 }
-updateUserButton.addEventListener('click', updateUser);
+
+document.getElementById('saveChanges').addEventListener('click', () => {
+    updateUser(userIdToUpdate);
+});
 
 let userIdToDelete;
 const deleteUser = async (userId) => {
