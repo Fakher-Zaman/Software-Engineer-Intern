@@ -157,6 +157,7 @@ const updateUser = async (userId) => {
                 }
 
                 localStorage.setItem('updated-users', JSON.stringify(updatedUsers));
+                displayUsers();
             })
             .catch(error => {
                 console.error('Error updating user:', error);
@@ -186,6 +187,7 @@ const updateUser = async (userId) => {
         }
 
         localStorage.setItem('updated-users', JSON.stringify(localUsers));
+        displayUsers();
     }
 }
 

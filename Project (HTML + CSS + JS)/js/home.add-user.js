@@ -121,3 +121,13 @@ function addUser(e) {
     userAgeInput.value = "";
     userGenderInput.value = "";
 }
+
+document.addEventListener('click', event => {
+    const target = event.target;
+    if (target.classList.contains('edit')) {
+        window.location.href = '../components/home.all-user.html'
+    }
+    if (target.classList.contains('delete')) {
+        window.location.href = '../components/home.all-user.html'
+    }
+});
