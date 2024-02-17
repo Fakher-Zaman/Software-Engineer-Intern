@@ -118,6 +118,7 @@ const updateUser = async (userId) => {
     console.log("Update User Here");
 
     // Get the updated values from the form fields
+    const updatedImage = document.getElementById('image').value;
     const updatedFirstName = document.getElementById('firstName').value;
     const updatedLastName = document.getElementById('lastName').value;
     const updatedPhone = document.getElementById('phone').value;
@@ -129,6 +130,7 @@ const updateUser = async (userId) => {
 
     // Construct the body of the PUT request
     const requestBody = JSON.stringify({
+        image: updatedImage,
         firstName: updatedFirstName,
         lastName: updatedLastName,
         phone: updatedPhone,
@@ -165,7 +167,7 @@ const updateUser = async (userId) => {
     } else {
         // Get the updated user from the form fields
         const updatedUser = {
-            id: userId, // Assuming userId is available here
+            image: updatedImage,
             firstName: updatedFirstName,
             lastName: updatedLastName,
             phone: updatedPhone,
