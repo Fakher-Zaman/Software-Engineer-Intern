@@ -35,9 +35,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function displayUsers() {
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const deletedUsers = JSON.parse(localStorage.getItem('deleted-users')) || [];
+    const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
+
+    // Update existing users with updated data
+    localUsers.forEach(user => {
+        const updatedUser = updatedUsers.find(updatedUser => updatedUser.id === user.id);
+        if (updatedUser) {
+            Object.assign(user, updatedUser);
+        }
+    });
+
+    // Filter out deleted users
+    const activeUsers = updatedUsers.filter(user => !deletedUsers.some(deletedUser => deletedUser.id === user.id));
+
     userCountDisplay.innerHTML = `Locating ${localUsers.length} User Accounts`;
 
-    let dataDisplay = localUsers.map((user) => {
+    let dataDisplay = activeUsers.map((user) => {
         const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
 
         return `
