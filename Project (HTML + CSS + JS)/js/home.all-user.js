@@ -27,10 +27,18 @@ const getData = async () => {
 const displayUsers = async () => {
     const payload = await getData();
     const deletedUsers = JSON.parse(localStorage.getItem('deleted-users')) || [];
-    // console.log(deletedUsers);
+    const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
 
+    // Update existing users with updated data
+    payload.users.forEach(user => {
+        const updatedUser = updatedUsers.find(updatedUser => updatedUser.id === user.id);
+        if (updatedUser) {
+            Object.assign(user, updatedUser);
+        }
+    });
+
+    // Filter out deleted users
     const activeUsers = payload.users.filter(user => !deletedUsers.some(deletedUser => deletedUser.id === user.id));
-    // console.log(activeUsers);
 
     userCountDisplay.innerHTML = `Locating ${activeUsers.length} User Accounts`;
 
@@ -119,18 +127,24 @@ const updateUser = async (userId) => {
         gender: updatedGender
     });
 
-    fetch(`https://dummyjson.com/users/${userId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: requestBody
-    })
-        .then(res => res.json())
-        .then(updatedUser => {
-            console.log('User updated successfully:', updatedUser);
+    if (userId >= 1 && userId <= 30) {
+        fetch(`https://dummyjson.com/users/${userId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: requestBody
         })
-        .catch(error => {
-            console.error('Error updating user:', error);
-        });
+            .then(res => res.json())
+            .then(data => {
+                const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
+                updatedUsers.push(data);
+                localStorage.setItem('updated-users', JSON.stringify(updatedUsers));
+            })
+            .catch(error => {
+                console.error('Error updating user:', error);
+            });
+    } else {
+
+    }
 }
 
 document.getElementById('saveChanges').addEventListener('click', () => {
@@ -168,6 +182,9 @@ const confirmDeleteUser = async (userId) => {
                 localStorage.setItem('deleted-users', JSON.stringify(deletedUsers));
 
                 displayUsers();
+            })
+            .catch(error => {
+                console.error('Error deleting user:', error);
             });
     } else {
         // Store the user data in the 'deleted-users' local storage
