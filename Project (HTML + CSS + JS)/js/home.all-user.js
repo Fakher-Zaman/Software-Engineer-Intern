@@ -167,6 +167,7 @@ const updateUser = async (userId) => {
     } else {
         // Get the updated user from the form fields
         const updatedUser = {
+            id: userId, // Assuming userId is available here
             image: updatedImage,
             firstName: updatedFirstName,
             lastName: updatedLastName,
