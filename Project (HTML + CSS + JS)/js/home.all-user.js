@@ -138,9 +138,9 @@ const confirmDeleteUser = async (userId) => {
             const deletedUsers = JSON.parse(localStorage.getItem('deleted-users')) || [];
             deletedUsers.push(data);
             localStorage.setItem('deleted-users', JSON.stringify(deletedUsers));
-        });
 
-    displayUsers();
+            displayUsers();
+        });
 }
 
 document.getElementById('confirmDelete').addEventListener('click', () => {
@@ -175,10 +175,10 @@ document.addEventListener('click', event => {
     if (target.classList.contains('delete')) {
         showDeleteModal();
     }
-    if (target.classList.contains('close') || target.id === 'cancelEdit') {
+    if (target.classList.contains('close') || target.id === 'cancelEdit' || target.id === 'saveChanges') {
         hideEditModal();
     }
-    if (target.classList.contains('close') || target.id === 'cancelDelete') {
+    if (target.classList.contains('close') || target.id === 'cancelDelete' || target.id === 'confirmDelete') {
         hideDeleteModal();
     }
 });
