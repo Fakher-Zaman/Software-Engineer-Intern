@@ -19,17 +19,22 @@ const getData = async () => {
 
     // Merged local users with fetched users
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const mergedUsers = [...data.users, ...localUsers]
+    const mergedUsers = [...data.users, ...localUsers];
 
     return { users: mergedUsers };
 }
 
 const displayUsers = async () => {
     const payload = await getData();
+    const deletedUsers = JSON.parse(localStorage.getItem('deleted-users')) || [];
+    // console.log(deletedUsers);
 
-    userCountDisplay.innerHTML = `Locating ${payload.users.length} User Accounts`;
+    const activeUsers = payload.users.filter(user => !deletedUsers.some(deletedUser => deletedUser.id === user.id));
+    // console.log(activeUsers);
 
-    let dataDisplay = payload.users.map((user) => {
+    userCountDisplay.innerHTML = `Locating ${activeUsers.length} User Accounts`;
+
+    let dataDisplay = activeUsers.map((user) => {
         console.log(user);
         const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
 
@@ -128,7 +133,14 @@ const confirmDeleteUser = async (userId) => {
         method: 'DELETE',
     })
         .then(res => res.json())
-        .then(console.log);
+        .then(data => {
+            console.log(data);
+            const deletedUsers = JSON.parse(localStorage.getItem('deleted-users')) || [];
+            deletedUsers.push(data);
+            localStorage.setItem('deleted-users', JSON.stringify(deletedUsers));
+        });
+
+    displayUsers();
 }
 
 document.getElementById('confirmDelete').addEventListener('click', () => {
