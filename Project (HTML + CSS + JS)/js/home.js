@@ -97,7 +97,7 @@ crossBar.addEventListener('click', () => {
 });
 
 toggleTopnav.addEventListener('click', () => {
-    toggleSection.style.left = '-100%';
+    toggleSection.style.display = 'none';
 });
 
 var lastScrollTop = 0;
