@@ -79,15 +79,27 @@ const displayUsers = async () => {
 let userIdToUpdate;
 const editUser = async (userId) => {
     console.log(userId);
+
     const res = await fetch('https://dummyjson.com/users');
     const data = await res.json();
 
-    // Merged local users with fetched users
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const mergedUsers = [...data.users, ...localUsers]
+    const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
+    const mergedUsers = [...data.users, ...localUsers];
+
+    const indexToUpdate = mergedUsers.findIndex(user => user.id === userId);
+
+    // If the user is found in the mergedUsers array, update it with the corresponding updated user
+    if (indexToUpdate !== -1) {
+        const updatedUser = updatedUsers.find(user => user.id === userId);
+        if (updatedUser) {
+            mergedUsers[indexToUpdate] = updatedUser;
+        }
+    }
 
     const user = mergedUsers.find(user => user.id === userId);
 
+    // Populate the form fields with user information
     document.getElementById('image').value = user.image;
     document.getElementById('firstName').value = user.firstName;
     document.getElementById('lastName').value = user.lastName;
