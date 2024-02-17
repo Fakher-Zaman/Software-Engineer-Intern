@@ -162,7 +162,30 @@ const updateUser = async (userId) => {
                 console.error('Error updating user:', error);
             });
     } else {
+        // Get the updated user from the form fields
+        const updatedUser = {
+            id: userId, // Assuming userId is available here
+            firstName: updatedFirstName,
+            lastName: updatedLastName,
+            phone: updatedPhone,
+            email: updatedEmail,
+            address: { address: updatedAddress },
+            birthDate: updatedBirthDate,
+            age: updatedAge,
+            gender: updatedGender
+        };
 
+        // Update the local storage with the updated user
+        const localUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
+        const existingIndex = localUsers.findIndex(user => user.id === userId);
+        if (existingIndex !== -1) {
+            // If data for the same user ID exists, replace it with the new data
+            localUsers[existingIndex] = updatedUser;
+        } else {
+            localUsers.push(updatedUser);
+        }
+
+        localStorage.setItem('updated-users', JSON.stringify(localUsers));
     }
 }
 
