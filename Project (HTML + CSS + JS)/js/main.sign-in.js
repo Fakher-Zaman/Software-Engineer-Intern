@@ -20,7 +20,6 @@ function showToast(type, message) {
 
 function setData(event) {
     event.preventDefault();
-
     var username = document.getElementById("uname").value;
     var password = document.getElementById("pwd").value;
 
@@ -48,10 +47,9 @@ function setData(event) {
             localStorage.setItem('userProfile', data.image);
             localStorage.setItem('userFirstName', data.firstName);
             localStorage.setItem('userLastName', data.lastName);
-            console.log(data);
+            // console.log(data);
 
             showToast('success', 'Login successful. Welcome back, ' + data.username + '!');
-
             setTimeout(() => {
                 window.location.href = '../components/home.all-user.html';
             }, 1000);

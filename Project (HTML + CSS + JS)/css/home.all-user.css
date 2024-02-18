@@ -37,7 +37,7 @@
     border-radius: 2px;
 }
 
-/* for search */
+/* For User Search */
 .input-box {
     position: relative;
     height: 60px;
@@ -46,14 +46,13 @@
     background: var(--white);
     margin: 5px 20px 0;
     border-radius: 8px;
-    border: 2px solid rgba(169, 221, 247, 0.4);
+    border: 2px solid var(--search-border-color);
     transition: var(--transition-1);
 }
 
 .input-box:focus-within {
-    /* border: 2px solid rgba(169, 221, 247); */
     border-color: var(--primary-color-1);
-    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+    box-shadow: var(--box-shadow-3);
 }
 
 .input-box i,
@@ -66,7 +65,7 @@
 .input-box i {
     left: 20px;
     font-size: 30px;
-    color: #707070;
+    color: var(--search-icon-color);
 }
 
 .input-box input {
@@ -96,6 +95,7 @@
     transform: translateY(-50%) scale(0.98);
 }
 
+/* Display Users Section */
 /* part-1 info */
 .part1-info {
     display: flex;
@@ -179,10 +179,10 @@
 
 #delete:hover {
     background-color: var(--red-dark);
-    color: white;
+    color: var(--white);
 }
 
-/* Edit form css */
+/* Edit Form */
 form {
     margin: 1rem 0;
     display: grid;
@@ -325,8 +325,7 @@ form>.first-type {
     cursor: pointer;
 }
 
-/* responsiveness */
-
+/* Responsiveness */
 @media screen and (max-width: 1170px) {
     #display-users {
         grid-template-columns: 1fr 1fr;

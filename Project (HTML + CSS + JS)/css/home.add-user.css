@@ -1,5 +1,4 @@
 /* Add User Section */
-
 #add-section {
     padding: 1rem 0;
     min-height: 100vh;
@@ -23,7 +22,7 @@ div.label {
     font-size: 2rem;
 }
 
-/* form css */
+/* Add User Form */
 form {
     margin: 2rem;
     padding: 2rem;
@@ -77,7 +76,7 @@ form>.first-type {
     border: 2px solid var(--primary-color-1);
 }
 
-/* responsiveness */
+/* Responsiveness */
 @media screen and (max-width: 774px) {
     form {
         grid-template-columns: 1fr 1fr;

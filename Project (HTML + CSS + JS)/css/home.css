@@ -5,7 +5,6 @@
     top: 0;
     background-color: var(--white);
     transition: var(--transition-3);
-
     box-shadow: var(--box-shadow-1);
     height: 70px;
     display: flex;
@@ -131,7 +130,7 @@
     border-radius: 50%;
     width: 17px;
     height: 17px;
-    animation: spin 2s linear infinite;
+    animation: var(--logout-spinner);
     margin-right: 5px;
 }
 
@@ -160,7 +159,7 @@
     text-align: center;
 }
 
-/* toggle navbar css */
+/* Toggle Navbar */
 #toggle-section {
     height: 100%;
     width: 100%;
@@ -233,7 +232,7 @@
     border-radius: 50%;
     width: 17px;
     height: 17px;
-    animation: spin 2s linear infinite;
+    animation: var(--logout-spinner);
     margin-right: 7px;
 }
 
@@ -261,17 +260,17 @@
     margin-top: 5.2rem;
 }
 
-/* footer */
+/* Footer */
 .dashboard-footer {
     background-color: var(--secondary-color-1);
-    color: white;
+    color: var(--white);
     text-align: center;
     height: 60px;
     display: flex;
     align-items: center;
 }
 
-/* responsiveness */
+/* Responsiveness */
 @media screen and (max-width: 1170px) {
     .topnav>a {
         padding: 0.7rem;

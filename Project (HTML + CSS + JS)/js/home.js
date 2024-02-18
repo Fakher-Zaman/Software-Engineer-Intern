@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
             link.classList.add("active");
         }
     });
-
     toggleNavLinks.forEach(link => {
         if (link.href === currentLocation) {
             link.classList.add("active");
@@ -35,7 +34,6 @@ displayUserProfile.innerHTML = `
 const userProfile = document.getElementById('user-profile');
 const userProfileClass = document.querySelector('.user-profile');
 const logoutBtn = document.getElementById('logout-btn');
-
 // for navbar toggle functionality
 const toggleBar = document.getElementById('bars');
 const toggleSection = document.getElementById('toggle-section');
@@ -114,6 +112,7 @@ toggleTopnav.addEventListener('click', () => {
     toggleSection.style.display = 'none';
 });
 
+// For Effective Scroll Navbar
 var lastScrollTop = 0;
 var headerHeight = document.querySelector('.dashboard-header').offsetHeight;
 

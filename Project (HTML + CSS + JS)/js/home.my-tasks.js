@@ -1,16 +1,5 @@
 const userTodoItems = document.querySelector('.todo-list');
 
-function showLoader() {
-    document.getElementById('loaderContainer').style.display = 'block';
-    document.getElementById('task-section').style.display = 'none';
-}
-
-// Function to hide the loader
-function hideLoader() {
-    document.getElementById('loaderContainer').style.display = 'none';
-    document.getElementById('task-section').style.display = 'block';
-}
-
 function showToast(type, message) {
     var toast = document.getElementById("toast");
     toast.innerText = message;
@@ -23,11 +12,19 @@ function showToast(type, message) {
     }, 3000);
 }
 
+function showLoader() {
+    document.getElementById('loaderContainer').style.display = 'block';
+    document.getElementById('task-section').style.display = 'none';
+}
+
+function hideLoader() {
+    document.getElementById('loaderContainer').style.display = 'none';
+    document.getElementById('task-section').style.display = 'block';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Show loader when page loads
     showLoader();
 
-    // Display users after 2 seconds
     setTimeout(function () {
         // displayUsers();
         hideLoader();
@@ -36,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const getData = async () => {
     const res = await fetch(`https://dummyjson.com/users/${localStorage.userId}/todos`);
-    console.log(res);
+    // console.log(res);
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
 
     // Merge local todos with fetched todos
     const localTodos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -70,7 +67,6 @@ const displayTasks = async () => {
 
     userTodoItems.innerHTML = dataDisplay;
 }
-
 displayTasks();
 
 const todoInputs = document.querySelector(".todo-inputs");
@@ -84,29 +80,23 @@ todoList.addEventListener("click", deleteCheck);
 
 function addTodos(e) {
     e.preventDefault();
-
     const todoText = todoInputs.value;
     if (todoText.trim() === "") return; // Don't add empty todos
 
     const newTodo = {
-        id: Date.now(), // You can use a unique ID generator here
+        id: Date.now(), // For unique ID generator
         todo: todoText,
         completed: false,
         userId: localStorage.userId // Assuming you have userId stored in localStorage
     };
 
-    // Get local todos or initialize an empty array
     const localTodos = JSON.parse(localStorage.getItem('todos')) || [];
     localTodos.push(newTodo);
     localStorage.setItem('todos', JSON.stringify(localTodos));
 
-    // Update display
     displayTasks();
     todoInputs.value = "";
-
-    // Show success toaster
     showToast('success', 'Task added successfully.');
-
 }
 
 function deleteCheck(e) {
@@ -123,7 +113,6 @@ function deleteCheck(e) {
             localStorage.setItem('todos', JSON.stringify(updatedTodos));
         });
     }
-
     if (items.classList[0] === "complete-btn" || items.classList[0] === "") {
         const todo = items.parentElement;
         todo.classList.toggle("completed");
@@ -132,6 +121,7 @@ function deleteCheck(e) {
 
 function getTodos() {
     const localTodos = JSON.parse(localStorage.getItem('todos')) || [];
+
     localTodos.forEach(function (todo) {
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todo");

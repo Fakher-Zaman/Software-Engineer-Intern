@@ -4,52 +4,65 @@ const updateUserButton = document.querySelector('#saveChanges');
 const searchButton = document.querySelector('.button');
 const searchInput = document.querySelector('input[type="text"]');
 
+function showToast(type, message) {
+    var toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.className = "toast " + type;
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(function () {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+    }, 3000);
+}
+
+function showLoader() {
+    document.getElementById('loaderContainer').style.display = 'block';
+    document.getElementById('all-user-section').style.display = 'none';
+}
+
+function hideLoader() {
+    document.getElementById('loaderContainer').style.display = 'none';
+    document.getElementById('all-user-section').style.display = 'block';
+}
+
 searchButton.addEventListener('click', function () {
     const searchTerm = searchInput.value.trim();
-    console.log(searchTerm);
+    // console.log(searchTerm);
     if (searchTerm !== '') {
         fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
             .then(res => res.json())
             .then(data => {
                 if (data.users.length > 0) {
-                    // Display search results from API
                     displaySearchResults(data);
                 } else {
-                    // If no users are found in API response, search locally
                     searchLocally(searchTerm);
                 }
             })
             .catch(error => {
                 console.error('Error fetching search results:', error);
-                // Show error toaster
                 showToast('danger', 'Failed to fetch search results.');
             });
     }
 });
 
 function searchLocally(searchTerm) {
-    // Get users from local storage
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Filter local users based on search term
     const filteredUsers = localUsers.filter(user => {
-        // Customize this condition based on how you want to perform the search locally
-        // For example, you can search by firstName, lastName, email, etc.
+        // Search by firstName, lastName, email, etc.
         return user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
             user.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
             user.email.toLowerCase().includes(searchTerm.toLowerCase());
     });
-
-    // Display search results from local storage
     displayLocalSearchResults(filteredUsers);
 }
 
 function displaySearchResults(data) {
-    console.log(data);
+    // console.log(data);
     const userCountDisplay = document.getElementById('user-count');
-    userCountDisplay.innerHTML = `Locating ${data.users.length} User Accounts`; // Use data.users instead of users
-
     const display = document.querySelector("#display-users");
+    userCountDisplay.innerHTML = `Locating ${data.users.length} User Accounts`;
+
     const dataDisplay = data.users.map(user => {
         const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
 
@@ -122,29 +135,6 @@ function displayLocalSearchResults(users) {
     display.innerHTML = dataDisplay;
 }
 
-function showLoader() {
-    document.getElementById('loaderContainer').style.display = 'block';
-    document.getElementById('all-user-section').style.display = 'none';
-}
-
-// Function to hide the loader
-function hideLoader() {
-    document.getElementById('loaderContainer').style.display = 'none';
-    document.getElementById('all-user-section').style.display = 'block';
-}
-
-function showToast(type, message) {
-    var toast = document.getElementById("toast");
-    toast.innerText = message;
-    toast.className = "toast " + type;
-    toast.classList.remove("hide");
-    toast.classList.add("show");
-    setTimeout(function () {
-        toast.classList.remove("show");
-        toast.classList.add("hide");
-    }, 3000);
-}
-
 const getData = async () => {
     showLoader();
     const res = await fetch('https://dummyjson.com/users');
@@ -170,14 +160,12 @@ const displayUsers = async () => {
             Object.assign(user, updatedUser);
         }
     });
-
     // Filter out deleted users
     const activeUsers = payload.users.filter(user => !deletedUsers.some(deletedUser => deletedUser.id === user.id));
-
     userCountDisplay.innerHTML = `Locating ${activeUsers.length} User Accounts`;
 
     let dataDisplay = activeUsers.map((user) => {
-        console.log(user);
+        // console.log(user);
         const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
 
         return `
@@ -212,15 +200,13 @@ const displayUsers = async () => {
 
 let userIdToUpdate;
 const editUser = async (userId) => {
-    console.log(userId);
-
+    // console.log(userId);
     const res = await fetch('https://dummyjson.com/users');
     const data = await res.json();
 
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
     const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
     const mergedUsers = [...data.users, ...localUsers];
-
     const indexToUpdate = mergedUsers.findIndex(user => user.id === userId);
 
     // If the user is found in the mergedUsers array, update it with the corresponding updated user
@@ -230,10 +216,8 @@ const editUser = async (userId) => {
             mergedUsers[indexToUpdate] = updatedUser;
         }
     }
-
     const user = mergedUsers.find(user => user.id === userId);
 
-    // Populate the form fields with user information
     document.getElementById('image').value = user.image;
     document.getElementById('firstName').value = user.firstName;
     document.getElementById('lastName').value = user.lastName;
@@ -244,14 +228,11 @@ const editUser = async (userId) => {
     document.getElementById('age').value = user.age;
     document.getElementById('gender').value = user.gender;
 
-    // Store the user ID in the variable
     userIdToUpdate = userId;
 }
 
 const updateUser = async (userId) => {
-    console.log("Update User Here");
-
-    // Get the updated values from the form fields
+    // console.log("Update User Here");
     const updatedImage = document.getElementById('image').value;
     const updatedFirstName = document.getElementById('firstName').value;
     const updatedLastName = document.getElementById('lastName').value;
@@ -262,9 +243,7 @@ const updateUser = async (userId) => {
     const updatedAge = document.getElementById('age').value;
     const updatedGender = document.getElementById('gender').value;
 
-    // Check if any field is empty
     if (!updatedImage || !updatedFirstName || !updatedLastName || !updatedPhone || !updatedEmail || !updatedAddress || !updatedBirthDate || !updatedAge || !updatedGender) {
-        // Show warning toaster if any field is empty
         showToast('warning', 'Please fill all the fields before updating.');
         return;
     }
@@ -301,18 +280,15 @@ const updateUser = async (userId) => {
 
                 localStorage.setItem('updated-users', JSON.stringify(updatedUsers));
                 displayUsers();
-                // Show success toaster
                 showToast('success', 'User information updated successfully.');
             })
             .catch(error => {
                 console.error('Error updating user:', error);
-                // Show error toaster
                 showToast('danger', 'Failed to update user information.');
             });
     } else {
-        // Get the updated user from the form fields
         const updatedUser = {
-            id: userId, // Assuming userId is available here
+            id: userId,
             image: updatedImage,
             firstName: updatedFirstName,
             lastName: updatedLastName,
@@ -336,7 +312,6 @@ const updateUser = async (userId) => {
 
         localStorage.setItem('updated-users', JSON.stringify(localUsers));
         displayUsers();
-        // Show success toaster
         showToast('success', 'User information updated successfully.');
     }
 }
@@ -347,14 +322,13 @@ document.getElementById('saveChanges').addEventListener('click', () => {
 
 let userIdToDelete;
 const deleteUser = async (userId) => {
-    console.log(userId);
+    // console.log(userId);
     const res = await fetch('https://dummyjson.com/users');
     const data = await res.json();
 
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
     const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
     const mergedUsers = [...data.users, ...localUsers];
-
     const indexToUpdate = mergedUsers.findIndex(user => user.id === userId);
 
     // If the user is found in the mergedUsers array, update it with the corresponding updated user
@@ -364,39 +338,33 @@ const deleteUser = async (userId) => {
             mergedUsers[indexToUpdate] = updatedUser;
         }
     }
-
     const user = mergedUsers.find(user => user.id === userId);
     document.getElementById('user-name').innerHTML = user.firstName + " " + user.lastName;
 
-    // Store the user ID in the variable
     userIdToDelete = userId;
 }
 
-// Function to confirm deletion of a user
 const confirmDeleteUser = async (userId) => {
-    console.log('Deleting user with ID:', userId);
+    // console.log('Deleting user with ID:', userId);
     if (userId >= 1 && userId <= 30) {
         fetch(`https://dummyjson.com/users/${userId}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 const deletedUsers = JSON.parse(localStorage.getItem('deleted-users')) || [];
                 deletedUsers.push(data);
                 localStorage.setItem('deleted-users', JSON.stringify(deletedUsers));
 
                 displayUsers();
-                // Show success toaster
                 showToast('success', 'User information deleted successfully.');
             })
             .catch(error => {
                 console.error('Error deleting user:', error);
-                // Show danger toaster
                 showToast('danger', 'Failed to delete user information.');
             });
     } else {
-        // Store the user data in the 'deleted-users' local storage
         const localUsers = JSON.parse(localStorage.getItem('users')) || [];
         const deletedUser = localUsers.find(user => user.id === userId);
         if (deletedUser) {
@@ -405,12 +373,10 @@ const confirmDeleteUser = async (userId) => {
             localStorage.setItem('deleted-users', JSON.stringify(deletedUsers));
 
             displayUsers();
-            console.log('User data stored in deleted-users local storage:', deletedUser);
-            // Show success toaster
+            // console.log('User data stored in deleted-users local storage:', deletedUser);
             showToast('success', 'User information deleted successfully.');
         } else {
             console.error('User not found in local storage:', userId);
-            // Show danger toaster
             showToast('danger', 'Failed to delete user information.');
         }
     }

@@ -6,7 +6,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     z-index: 9999;
-    transition: opacity 0.5s ease;
+    transition: var(--toast-transition);
 }
 
 .hide {
@@ -18,25 +18,21 @@
 }
 
 .danger {
-    background-color: #dc3545;
-    /* Red */
-    color: #fff;
+    background-color: var(--toast-danger-bg);
+    color: var(--white);
 }
 
 .information {
-    background-color: #17a2b8;
-    /* Blue */
-    color: #fff;
+    background-color: var(--toast-information-bg);
+    color: var(--white);
 }
 
 .warning {
-    background-color: #ffc107;
-    /* Yellow */
-    color: #212529;
+    background-color: var(--toast-warning-bg);
+    color: var(--white);
 }
 
 .success {
-    background-color: #28a745;
-    /* Green */
-    color: #fff;
+    background-color: var(--toast-success-bg);
+    color: var(--white);
 }

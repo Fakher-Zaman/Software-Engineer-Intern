@@ -1,5 +1,5 @@
 body {
-    background-color: #a4d8fa;
+    background-color: var(--task-section-bg);
 }
 
 /* My Task Section */

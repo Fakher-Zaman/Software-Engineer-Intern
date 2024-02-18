@@ -7,20 +7,8 @@ const userAddressInput = document.getElementById('address');
 const userBirthDateInput = document.getElementById('birthDate');
 const userAgeInput = document.getElementById('age');
 const userGenderInput = document.getElementById('gender');
-
 const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
-
-function showLoader() {
-    document.getElementById('loaderContainer').style.display = 'block';
-    document.getElementById('add-section').style.display = 'none';
-}
-
-// Function to hide the loader
-function hideLoader() {
-    document.getElementById('loaderContainer').style.display = 'none';
-    document.getElementById('add-section').style.display = 'block';
-}
 
 function showToast(type, message) {
     var toast = document.getElementById("toast");
@@ -34,11 +22,18 @@ function showToast(type, message) {
     }, 3000);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Show loader when page loads
-    showLoader();
+function showLoader() {
+    document.getElementById('loaderContainer').style.display = 'block';
+    document.getElementById('add-section').style.display = 'none';
+}
 
-    // Display users after 2 seconds
+function hideLoader() {
+    document.getElementById('loaderContainer').style.display = 'none';
+    document.getElementById('add-section').style.display = 'block';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    showLoader();
     setTimeout(function () {
         displayUsers();
         hideLoader();
@@ -61,7 +56,6 @@ function displayUsers() {
     // Filter out deleted users
     const activeUsers = localUsers.filter(user => !deletedUsers.some(deletedUser => deletedUser.id === user.id));
     localStorage.setItem('users', JSON.stringify(activeUsers));
-
     userCountDisplay.innerHTML = `Locating ${activeUsers.length} User Accounts`;
 
     let dataDisplay = activeUsers.map((user) => {
@@ -98,12 +92,9 @@ function displayUsers() {
 
 function addUser(e) {
     e.preventDefault();
-    console.log("Add User Here");
-
-    // Retrieve existing data from local storage
+    // console.log("Add User Here");
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    // Create an address object
     const address = {
         address: userAddressInput.value
     };
@@ -135,13 +126,11 @@ function addUser(e) {
             users.push(data);
             localStorage.setItem('users', JSON.stringify(users));
 
-            displayUsers(); // Display the updated users list
-            // Show success toaster
+            displayUsers();
             showToast('success', 'User added successfully.');
         })
         .catch(error => {
             console.error('Error adding user:', error);
-            // Show error toaster
             showToast('danger', 'Failed to add user.');
         });
 
@@ -159,14 +148,12 @@ function addUser(e) {
 document.addEventListener('click', event => {
     const target = event.target;
     if (target.classList.contains('edit')) {
-        // Show informative toaster
         showToast('information', 'You are now editing a user in the All Users section.');
         setTimeout(() => {
             window.location.href = '../components/home.all-user.html';
         }, 1500);
     }
     if (target.classList.contains('delete')) {
-        // Show informative toaster
         showToast('information', 'You are now deleting a user in the All Users section.');
         setTimeout(() => {
             window.location.href = '../components/home.all-user.html';
