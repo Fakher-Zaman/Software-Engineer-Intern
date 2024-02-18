@@ -48,6 +48,7 @@ function displayUsers() {
 
     // Filter out deleted users
     const activeUsers = localUsers.filter(user => !deletedUsers.some(deletedUser => deletedUser.id === user.id));
+    localStorage.setItem('users', JSON.stringify(activeUsers));
 
     userCountDisplay.innerHTML = `Locating ${activeUsers.length} User Accounts`;
 
