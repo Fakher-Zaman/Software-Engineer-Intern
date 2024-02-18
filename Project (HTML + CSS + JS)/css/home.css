@@ -10,6 +10,7 @@
     height: 70px;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .sticky {
@@ -253,7 +254,7 @@
     font-size: 2.5rem;
 }
 
-#home-section,
+#search-user,
 #task-section,
 #add-section {
     margin-top: 5.2rem;
@@ -277,8 +278,10 @@
 }
 
 @media screen and (max-width: 774px) {
+    #search-user {
+        margin-top: 10px;
+    }
 
-    #home-section,
     #task-section,
     #add-section {
         margin-top: 0;

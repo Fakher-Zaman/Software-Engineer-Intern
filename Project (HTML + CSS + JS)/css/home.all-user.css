@@ -1,4 +1,10 @@
 /* Home Section */
+.search-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 #display-users {
     display: grid;
@@ -25,6 +31,65 @@
     padding: 0.5rem 0.7rem;
     font-size: 1.3rem;
     border-radius: 2px;
+}
+
+/* for search */
+.input-box {
+    position: relative;
+    height: 60px;
+    max-width: 900px;
+    width: 50%;
+    background: var(--white);
+    margin: 5px 20px 0;
+    border-radius: 8px;
+    border: 2px solid rgba(169, 221, 247, 0.4);
+    transition: var(--transition-1);
+}
+
+.input-box:focus-within {
+    /* border: 2px solid rgba(169, 221, 247); */
+    border-color: var(--primary-color-1);
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+}
+
+.input-box i,
+.input-box .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-box i {
+    left: 20px;
+    font-size: 30px;
+    color: #707070;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 0 155px 0 65px;
+    background-color: transparent;
+}
+
+.input-box .button {
+    right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white);
+    border: none;
+    padding: 15px 20px;
+    border-radius: 2px;
+    background-color: var(--primary-color-1);
+    cursor: pointer;
+}
+
+.input-box .button:active {
+    transform: translateY(-50%) scale(0.98);
 }
 
 /* part-1 info */
@@ -269,6 +334,26 @@ form>.first-type {
 }
 
 @media screen and (max-width: 774px) {
+    .input-box {
+        height: 55px;
+        width: 80%;
+    }
+
+    .input-box i {
+        left: 12px;
+        font-size: 25px;
+    }
+
+    .input-box input {
+        padding: 0 112px 0 50px;
+    }
+
+    .input-box .button {
+        right: 12px;
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+
     #display-users {
         grid-template-columns: 1fr;
     }
@@ -279,6 +364,11 @@ form>.first-type {
 }
 
 @media screen and (max-width: 600px) {
+    .input-box {
+        height: 50px;
+        width: 100%;
+    }
+
     #deleteModal>.modal-content {
         width: 70%;
     }
