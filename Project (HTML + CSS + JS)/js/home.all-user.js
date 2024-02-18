@@ -11,7 +11,13 @@ searchButton.addEventListener('click', function () {
         fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
             .then(res => res.json())
             .then(data => {
-                displaySearchResults(data);
+                if (data.users.length > 0) {
+                    // Display search results from API
+                    displaySearchResults(data);
+                } else {
+                    // If no users are found in API response, search locally
+                    searchLocally(searchTerm);
+                }
             })
             .catch(error => {
                 console.error('Error fetching search results:', error);
@@ -21,6 +27,23 @@ searchButton.addEventListener('click', function () {
     }
 });
 
+function searchLocally(searchTerm) {
+    // Get users from local storage
+    const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Filter local users based on search term
+    const filteredUsers = localUsers.filter(user => {
+        // Customize this condition based on how you want to perform the search locally
+        // For example, you can search by firstName, lastName, email, etc.
+        return user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            user.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            user.email.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+
+    // Display search results from local storage
+    displayLocalSearchResults(filteredUsers);
+}
+
 function displaySearchResults(data) {
     console.log(data);
     const userCountDisplay = document.getElementById('user-count');
@@ -28,6 +51,45 @@ function displaySearchResults(data) {
 
     const display = document.querySelector("#display-users");
     const dataDisplay = data.users.map(user => {
+        const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
+
+        return `
+            <div class="get-users">
+                <div class="part1-info">
+                    <img src="${image}" alt="img" width="50" height="auto">
+                    <!-- <p class="avatar">${firstName.charAt(0) + lastName.charAt(0)}</p> -->
+                    <div class="contact-info">
+                        <p><span>${phone}</span><i class="fa-solid fa-square-phone-flip"></i></p>
+                        <p><span>${email}</span><i class="fa-solid fa-square-envelope"></i></p>
+                    </div>
+                </div>
+                <div class="part2-info">
+                    <p><i class="fa-solid fa-user"></i><span>${firstName} ${lastName}</span></p>
+                    <p><i class="fa-solid fa-cake-candles"></i><span>${birthDate}</span></p>
+                    <p><i class="fa-solid fa-location-dot"></i><span>${address.address}</span></p>
+                </div>
+                <div class="part3-info">
+                    <p><span>Gender:</span>${gender}</p>
+                    <p><span>Age:</span>${age}</p>
+                </div>
+                <div class="part4-btns">
+                    <button id="edit" class="edit" type="button" onclick="editUser(${user.id})">Edit</button>
+                    <button id="delete" class="delete" type="button" onclick="deleteUser(${user.id})" style="margin-left: 10px;">Delete</button>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    display.innerHTML = dataDisplay;
+}
+
+function displayLocalSearchResults(users) {
+    // Display search results from local storage
+    const userCountDisplay = document.getElementById('user-count');
+    userCountDisplay.innerHTML = `Locating ${users.length} User Accounts`;
+
+    const display = document.querySelector("#display-users");
+    const dataDisplay = users.map(user => {
         const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
 
         return `
