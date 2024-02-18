@@ -140,6 +140,13 @@ const updateUser = async (userId) => {
     const updatedAge = document.getElementById('age').value;
     const updatedGender = document.getElementById('gender').value;
 
+    // Check if any field is empty
+    if (!updatedImage || !updatedFirstName || !updatedLastName || !updatedPhone || !updatedEmail || !updatedAddress || !updatedBirthDate || !updatedAge || !updatedGender) {
+        // Show warning toaster if any field is empty
+        showToast('warning', 'Please fill all the fields before updating.');
+        return;
+    }
+
     // Construct the body of the PUT request
     const requestBody = JSON.stringify({
         image: updatedImage,
