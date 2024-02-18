@@ -8,11 +8,9 @@ searchButton.addEventListener('click', function () {
     const searchTerm = searchInput.value.trim();
     console.log(searchTerm);
     if (searchTerm !== '') {
-        // Make a fetch request to search for users by name
         fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
             .then(res => res.json())
             .then(data => {
-                // Process the search results
                 displaySearchResults(data);
             })
             .catch(error => {
@@ -24,7 +22,6 @@ searchButton.addEventListener('click', function () {
 });
 
 function displaySearchResults(data) {
-    // Display search results
     console.log(data);
     const userCountDisplay = document.getElementById('user-count');
     userCountDisplay.innerHTML = `Locating ${data.users.length} User Accounts`; // Use data.users instead of users
