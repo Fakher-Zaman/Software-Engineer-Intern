@@ -30,9 +30,10 @@ const displayTasks = async () => {
     hideLoader();
     let dataDisplay = payload.todos.map((task) => {
         const { id, todo, completed, userId } = task;
+        const completedClass = completed ? 'completed' : '';
 
         return `
-            <div class="todo">
+            <div class="todo ${completedClass}">
                 <li class="todo-item">${todo}</li>
                 <span class="complete-btn">
                     <i class="fa-solid fa-check" style="font-size: 1.8rem;"></i>
