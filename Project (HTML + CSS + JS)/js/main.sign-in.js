@@ -6,6 +6,18 @@ fetch('components/main.sign-in.html')
     })
     .catch(error => console.error('Error fetching sign-in content:', error));
 
+function showToast(type, message) {
+    var toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.className = "toast " + type;
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(function () {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+    }, 3000);
+}
+
 function setData(event) {
     event.preventDefault();
 
@@ -40,8 +52,9 @@ function setData(event) {
 
             // Redirect to home page
             window.location.href = '../components/home.all-user.html'
+            showToast('success', 'Login successful. Welcome back, ' + data.username + '!');
         })
         .catch(error => {
-            alert(error.message);
+            showToast('danger', error.message);
         });
 };
