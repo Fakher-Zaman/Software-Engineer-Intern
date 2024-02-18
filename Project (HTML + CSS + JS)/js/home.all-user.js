@@ -65,11 +65,13 @@ function displaySearchResults(data) {
 
 function showLoader() {
     document.getElementById('loaderContainer').style.display = 'block';
+    document.getElementById('all-user-section').style.display = 'none';
 }
 
 // Function to hide the loader
 function hideLoader() {
     document.getElementById('loaderContainer').style.display = 'none';
+    document.getElementById('all-user-section').style.display = 'block';
 }
 
 function showToast(type, message) {
