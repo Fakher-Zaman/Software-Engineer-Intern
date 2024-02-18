@@ -22,7 +22,6 @@ div.label {
 }
 
 #task-section i {
-    margin-left: 10px;
     font-size: 2.5rem;
 }
 
@@ -44,6 +43,7 @@ form button {
 
 form button {
     padding: 5.5px;
+    margin-left: 2px;
 }
 
 form button {
