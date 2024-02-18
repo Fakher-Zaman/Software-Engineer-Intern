@@ -1,4 +1,8 @@
 /* Home Section */
+#all-user-section {
+    min-height: 100vh;
+}
+
 .search-user {
     display: flex;
     flex-direction: column;

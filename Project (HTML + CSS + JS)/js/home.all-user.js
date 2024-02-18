@@ -1,6 +1,67 @@
 const display = document.querySelector("#display-users");
 const userCountDisplay = document.getElementById('user-count');
 const updateUserButton = document.querySelector('#saveChanges');
+const searchButton = document.querySelector('.button');
+const searchInput = document.querySelector('input[type="text"]');
+
+searchButton.addEventListener('click', function () {
+    const searchTerm = searchInput.value.trim();
+    console.log(searchTerm);
+    if (searchTerm !== '') {
+        // Make a fetch request to search for users by name
+        fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
+            .then(res => res.json())
+            .then(data => {
+                // Process the search results
+                displaySearchResults(data);
+            })
+            .catch(error => {
+                console.error('Error fetching search results:', error);
+                // Show error toaster
+                showToast('danger', 'Failed to fetch search results.');
+            });
+    }
+});
+
+function displaySearchResults(data) {
+    // Display search results
+    console.log(data);
+    const userCountDisplay = document.getElementById('user-count');
+    userCountDisplay.innerHTML = `Locating ${data.users.length} User Accounts`; // Use data.users instead of users
+
+    const display = document.querySelector("#display-users");
+    const dataDisplay = data.users.map(user => {
+        const { image, address, phone, age, firstName, lastName, email, gender, birthDate } = user;
+
+        return `
+            <div class="get-users">
+                <div class="part1-info">
+                    <img src="${image}" alt="img" width="50" height="auto">
+                    <!-- <p class="avatar">${firstName.charAt(0) + lastName.charAt(0)}</p> -->
+                    <div class="contact-info">
+                        <p><span>${phone}</span><i class="fa-solid fa-square-phone-flip"></i></p>
+                        <p><span>${email}</span><i class="fa-solid fa-square-envelope"></i></p>
+                    </div>
+                </div>
+                <div class="part2-info">
+                    <p><i class="fa-solid fa-user"></i><span>${firstName} ${lastName}</span></p>
+                    <p><i class="fa-solid fa-cake-candles"></i><span>${birthDate}</span></p>
+                    <p><i class="fa-solid fa-location-dot"></i><span>${address.address}</span></p>
+                </div>
+                <div class="part3-info">
+                    <p><span>Gender:</span>${gender}</p>
+                    <p><span>Age:</span>${age}</p>
+                </div>
+                <div class="part4-btns">
+                    <button id="edit" class="edit" type="button" onclick="editUser(${user.id})">Edit</button>
+                    <button id="delete" class="delete" type="button" onclick="deleteUser(${user.id})" style="margin-left: 10px;">Delete</button>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    display.innerHTML = dataDisplay;
+}
 
 function showLoader() {
     document.getElementById('loaderContainer').style.display = 'block';
