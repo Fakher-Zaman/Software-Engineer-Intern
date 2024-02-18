@@ -22,6 +22,18 @@ function hideLoader() {
     document.getElementById('add-section').style.display = 'block';
 }
 
+function showToast(type, message) {
+    var toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.className = "toast " + type;
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(function () {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+    }, 3000);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     // Show loader when page loads
     showLoader();
@@ -122,7 +134,15 @@ function addUser(e) {
             data.id = Date.now(); // Generate a new unique ID
             users.push(data);
             localStorage.setItem('users', JSON.stringify(users));
+
             displayUsers(); // Display the updated users list
+            // Show success toaster
+            showToast('success', 'User added successfully.');
+        })
+        .catch(error => {
+            console.error('Error adding user:', error);
+            // Show error toaster
+            showToast('danger', 'Failed to add user.');
         });
 
     // Clear input fields

@@ -50,9 +50,11 @@ function setData(event) {
             localStorage.setItem('userLastName', data.lastName);
             console.log(data);
 
-            // Redirect to home page
-            window.location.href = '../components/home.all-user.html'
             showToast('success', 'Login successful. Welcome back, ' + data.username + '!');
+
+            setTimeout(() => {
+                window.location.href = '../components/home.all-user.html';
+            }, 1000);
         })
         .catch(error => {
             showToast('danger', error.message);

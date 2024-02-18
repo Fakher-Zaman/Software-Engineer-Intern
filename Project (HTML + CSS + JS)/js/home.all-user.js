@@ -11,6 +11,18 @@ function hideLoader() {
     document.getElementById('loaderContainer').style.display = 'none';
 }
 
+function showToast(type, message) {
+    var toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.className = "toast " + type;
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(function () {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+    }, 3000);
+}
+
 const getData = async () => {
     showLoader();
     const res = await fetch('https://dummyjson.com/users');
@@ -160,9 +172,13 @@ const updateUser = async (userId) => {
 
                 localStorage.setItem('updated-users', JSON.stringify(updatedUsers));
                 displayUsers();
+                // Show success toaster
+                showToast('success', 'User information updated successfully.');
             })
             .catch(error => {
                 console.error('Error updating user:', error);
+                // Show error toaster
+                showToast('danger', 'Failed to update user information.');
             });
     } else {
         // Get the updated user from the form fields
@@ -191,6 +207,8 @@ const updateUser = async (userId) => {
 
         localStorage.setItem('updated-users', JSON.stringify(localUsers));
         displayUsers();
+        // Show success toaster
+        showToast('success', 'User information updated successfully.');
     }
 }
 
@@ -240,9 +258,13 @@ const confirmDeleteUser = async (userId) => {
                 localStorage.setItem('deleted-users', JSON.stringify(deletedUsers));
 
                 displayUsers();
+                // Show success toaster
+                showToast('success', 'User information deleted successfully.');
             })
             .catch(error => {
                 console.error('Error deleting user:', error);
+                // Show danger toaster
+                showToast('danger', 'Failed to delete user information.');
             });
     } else {
         // Store the user data in the 'deleted-users' local storage
@@ -255,8 +277,12 @@ const confirmDeleteUser = async (userId) => {
 
             displayUsers();
             console.log('User data stored in deleted-users local storage:', deletedUser);
+            // Show success toaster
+            showToast('success', 'User information deleted successfully.');
         } else {
             console.error('User not found in local storage:', userId);
+            // Show danger toaster
+            showToast('danger', 'Failed to delete user information.');
         }
     }
 }
