@@ -58,6 +58,18 @@ toggleSection.innerHTML = `
     </div>
 `;
 
+function showToast(type, message) {
+    var toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.className = "toast " + type;
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(function () {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+    }, 3000);
+}
+
 const toggleLogoutBtn = document.getElementById('toggle-logout-btn');
 const crossBar = document.getElementById('cross-mark');
 const toggleTopnav = document.querySelector('.toggle-topnav');
@@ -72,6 +84,7 @@ logoutBtn.addEventListener('click', () => {
     logoutBtn.style.alignItems = 'center';
     logoutLoader.style.display = 'inline-block';
 
+    showToast('success', 'User Logout successfully.');
     setTimeout(() => {
         localStorage.clear();
         window.location.href = "../index.html";
@@ -82,6 +95,7 @@ toggleLogoutBtn.addEventListener('click', () => {
     const logoutLoader = document.getElementById('toggle-logout-loader');
     logoutLoader.style.display = 'inline-block';
 
+    showToast('success', 'User Logout successfully.');
     setTimeout(() => {
         localStorage.clear();
         window.location.href = "../index.html";
