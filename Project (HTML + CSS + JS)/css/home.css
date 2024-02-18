@@ -169,6 +169,7 @@
     left: -100%;
     background-color: var(--white);
     transition: var(--transition-2);
+    z-index: 2;
 }
 
 .toggle-img-links {
