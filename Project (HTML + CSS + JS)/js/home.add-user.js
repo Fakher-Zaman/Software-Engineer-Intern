@@ -159,9 +159,17 @@ function addUser(e) {
 document.addEventListener('click', event => {
     const target = event.target;
     if (target.classList.contains('edit')) {
-        window.location.href = '../components/home.all-user.html'
+        // Show informative toaster
+        showToast('information', 'You are now editing a user in the All Users section.');
+        setTimeout(() => {
+            window.location.href = '../components/home.all-user.html';
+        }, 1500);
     }
     if (target.classList.contains('delete')) {
-        window.location.href = '../components/home.all-user.html'
+        // Show informative toaster
+        showToast('information', 'You are now deleting a user in the All Users section.');
+        setTimeout(() => {
+            window.location.href = '../components/home.all-user.html';
+        }, 1500);
     }
 });
