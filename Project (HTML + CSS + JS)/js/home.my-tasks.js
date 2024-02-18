@@ -11,6 +11,29 @@ function hideLoader() {
     document.getElementById('task-section').style.display = 'block';
 }
 
+function showToast(type, message) {
+    var toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.className = "toast " + type;
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(function () {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+    }, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Show loader when page loads
+    showLoader();
+
+    // Display users after 2 seconds
+    setTimeout(function () {
+        // displayUsers();
+        hideLoader();
+    }, 1000);
+});
+
 const getData = async () => {
     const res = await fetch(`https://dummyjson.com/users/${localStorage.userId}/todos`);
     console.log(res);
@@ -25,9 +48,9 @@ const getData = async () => {
 };
 
 const displayTasks = async () => {
-    showLoader();
+    // showLoader();
     const payload = await getData();
-    hideLoader();
+    // hideLoader();
     let dataDisplay = payload.todos.map((task) => {
         const { id, todo, completed, userId } = task;
         const completedClass = completed ? 'completed' : '';
@@ -80,6 +103,10 @@ function addTodos(e) {
     // Update display
     displayTasks();
     todoInputs.value = "";
+
+    // Show success toaster
+    showToast('success', 'Task added successfully.');
+
 }
 
 function deleteCheck(e) {
