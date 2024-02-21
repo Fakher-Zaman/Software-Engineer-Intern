@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <section>
-      <h1>useRouter</h1>
+      <h1>Next Js</h1>
       <Link href="/projects">Projects</Link>
       <button
         className='border bg-red-200 ml-5 my-10 px-2 py-4'
