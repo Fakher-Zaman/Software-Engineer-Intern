@@ -1,15 +1,21 @@
 import { NextResponse } from "next/server";
 
 export async function POST(req, res) {
-    let { email, password } = await req.json();
-    console.log(email, password);
+    let { name, age, email } = await req.json();
+    console.log(name, age, email);
 
-    if (!email || !password) {
+    if (!name || !age || !email) {
         return NextResponse.json(
-            { error: "required filed not found" },
+            { error: "required filed not found", ok: false },
             { status: 400 }
         );
     }
 
-    return NextResponse.json({ res: "data send successfully" });
+    return NextResponse.json(
+        {
+            res: "Credentials verified, User successfully loggin in.",
+            ok: true,
+        },
+        { status: 200 }
+    );
 }
