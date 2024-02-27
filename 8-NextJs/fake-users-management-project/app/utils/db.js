@@ -1,10 +1,10 @@
 export const users = [
     {
         "id": "2",
-        "name": "Ali Hamza",
+        "name": "Ali Hamza Bhatti",
         "age": 21,
-        "email": "alihamza@gmail.com",
-        "password": "Qwerty1234"
+        "email": "alihamzapuma@gmail.com",
+        "password": "Puma@King#123"
     },
     {
         "id": "3",
@@ -12,13 +12,6 @@ export const users = [
         "age": 24,
         "email": "zeeshanchadhar@gmail.com",
         "password": "Qwerty12345"
-    },
-    {
-        "id": "4",
-        "name": "Hammad Asif",
-        "age": 23,
-        "email": "hammadasif@gmail.com",
-        "password": "Qwerty123456"
     },
     {
         "id": "5",
