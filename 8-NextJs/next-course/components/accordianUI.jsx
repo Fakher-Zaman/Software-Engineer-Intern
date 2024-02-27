@@ -1,11 +1,14 @@
 'use client'
-import { useState } from 'react'
 
+import { useState } from 'react'
 import {
     Accordion,
     AccordionHeader,
     AccordionBody
 } from '@material-tailwind/react'
+import AllUsers from './AllUsers';
+import SpecificUser from './SpecificUser';
+import CreateUser from './CreateUser';
 
 const AccordianUI = () => {
     const [open, setOpen] = useState(1);
@@ -19,7 +22,25 @@ const AccordianUI = () => {
                     All Users
                 </AccordionHeader>
                 <AccordionBody>
-                    All Users
+                    <AllUsers />
+                </AccordionBody>
+            </Accordion>
+
+            <Accordion open={open === 2}>
+                <AccordionHeader onClick={() => handleOpen(2)}>
+                    Search For Specific User Here
+                </AccordionHeader>
+                <AccordionBody>
+                    <SpecificUser />
+                </AccordionBody>
+            </Accordion>
+
+            <Accordion open={open === 3}>
+                <AccordionHeader onClick={() => handleOpen(3)}>
+                    Create New User
+                </AccordionHeader>
+                <AccordionBody>
+                    <CreateUser />
                 </AccordionBody>
             </Accordion>
         </section>
