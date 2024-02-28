@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const { data: session } = useSession();
@@ -21,20 +22,38 @@ const Navbar = () => {
                             </Link>
                         </li>
                     </div>
-                    {/* ------------------------ */}
+
                     <div className="auth">
-                        <>
-                            <li className='mx-4 mb-5'>
-                                <Link href='/login' className='text-white font-bold'>
-                                    Login
-                                </Link>
-                            </li>
-                            <li className='mx-4 mb-[4rem]'>
-                                <Link href='/register' className='text-white font-bold'>
-                                    Register
-                                </Link>
-                            </li>
-                        </>
+                        {!session ? (
+                            <>
+                                <li className='mx-4 mb-5'>
+                                    <Link href='/login' className='text-white font-bold'>
+                                        Login
+                                    </Link>
+                                </li>
+                                <li className='mx-4 mb-[4rem]'>
+                                    <Link href='/register' className='text-white font-bold'>
+                                        Register
+                                    </Link>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <p className='mb-4 text-white'>{session.user?.email}</p>
+                                <li>
+                                    <button
+                                        onClick={() => {
+                                            signOut()
+                                            toast.success('Logged out successfully')
+                                        }}
+                                        className='p-2 px-5 mb-[2rem] bg-red-600 rounded'
+                                    >
+                                        Logout
+                                    </button>
+                                </li>
+                            </>
+                        )}
+
                     </div>
                 </ul>
             </div>

@@ -8,7 +8,7 @@ export const authOptions = {
     providers: [
         CredentialsProvider({
             id: 'credentials',
-            name: 'Credentials',
+            name: 'credentials',
             credentials: {
                 email: {
                     label: 'Email',
@@ -42,7 +42,7 @@ export const authOptions = {
 
     callbacks: {
         async signIn({ user, account }) {
-            if (account?.providers == 'credentials') {
+            if (account?.provider == 'credentials') {
                 return true;
             }
         }
