@@ -1,5 +1,9 @@
+import User from "@/components/User";
+
 export default function Home() {
   return (
-    <section>Hello</section>
+    <section>
+      <User name="alex" age={20} />
+    </section>
   );
 }

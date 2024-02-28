@@ -1,9 +1,20 @@
-import React from 'react'
+// type UserShape = {
+//     name: string;
+//     age: number;
+// }
 
-const User = () => {
+interface UserShape {
+    name: string;
+    age: number;
+}
+
+const User = ({ name, age }: UserShape) => {
     return (
-        <div>User</div>
+        <main>
+            <h1>{name}</h1>
+            <p>{age}</p>
+        </main>
     )
 }
 
-export default User
+export default User;
