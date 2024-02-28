@@ -1,0 +1,17 @@
+00:00 - Intro
+00:02 - What You'll Learn
+01:14 - Course Setup
+04:13 - Component Props Typing
+11:04 - Children Types
+14:25 - FC Functional Components & TypeScript
+17:07 - Dynamic Routes & TypeScript
+19:29 - Reusable Types 
+26:28 - useState & TypeScript
+30:17 - Forms, useRef, Events
+41:50 - ElementWrapper
+49:14 - Type Predicates
+56:31 - Context API & TypeScript
+1:09:57 - useReducer & TypeScript
+1:14:17 - useEffect & TypeScript
+1:19:54 - Global Types
+1:20:46 - Outro
