@@ -1,18 +1,11 @@
-// type UserShape = {
-//     name: string;
-//     age: number;
-// }
+import { type ReactNode } from "react";
 
-interface UserShape {
-    name: string;
-    age: number;
-}
+type UserShape = { children: ReactNode };
 
-const User = ({ name, age }: UserShape) => {
+const User = ({ children }: UserShape) => {
     return (
         <main>
-            <h1>{name}</h1>
-            <p>{age}</p>
+            {children}
         </main>
     )
 }
