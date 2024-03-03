@@ -1,11 +1,11 @@
 'use client';
 
-import Counter from "@/components/Counter";
+import MyComponent from "@/components/MyComponent";
 
 export default function Home() {
   return (
     <>
-      <Counter />
+      <MyComponent />
     </>
   );
 }
