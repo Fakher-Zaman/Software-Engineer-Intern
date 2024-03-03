@@ -1,17 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-type Product = {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    discountPercentage: number;
-    stock: number;
-    brand: string;
-    category: string;
-    thumbnail: string;
-};
-
 const MyComponent = () => {
     const [data, setData] = useState<Product | null>(null);
 
