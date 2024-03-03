@@ -1,27 +1,35 @@
-import React, { createContext, FC, ReactNode, useState } from "react";
+import { FC, ReactNode, createContext, useState } from "react";
 
-type MyContextData = {
-    value: string;
-    setValue: (newValue: string) => void;
+interface MyContextProps {
+    count: number;
+    increment: () => void;
+    decrement: () => void;
 }
 
-export const MyContext = createContext<MyContextData | undefined>(undefined);
+export const MyContext = createContext<MyContextProps>({
+    count: 0,
+    increment: () => { },
+    decrement: () => { },
+});
 
-type MyContextProviderProps = {
+interface MyProviderProps {
     children: ReactNode
-};
+}
 
-export const MyContextProvider: FC<MyContextProviderProps> = ({ children }) => {
-    const [value, setValue] = useState<string>("");
+const MyProvider: FC<MyProviderProps> = ({ children }) => {
+    const [count, setCount] = useState<number>(0);
 
-    const contextValue: MyContextData = {
-        value,
-        setValue,
+    const increment = () => {
+        setCount(count + 1);
     }
 
-    return (
-        <MyContext.Provider value={contextValue}>
-            {children}
-        </MyContext.Provider>
-    );
-};
+    const decrement = () => {
+        setCount(count - 1);
+    }
+
+    return <MyContext.Provider value={{ count, increment, decrement }}>
+        {children}
+    </MyContext.Provider>
+}
+
+export default MyProvider;

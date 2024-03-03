@@ -1,14 +1,14 @@
 'use client';
 
 import MyComponent from "@/components/MyComponent";
-import { MyContextProvider } from "@/content/MyContext";
+import MyProvider from "@/content/MyContext";
 
 export default function Home() {
   return (
     <>
-      <MyContextProvider>
+      <MyProvider>
         <MyComponent />
-      </MyContextProvider>
+      </MyProvider>
     </>
   );
 }
