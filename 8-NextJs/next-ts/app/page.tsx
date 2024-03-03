@@ -1,12 +1,14 @@
 'use client';
 
-import Button from "@/components/Button";
-import { PrimaryButtonProps, SecondaryButtonProps } from "@/components/Button";
+import MyComponent from "@/components/MyComponent";
+import { MyContextProvider } from "@/content/MyContext";
 
 export default function Home() {
   return (
-    <section>
-      <Button {...PrimaryButtonProps} {...SecondaryButtonProps} />
-    </section>
+    <>
+      <MyContextProvider>
+        <MyComponent />
+      </MyContextProvider>
+    </>
   );
 }
