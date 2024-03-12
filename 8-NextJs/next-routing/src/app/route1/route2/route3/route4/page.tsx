@@ -13,8 +13,8 @@ const Page1 = () => {
     return (
         <div>
             {showError && <Error error={new Error("An error occurred")} reset={() => setShowError(false)} />}
-            <h2 className="bg-blue-300">Route2 Page</h2>
-            <button onClick={toggleError} className='px-3 py-2 bg-blue-200 m-2 rounded'>Toggle Error</button>
+            <h2 className="bg-orange-300">Route4 Page</h2>
+            <button onClick={toggleError} className='px-3 py-2 bg-orange-200 m-2 rounded'>Toggle Error</button>
         </div>
     );
 };

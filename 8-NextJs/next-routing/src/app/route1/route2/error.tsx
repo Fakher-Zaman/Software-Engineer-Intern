@@ -9,8 +9,8 @@ export default function Error({
 }) {
     return (
         <div>
-            <h2>Something went wrong!</h2>
-            <button onClick={() => reset()}>Try again</button>
+            <h2>Something went wrong! at Route2 Page</h2>
+            <button onClick={() => reset()} className='px-3 py-2 bg-blue-200 m-2 rounded'>Try again</button>
         </div>
     )
 }
