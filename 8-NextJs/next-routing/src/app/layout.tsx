@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ReactToast from "@/components/react-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <h2 className="bg-yellow-300">Main Layout</h2>
         {/* <Navbar /> */}
+        <ReactToast />
         {children}
       </body>
     </html>

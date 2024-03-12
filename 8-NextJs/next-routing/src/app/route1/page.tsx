@@ -2,12 +2,14 @@
 
 import React, { useState } from 'react';
 import Error from './error';
+import { toast } from 'react-toastify';
 
 const Page1 = () => {
     const [showError, setShowError] = useState(false);
 
     const toggleError = () => {
         setShowError(!showError);
+        toast.error('An error occurred at Route1 Page!');
     };
 
     return (
