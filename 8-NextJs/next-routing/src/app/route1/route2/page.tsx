@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Error from './error';
+import Error from '@/app/error';
 import { toast } from 'react-toastify';
 
 const Page1 = () => {
