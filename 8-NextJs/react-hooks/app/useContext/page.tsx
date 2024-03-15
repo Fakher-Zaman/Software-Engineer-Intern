@@ -18,7 +18,7 @@ const Context = () => {
     return (
         <UserContext.Provider value={{ user }}>
             <div className='m-4'>
-                <h1>{`Hello ${user}`}</h1>
+                {/* <h1>{`Hello ${user}`}</h1> */}
                 <Component1 />
             </div>
         </UserContext.Provider>
