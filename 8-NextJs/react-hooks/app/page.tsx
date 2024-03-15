@@ -13,7 +13,7 @@ export default function Home() {
         <Link href="/useReducer" className="pointer px-4 py-2 rounded m-2 bg-purple-400 text-white">useReducer</Link>
         <Link href="/useCallback" className="pointer px-4 py-2 rounded m-2 bg-purple-500 text-white">useCallback</Link>
         <Link href="/useMemo" className="pointer px-4 py-2 rounded m-2 bg-purple-600 text-white">useMemo</Link>
-        <Link href="/customHooks" className="pointer px-4 py-2 rounded m-2 bg-purple-700 text-white">customHooks</Link>
+        <Link href="/customHook" className="pointer px-4 py-2 rounded m-2 bg-purple-700 text-white">customHooks</Link>
       </nav>
     </main>
   );
