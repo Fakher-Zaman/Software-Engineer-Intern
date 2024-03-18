@@ -26,6 +26,8 @@ const App = () => {
             setActiveSection(currentSection);
         };
 
+        // console.log("useEffect called in useRef.");
+
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);

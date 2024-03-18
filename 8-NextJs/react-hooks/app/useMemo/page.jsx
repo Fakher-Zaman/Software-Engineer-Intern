@@ -11,6 +11,8 @@ const App = () => {
             setScrollPosition(window.scrollY);
         };
 
+        // console.log("useEffect called in useMemo.")
+
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -27,6 +29,8 @@ const App = () => {
                 currentSection = index;
             }
         });
+
+        // console.log("useMemo called in useMemo.");
 
         return currentSection;
     }, [scrollPosition]);
