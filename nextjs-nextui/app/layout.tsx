@@ -5,6 +5,7 @@ import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
 import clsx from "clsx";
+import { SideNavbar } from "@/components/side-navbar";
 
 export const metadata: Metadata = {
 	title: {
@@ -38,9 +39,13 @@ export default function RootLayout({
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-					<div className="relative flex flex-col h-screen">
+					<div className="flex flex-col">
 						<Navbar />
-						<div>
+						<div className="flex flex-row h-screen">
+							{/* <aside className="bg-green-200 w-80">
+								<h1>Side Navbar Here</h1>
+							</aside> */}
+							<SideNavbar />
 							<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
 								{children}
 							</main>
