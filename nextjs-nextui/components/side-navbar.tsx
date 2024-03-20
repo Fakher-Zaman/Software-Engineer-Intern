@@ -11,7 +11,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 
 export const SideNavbar = () => {
     return (
-        <div className="md:w-60 h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
+        <div className="max-h-screen overflow-auto md:w-60 h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
             <div className="flex flex-col space-y-6 w-full">
                 <div className="flex flex-col space-y-1 md:px-6 ">
                     {SIDENAV_ITEMS.map((item, idx) => {
