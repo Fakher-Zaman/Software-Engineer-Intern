@@ -13,7 +13,7 @@ export const SideNavbar = () => {
     return (
         <div className="max-h-screen overflow-auto md:w-60 h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
             <div className="flex flex-col space-y-6 w-full">
-                <div className="flex flex-col space-y-1 md:px-3">
+                <div className="flex flex-col space-y-1 md:px-4">
                     {SIDENAV_ITEMS.map((item, idx) => {
                         return <MenuItem key={idx} item={item} />;
                     })}

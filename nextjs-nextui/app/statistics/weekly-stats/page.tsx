@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Certificates = () => {
+const WeeklyStats = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Mathematics Certify</h1>
+            <h1>Weekly Stats</h1>
         </section>
     )
 }
 
-export default Certificates;
+export default WeeklyStats;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Certificates = () => {
+const Bundles = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Mathematics Certify</h1>
+            <h1>Bundles</h1>
         </section>
     )
 }
 
-export default Certificates;
+export default Bundles;

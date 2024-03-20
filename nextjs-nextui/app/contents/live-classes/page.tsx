@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Certificates = () => {
+const LiveClasses = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Mathematics Certify</h1>
+            <h1>Live Classes</h1>
         </section>
     )
 }
 
-export default Certificates;
+export default LiveClasses;
