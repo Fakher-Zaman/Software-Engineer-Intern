@@ -48,23 +48,23 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         icon: <FiUser />,
     },
     {
-        title: 'Stats',
-        path: '/stats',
+        title: 'Statistics',
+        path: '/statistics',
         icon: <LuBarChart />,
     },
     {
-        title: 'Inbox',
-        path: '/inbox',
+        title: 'Inbox Me',
+        path: '/inbox-me',
         icon: <LuBox />,
     },
     {
-        title: 'Join',
-        path: '/join',
+        title: 'Join Now',
+        path: '/join-now',
         icon: <LuPlusSquare />,
     },
     {
-        title: 'Views',
-        path: '/views',
+        title: 'Viewers',
+        path: '/viewers',
         icon: <BiShow />,
     },
     {
