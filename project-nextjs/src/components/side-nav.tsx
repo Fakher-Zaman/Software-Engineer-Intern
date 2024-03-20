@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const SideNav = () => {
     return (
@@ -8,4 +8,4 @@ const SideNav = () => {
     )
 }
 
-export default SideNav
+export default SideNav;
