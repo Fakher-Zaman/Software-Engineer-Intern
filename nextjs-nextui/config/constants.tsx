@@ -11,12 +11,12 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     {
         title: 'Dashboard',
         path: '/',
-        icon: <MdOutlineSpaceDashboard />,
+        icon: <MdOutlineSpaceDashboard style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Contents',
         path: '/contents',
-        icon: <MdOutlineDashboardCustomize />,
+        icon: <MdOutlineDashboardCustomize style={{ fontSize: '1.5rem' }} />,
         submenu: true,
         subMenuItems: [
             { title: 'Courses', path: '/contents' },
@@ -35,46 +35,46 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     {
         title: 'Overview',
         path: '/overview',
-        icon: <TbBrowser />,
+        icon: <TbBrowser style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Top Voices',
         path: '/top-voices',
-        icon: <MdOutlineVolumeUp />,
+        icon: <MdOutlineVolumeUp style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Profile',
         path: '/profile',
-        icon: <FiUser />,
+        icon: <FiUser style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Statistics',
         path: '/statistics',
-        icon: <LuBarChart />,
+        icon: <LuBarChart style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Inbox Me',
         path: '/inbox-me',
-        icon: <LuBox />,
+        icon: <LuBox style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Join Now',
         path: '/join-now',
-        icon: <LuPlusSquare />,
+        icon: <LuPlusSquare style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Viewers',
         path: '/viewers',
-        icon: <BiShow />,
+        icon: <BiShow style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Certificates',
         path: '/certificates',
-        icon: <PiGraduationCapBold />,
+        icon: <PiGraduationCapBold style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Settings',
         path: '/settings',
-        icon: <TbSettings />,
+        icon: <TbSettings style={{ fontSize: '1.5rem' }} />,
     },
 ]

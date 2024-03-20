@@ -41,11 +41,11 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
                     >
                         <div className="flex flex-row space-x-4 items-center">
                             {item.icon}
-                            <span className="font-semibold text-xl  flex">{item.title}</span>
+                            <span className="text-lg  flex">{item.title}</span>
                         </div>
 
                         <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
-                            <RiArrowDropDownLine />
+                            <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />
                         </div>
                     </button>
 
@@ -73,7 +73,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
                         }`}
                 >
                     {item.icon}
-                    <span className="font-semibold text-xl flex">{item.title}</span>
+                    <span className="text-lg flex">{item.title}</span>
                 </Link>
             )}
         </div>
