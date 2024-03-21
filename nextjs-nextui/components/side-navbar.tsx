@@ -11,19 +11,28 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
 export const SideNavbar = () => {
+    const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+
+    const toggleCollapse = () => {
+        setIsCollapsed(!isCollapsed);
+    };
+
     return (
-        <div className="md:w-60 h-screen fixed border-r-1 border-zinc-200 hidden md:flex">
-            <button className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'>
+        <section className={`h-screen fixed border-r-1 border-zinc-200 hidden md:flex ${isCollapsed ? 'w-16' : ''}`}>
+            <button
+                className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'
+                onClick={toggleCollapse}
+            >
                 <MdKeyboardArrowRight />
             </button>
-            <div className="max-h-screen overflow-auto flex flex-col space-y-6 w-full">
+            <aside className="max-h-screen overflow-auto flex flex-col space-y-6 w-full">
                 <div className="flex flex-col md:px-4">
                     {SIDENAV_ITEMS.map((item, idx) => {
                         return <MenuItem key={idx} item={item} />;
                     })}
                 </div>
-            </div>
-        </div>
+            </aside>
+        </section>
     );
 };
 
