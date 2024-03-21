@@ -12,7 +12,7 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 
 export const SideNavbar = () => {
     return (
-        <div className="md:w-60 h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
+        <div className="md:w-60 h-screen fixed border-r-1 border-zinc-200 hidden md:flex">
             <button className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'>
                 <MdKeyboardArrowRight />
             </button>
