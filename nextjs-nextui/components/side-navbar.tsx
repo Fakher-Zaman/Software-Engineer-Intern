@@ -1,10 +1,8 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
-
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
 import { SIDENAV_ITEMS } from '@/config/constants';
 import { SideNavItem } from '@/types/sidenav';
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -29,7 +27,7 @@ export const SideNavbar = () => {
             <aside className="max-h-screen overflow-auto flex flex-col space-y-6 w-full">
                 <div className="flex flex-col">
                     {SIDENAV_ITEMS.map((item, idx) => {
-                        return <MenuItem key={idx} item={item} isCollapsed={isCollapsed} />;
+                        return <MenuItem key={idx} item={item} index={idx} isCollapsed={isCollapsed} />;
                     })}
                 </div>
             </aside>
@@ -37,7 +35,7 @@ export const SideNavbar = () => {
     );
 };
 
-const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boolean }) => {
+const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: number; isCollapsed: boolean }) => {
     const pathname = usePathname();
     const [subMenuOpen, setSubMenuOpen] = useState(false);
     const toggleSubMenu = () => {
@@ -50,8 +48,7 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
                 <>
                     <button
                         onClick={toggleSubMenu}
-                        className={`flex flex-row items-center md:px-6 md:py-2 rounded-sm hover-bg-zinc-100 w-full justify-between hover:bg-zinc-100 ${pathname.includes(item.path) ? 'bg-zinc-100' : ''
-                            }`}
+                        className={`flex flex-row items-center md:px-6 md:py-2 hover-bg-coolGray w-full justify-between hover:bg-coolGray ${pathname.includes(item.path) ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
                     >
                         <div className="flex flex-row space-x-4 items-center">
                             {item.icon}
@@ -63,15 +60,14 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
                         </div>
                     </button>
 
-                    {subMenuOpen && (
+                    {subMenuOpen && !isCollapsed && (
                         <div className="my-2 ml-12 flex flex-col space-y-4">
                             {item.subMenuItems?.map((subItem, idx) => {
                                 return (
                                     <Link
                                         key={idx}
                                         href={subItem.path}
-                                        className={`${subItem.path === pathname ? 'font-bold' : ''
-                                            }`}
+                                        className={`${subItem.path === pathname ? 'font-bold' : ''}`}
                                     >
                                         <span>{subItem.title}</span>
                                     </Link>
@@ -83,8 +79,7 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
             ) : (
                 <Link
                     href={item.path}
-                    className={`flex flex-row space-x-4 items-center md:py-2 md:px-6 rounded-sm hover:bg-zinc-100 ${item.path === pathname ? 'bg-zinc-100' : ''
-                        }`}
+                    className={`flex flex-row space-x-4 items-center md:py-2 md:px-6 hover:bg-coolGray ${item.path === pathname ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
                 >
                     {item.icon}
                     {!isCollapsed && <span className="text-lg flex">{item.title}</span>}
