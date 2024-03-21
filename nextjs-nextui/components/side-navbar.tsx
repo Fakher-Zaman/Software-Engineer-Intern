@@ -18,7 +18,7 @@ export const SideNavbar = () => {
     };
 
     return (
-        <section className={`h-screen fixed border-r-1 border-zinc-200 hidden md:flex ${isCollapsed ? 'w-16' : ''}`}>
+        <section className={`h-screen fixed border-r-1 border-zinc-200 hidden md:flex ${isCollapsed ? 'w-16' : 'md:w-60'}`}>
             <button
                 className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'
                 onClick={toggleCollapse}
