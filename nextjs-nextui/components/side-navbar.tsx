@@ -8,11 +8,15 @@ import { usePathname } from 'next/navigation';
 import { SIDENAV_ITEMS } from '@/config/constants';
 import { SideNavItem } from '@/types/sidenav';
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 export const SideNavbar = () => {
     return (
-        <div className="max-h-screen overflow-auto md:w-60 h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
-            <div className="flex flex-col space-y-6 w-full">
+        <div className="md:w-60 h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
+            <button className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'>
+                <MdKeyboardArrowRight />
+            </button>
+            <div className="max-h-screen overflow-auto flex flex-col space-y-6 w-full">
                 <div className="flex flex-col md:px-4">
                     {SIDENAV_ITEMS.map((item, idx) => {
                         return <MenuItem key={idx} item={item} />;
