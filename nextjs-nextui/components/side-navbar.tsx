@@ -9,6 +9,7 @@ import { SIDENAV_ITEMS } from '@/config/constants';
 import { SideNavItem } from '@/types/sidenav';
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { GoDotFill } from "react-icons/go";
 
 export const SideNavbar = () => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
@@ -18,7 +19,7 @@ export const SideNavbar = () => {
     };
 
     return (
-        <section className={`h-screen fixed border-r-1 border-zinc-200 hidden md:flex ${isCollapsed ? 'w-16' : 'md:w-60'}`}>
+        <section className={`h-screen fixed border-r-1 border-zinc-200 hidden md:flex ${isCollapsed ? 'w-20' : 'md:w-60'}`}>
             <button
                 className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'
                 onClick={toggleCollapse}
@@ -54,11 +55,11 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
                     >
                         <div className="flex flex-row space-x-4 items-center">
                             {item.icon}
-                            <span className="text-lg  flex">{item.title}</span>
+                            {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
                         </div>
 
                         <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
-                            <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />
+                            {isCollapsed ? <GoDotFill style={{ fontSize: '0.8rem', marginLeft: '10px' }} /> : <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />}
                         </div>
                     </button>
 
