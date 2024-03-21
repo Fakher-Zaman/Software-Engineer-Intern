@@ -27,7 +27,7 @@ export const SideNavbar = () => {
                 {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
             </button>
             <aside className="max-h-screen overflow-auto flex flex-col space-y-6 w-full">
-                <div className="flex flex-col md:px-4">
+                <div className="flex flex-col">
                     {SIDENAV_ITEMS.map((item, idx) => {
                         return <MenuItem key={idx} item={item} isCollapsed={isCollapsed} />;
                     })}
@@ -45,12 +45,12 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
     };
 
     return (
-        <div className="">
+        <div>
             {item.submenu ? (
                 <>
                     <button
                         onClick={toggleSubMenu}
-                        className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:bg-zinc-100 ${pathname.includes(item.path) ? 'bg-zinc-100' : ''
+                        className={`flex flex-row items-center md:px-6 md:py-2 rounded-sm hover-bg-zinc-100 w-full justify-between hover:bg-zinc-100 ${pathname.includes(item.path) ? 'bg-zinc-100' : ''
                             }`}
                     >
                         <div className="flex flex-row space-x-4 items-center">
@@ -83,7 +83,7 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
             ) : (
                 <Link
                     href={item.path}
-                    className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-zinc-100 ${item.path === pathname ? 'bg-zinc-100' : ''
+                    className={`flex flex-row space-x-4 items-center md:py-2 md:px-6 rounded-sm hover:bg-zinc-100 ${item.path === pathname ? 'bg-zinc-100' : ''
                         }`}
                 >
                     {item.icon}
