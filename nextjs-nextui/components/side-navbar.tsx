@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 import { SIDENAV_ITEMS } from '@/config/constants';
 import { SideNavItem } from '@/types/sidenav';
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 export const SideNavbar = () => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
@@ -23,12 +23,12 @@ export const SideNavbar = () => {
                 className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'
                 onClick={toggleCollapse}
             >
-                <MdKeyboardArrowRight />
+                {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
             </button>
             <aside className="max-h-screen overflow-auto flex flex-col space-y-6 w-full">
                 <div className="flex flex-col md:px-4">
                     {SIDENAV_ITEMS.map((item, idx) => {
-                        return <MenuItem key={idx} item={item} />;
+                        return <MenuItem key={idx} item={item} isCollapsed={isCollapsed} />;
                     })}
                 </div>
             </aside>
@@ -36,7 +36,7 @@ export const SideNavbar = () => {
     );
 };
 
-const MenuItem = ({ item }: { item: SideNavItem }) => {
+const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boolean }) => {
     const pathname = usePathname();
     const [subMenuOpen, setSubMenuOpen] = useState(false);
     const toggleSubMenu = () => {
@@ -86,7 +86,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
                         }`}
                 >
                     {item.icon}
-                    <span className="text-lg flex">{item.title}</span>
+                    {!isCollapsed && <span className="text-lg flex">{item.title}</span>}
                 </Link>
             )}
         </div>
