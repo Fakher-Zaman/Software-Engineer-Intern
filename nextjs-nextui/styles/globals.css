@@ -4,4 +4,5 @@
 
 .sidenav {
     height: calc(100vh - 4.1rem);
+    transition: .3s all ease-in-out;
 }

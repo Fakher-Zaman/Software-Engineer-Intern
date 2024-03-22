@@ -56,7 +56,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                         </div>
 
                         <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
-                            {isCollapsed ? <GoDotFill style={{ fontSize: '0.8rem', marginLeft: '10px' }} /> : <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />}
+                            {isCollapsed ? <GoDotFill style={{ fontSize: '0.8rem', marginLeft: '10px', marginTop: '9.8px', marginBottom: '9.8px' }} /> : <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />}
                         </div>
                     </button>
 
