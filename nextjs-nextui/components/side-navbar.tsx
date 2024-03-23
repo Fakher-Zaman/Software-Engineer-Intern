@@ -49,7 +49,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                     {!isCollapsed ? (
                         <button
                             onClick={toggleSubMenu}
-                            className={`h-11 flex flex-row justify-between items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                            className={`h-11 flex flex-row justify-between items-center md:px-6 md:py-1.5 w-full ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : 'hover:bg-blue-300'}`}
                         >
                             <div className="flex flex-row space-x-4 items-center">
                                 {item.icon}
@@ -62,8 +62,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                         </button>
                     ) : (
                         <button
-                            onClick={toggleSubMenu}
-                            className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                            className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ' hover:bg-blue-300'}`}
                         >
                             <div className="flex flex-row space-x-4 items-center">
                                 {item.icon}
@@ -83,7 +82,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                                     <Link
                                         key={idx}
                                         href={subItem.path}
-                                        className={`${subItem.path === pathname ? 'font-bold' : ''}`}
+                                        className={`${subItem.path === pathname ? 'font-bold' : 'hover:text-blue-500 '}`}
                                     >
                                         <span>{subItem.title}</span>
                                     </Link>
@@ -95,7 +94,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
             ) : (
                 <Link
                     href={item.path}
-                    className={`h-11 flex flex-row space-x-4 items-center md:py-2 md:px-6 hover:bg-coolGray ${item.path === pathname ? 'border-l-4 border-blue-500' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                    className={`h-11 flex flex-row space-x-4 items-center md:py-2 md:px-6 ${item.path === pathname ? 'border-l-4 border-blue-500' : 'hover:bg-blue-300'}`}
                 >
                     {item.icon}
                     {!isCollapsed && <span className="text-lg flex">{item.title}</span>}
