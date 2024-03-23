@@ -12,6 +12,7 @@ import { Link } from "@nextui-org/link";
 import { link as linkStyles } from "@nextui-org/theme";
 
 import { siteConfig } from "@/config/site";
+import { SIDENAV_ITEMS } from '@/config/constants';
 import NextLink from "next/link";
 import clsx from "clsx";
 
@@ -45,7 +46,7 @@ export const Navbar = () => {
 
 			<NavbarMenu>
 				<div className="mx-4 mt-2 flex flex-col gap-2">
-					{siteConfig.navMenuItems.map((item, index) => (
+					{SIDENAV_ITEMS.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>
 							<Link
 								color={
@@ -55,10 +56,10 @@ export const Navbar = () => {
 											? "danger"
 											: "foreground"
 								}
-								href="#"
+								href={item.path}
 								size="lg"
 							>
-								{item.label}
+								{item.title}
 							</Link>
 						</NavbarMenuItem>
 					))}
