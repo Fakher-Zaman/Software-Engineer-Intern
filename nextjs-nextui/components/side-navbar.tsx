@@ -17,7 +17,7 @@ export const SideNavbar = () => {
     };
 
     return (
-        <section className={`sidenav sticky border-r-1 hidden md:flex ${isCollapsed ? 'w-20' : 'md:w-64'}`}>
+        <section className={`sidenav sticky border-r-1 hidden md:flex ${isCollapsed ? 'w-20 transition-width duration-300' : 'md:w-64 transition-width duration-300'}`}>
             <button
                 className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'
                 onClick={toggleCollapse}
@@ -56,7 +56,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                                 {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
                             </div>
 
-                            <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
+                            <div className={`flex transition-transform duration-300 ${subMenuOpen ? 'rotate-180' : ''}`}>
                                 <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />
                             </div>
                         </button>
