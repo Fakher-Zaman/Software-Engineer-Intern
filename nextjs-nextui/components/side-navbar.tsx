@@ -24,8 +24,8 @@ export const SideNavbar = () => {
             >
                 {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
             </button>
-            <aside className="max-h-screen overflow-auto flex flex-col space-y-6 w-full">
-                <div className="flex flex-col">
+            <aside className="max-h-screen overflow-auto flex flex-col space-y-6">
+                <div className="flex flex-col md:w-80">
                     {SIDENAV_ITEMS.map((item, idx) => {
                         return <MenuItem key={idx} item={item} index={idx} isCollapsed={isCollapsed} />;
                     })}
@@ -48,7 +48,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                 <>
                     <button
                         onClick={toggleSubMenu}
-                        className={`flex flex-row items-center md:px-6 md:py-2 hover-bg-coolGray w-full justify-between hover:bg-coolGray ${pathname.includes(item.path) ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                        className={`flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
                     >
                         <div className="flex flex-row space-x-4 items-center">
                             {item.icon}
