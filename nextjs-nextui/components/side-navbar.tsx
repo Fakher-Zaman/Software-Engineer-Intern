@@ -49,7 +49,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                     {!isCollapsed ? (
                         <button
                             onClick={toggleSubMenu}
-                            className={`h-11 flex flex-row justify-between items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                            className={`h-11 flex flex-row justify-between items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
                         >
                             <div className="flex flex-row space-x-4 items-center">
                                 {item.icon}
@@ -63,7 +63,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                     ) : (
                         <button
                             onClick={toggleSubMenu}
-                            className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                            className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
                         >
                             <div className="flex flex-row space-x-4 items-center">
                                 {item.icon}
@@ -95,7 +95,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
             ) : (
                 <Link
                     href={item.path}
-                    className={`h-11 flex flex-row space-x-4 items-center md:py-2 md:px-6 hover:bg-coolGray ${item.path === pathname ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                    className={`h-11 flex flex-row space-x-4 items-center md:py-2 md:px-6 hover:bg-coolGray ${item.path === pathname ? 'border-l-4 border-blue-500' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
                 >
                     {item.icon}
                     {!isCollapsed && <span className="text-lg flex">{item.title}</span>}
