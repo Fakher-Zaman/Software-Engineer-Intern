@@ -17,15 +17,15 @@ export const SideNavbar = () => {
     };
 
     return (
-        <section className={`sidenav sticky border-r-1 border-zinc-200 hidden md:flex ${isCollapsed ? 'w-20' : 'md:w-80'}`}>
+        <section className={`sidenav sticky border-r-1 hidden md:flex ${isCollapsed ? 'w-20' : 'md:w-72'}`}>
             <button
                 className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'
                 onClick={toggleCollapse}
             >
                 {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
             </button>
-            <aside className="max-h-screen overflow-auto flex flex-col space-y-6">
-                <div className="flex flex-col md:w-80">
+            <aside className="max-h-screen overflow-y-auto overflow-x-hidden flex flex-col space-y-6">
+                <div className="flex flex-col md:w-72">
                     {SIDENAV_ITEMS.map((item, idx) => {
                         return <MenuItem key={idx} item={item} index={idx} isCollapsed={isCollapsed} />;
                     })}
