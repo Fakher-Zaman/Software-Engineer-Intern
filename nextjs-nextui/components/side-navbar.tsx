@@ -17,7 +17,7 @@ export const SideNavbar = () => {
     };
 
     return (
-        <section className={`sidenav sticky border-r-1 hidden md:flex ${isCollapsed ? 'w-20' : 'md:w-72'}`}>
+        <section className={`sidenav sticky border-r-1 hidden md:flex ${isCollapsed ? 'w-20' : 'md:w-64'}`}>
             <button
                 className='absolute top-8 right-0 w-6 h-6 bg-white border text-black rounded-full cursor-pointer translate-x-1/2 text-xl'
                 onClick={toggleCollapse}
@@ -25,7 +25,7 @@ export const SideNavbar = () => {
                 {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
             </button>
             <aside className="max-h-screen overflow-y-auto overflow-x-hidden flex flex-col space-y-6">
-                <div className="flex flex-col md:w-72">
+                <div className="flex flex-col md:w-64">
                     {SIDENAV_ITEMS.map((item, idx) => {
                         return <MenuItem key={idx} item={item} index={idx} isCollapsed={isCollapsed} />;
                     })}
@@ -46,22 +46,38 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
         <div>
             {item.submenu ? (
                 <>
-                    <button
-                        onClick={toggleSubMenu}
-                        className={`flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
-                    >
-                        <div className="flex flex-row space-x-4 items-center">
-                            {item.icon}
-                            {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
-                        </div>
+                    {!isCollapsed ? (
+                        <button
+                            onClick={toggleSubMenu}
+                            className={`flex flex-row justify-between items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                        >
+                            <div className="flex flex-row space-x-4 items-center">
+                                {item.icon}
+                                {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
+                            </div>
 
-                        <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
-                            {isCollapsed ? <GoDotFill style={{ fontSize: '0.8rem', marginLeft: '10px', marginTop: '9.8px', marginBottom: '9.8px' }} /> : <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />}
-                        </div>
-                    </button>
+                            <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
+                                <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />
+                            </div>
+                        </button>
+                    ) : (
+                        <button
+                            onClick={toggleSubMenu}
+                            className={`flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full hover:bg-coolGray ${pathname.includes(item.path) ? 'bg-coolGray' : ''} ${index < 2 ? 'bg-coolGray' : ''}`}
+                        >
+                            <div className="flex flex-row space-x-4 items-center">
+                                {item.icon}
+                                {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
+                            </div>
+
+                            <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
+                                <GoDotFill style={{ fontSize: '0.8rem', marginLeft: '10px' }} />
+                            </div>
+                        </button>
+                    )}
 
                     {subMenuOpen && !isCollapsed && (
-                        <div className="my-2 ml-12 flex flex-col space-y-4">
+                        <div className="my-2 ml-16 flex flex-col space-y-4">
                             {item.subMenuItems?.map((subItem, idx) => {
                                 return (
                                     <Link
