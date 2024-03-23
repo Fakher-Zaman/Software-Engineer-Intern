@@ -8,6 +8,7 @@ import { SideNavItem } from '@/types/sidenav';
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { GoDotFill } from "react-icons/go";
+import { Popover, PopoverTrigger, PopoverContent, Button } from "@nextui-org/react";
 
 export const SideNavbar = () => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
@@ -61,18 +62,35 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                             </div>
                         </button>
                     ) : (
-                        <button
-                            className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ' hover:bg-blue-300'}`}
-                        >
-                            <div className="flex flex-row space-x-4 items-center">
-                                {item.icon}
-                                {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
-                            </div>
+                        <Popover placement="bottom" showArrow={true}>
+                            <PopoverTrigger>
+                                <button
+                                    className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ' hover:bg-blue-300'}`}
+                                >
+                                    <div className="flex flex-row space-x-4 items-center">
+                                        {item.icon}
+                                        {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
+                                    </div>
 
-                            <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
-                                <GoDotFill style={{ fontSize: '0.8rem', marginLeft: '10px' }} />
-                            </div>
-                        </button>
+                                    <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
+                                        <GoDotFill style={{ fontSize: '0.8rem', marginLeft: '10px' }} />
+                                    </div>
+                                </button>
+                            </PopoverTrigger>
+                            <PopoverContent>
+                                <div className="px-1 py-2">
+                                    {item.subMenuItems?.map((subItem, idx) => (
+                                        <Link
+                                            key={idx}
+                                            href={subItem.path}
+                                            className={`flex flex-col ${subItem.path === pathname ? 'font-bold' : 'hover:text-blue-500 '}`}
+                                        >
+                                            <span>{subItem.title}</span>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </PopoverContent>
+                        </Popover>
                     )}
 
                     {subMenuOpen && !isCollapsed && (
