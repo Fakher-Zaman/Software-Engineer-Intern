@@ -58,7 +58,7 @@ export const Navbar = () => {
 						<div key={`${item}-${index}`}>
 							{item.subMenuItems && item.subMenuItems.length > 0 ? (
 								<Accordion className="p-0">
-									<AccordionItem key={index} aria-label={item.title} title={item.title}>
+									<AccordionItem key={index} aria-label={item.title} title={item.title} className={`${pathname.includes(item.path) ? 'border-l-4 border-blue-500 pl-2' : ''}`}>
 										<div className="flex flex-col">
 											{item.subMenuItems.map((subItem, subIndex) => (
 												<Link
