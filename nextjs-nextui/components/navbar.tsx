@@ -10,15 +10,9 @@ import {
 	NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
-
-import { link as linkStyles } from "@nextui-org/theme";
-
-import { siteConfig } from "@/config/site";
 import { SIDENAV_ITEMS } from '@/config/constants';
 import NextLink from "next/link";
-import clsx from "clsx";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-
 import { ThemeSwitch } from "@/components/theme-switch";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -27,7 +21,7 @@ export const Navbar = () => {
 	const pathname = usePathname();
 	const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
 
-	const handleAccordionToggle = (index) => {
+	const handleAccordionToggle = (index: number) => {
 		setActiveAccordionIndex(index === activeAccordionIndex ? -1 : index);
 	};
 
@@ -57,15 +51,15 @@ export const Navbar = () => {
 
 			<NavbarMenu>
 				<div className="mx-4 mt-2 flex flex-col gap-2">
-					{SIDENAV_ITEMS.map((item, index) => (
+					{SIDENAV_ITEMS.map((item, index: number) => (
 						<div key={`${item}-${index}`}>
-							{item.submenu ? (
+							{item.subMenuItems && item.subMenuItems.length > 0 ? (
 								<Accordion
 									className="p-0"
 									onChange={() => handleAccordionToggle(index)}
 								>
 									<AccordionItem key={index} aria-label={item.title} title={item.title}>
-										<div>
+										<div className="flex flex-col">
 											{item.subMenuItems.map((subItem, subIndex) => (
 												<Link
 													key={`${subItem}-${subIndex}`}
