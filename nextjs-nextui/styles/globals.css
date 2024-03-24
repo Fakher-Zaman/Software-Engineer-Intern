@@ -5,3 +5,7 @@
 .sidenav {
     height: calc(100vh - 4.1rem);
 }
+
+h2>button {
+    padding: 0 !important;
+}
