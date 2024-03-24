@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
@@ -17,8 +19,10 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
+	const pathname = usePathname();
 
 	return (
 		<NextUINavbar maxWidth="xl" position="sticky" className="border-b-1">
@@ -50,11 +54,9 @@ export const Navbar = () => {
 						<NavbarMenuItem key={`${item}-${index}`}>
 							<Link
 								color={
-									index === 2
+									pathname.includes(item.path)
 										? "primary"
-										: index === siteConfig.navMenuItems.length - 1
-											? "danger"
-											: "foreground"
+										: "foreground"
 								}
 								href={item.path}
 								size="lg"
