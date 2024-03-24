@@ -25,6 +25,13 @@ export const Navbar = () => {
 		setActiveAccordionIndex(index === activeAccordionIndex ? -1 : index);
 	};
 
+	const handleSubItemClick = (path: string, index: number) => {
+		// If the path of the clicked item is already active, toggle the accordion
+		if (pathname === path) {
+			setActiveAccordionIndex(activeAccordionIndex === -1 ? index : -1);
+		}
+	};
+
 	return (
 		<NextUINavbar maxWidth="xl" position="sticky" className="border-b-1">
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -64,12 +71,13 @@ export const Navbar = () => {
 												<Link
 													key={`${subItem}-${subIndex}`}
 													color={
-														pathname.includes(subItem.path)
+														pathname === subItem.path
 															? "primary"
 															: "foreground"
 													}
 													href={subItem.path}
 													size="lg"
+													onClick={() => handleSubItemClick(subItem.path, index)}
 												>
 													{subItem.title}
 												</Link>
@@ -81,7 +89,7 @@ export const Navbar = () => {
 								<NavbarMenuItem>
 									<Link
 										color={
-											pathname.includes(item.path)
+											pathname === item.path
 												? "primary"
 												: "foreground"
 										}
