@@ -21,10 +21,6 @@ export const Navbar = () => {
 	const pathname = usePathname();
 	const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
 
-	const handleAccordionToggle = (index: number) => {
-		setActiveAccordionIndex(index === activeAccordionIndex ? -1 : index);
-	};
-
 	const handleSubItemClick = (path: string, index: number) => {
 		// If the path of the clicked item is already active, toggle the accordion
 		if (pathname === path) {
@@ -61,10 +57,7 @@ export const Navbar = () => {
 					{SIDENAV_ITEMS.map((item, index: number) => (
 						<div key={`${item}-${index}`}>
 							{item.subMenuItems && item.subMenuItems.length > 0 ? (
-								<Accordion
-									className="p-0"
-									onChange={() => handleAccordionToggle(index)}
-								>
+								<Accordion className="p-0">
 									<AccordionItem key={index} aria-label={item.title} title={item.title}>
 										<div className="flex flex-col">
 											{item.subMenuItems.map((subItem, subIndex) => (
