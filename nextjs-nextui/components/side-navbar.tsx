@@ -62,7 +62,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                             </div>
                         </button>
                     ) : (
-                        <Popover placement="bottom" showArrow={true}>
+                        <Popover placement="bottom">
                             <PopoverTrigger>
                                 <button
                                     className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ' hover:bg-blue-300'}`}
@@ -83,7 +83,7 @@ const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: numb
                                         <Link
                                             key={idx}
                                             href={subItem.path}
-                                            className={`flex flex-col ${subItem.path === pathname ? 'font-bold' : 'hover:text-blue-500 '}`}
+                                            className={`flex flex-col text-lg ${subItem.path === pathname ? 'font-bold' : 'hover:text-blue-500 '}`}
                                         >
                                             <span>{subItem.title}</span>
                                         </Link>
