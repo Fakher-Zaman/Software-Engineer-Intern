@@ -5,7 +5,7 @@ const page = () => {
         <section>
             <h1 className="text-center text-4xl">Overview</h1>
         </section>
-    )
+    );
 }
 
 export default page;

@@ -5,7 +5,7 @@ const Certificates = () => {
         <section className="text-center text-4xl">
             <h1>Mathematics Certify</h1>
         </section>
-    )
+    );
 }
 
 export default Certificates;

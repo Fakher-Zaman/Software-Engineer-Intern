@@ -5,7 +5,7 @@ const LiveClasses = () => {
         <section className="text-center text-4xl">
             <h1>Live Classes</h1>
         </section>
-    )
+    );
 }
 
 export default LiveClasses;

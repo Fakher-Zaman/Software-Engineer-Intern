@@ -5,7 +5,7 @@ const Statistics = () => {
         <section className="text-center text-4xl">
             <h1>Annual Stats</h1>
         </section>
-    )
+    );
 }
 
 export default Statistics;

@@ -102,4 +102,4 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         path: '/settings',
         icon: <TbSettings style={{ fontSize: '1.5rem' }} />,
     },
-]
+];

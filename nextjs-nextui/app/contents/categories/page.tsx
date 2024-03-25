@@ -5,7 +5,7 @@ const Categories = () => {
         <section className="text-center text-4xl">
             <h1>Categories</h1>
         </section>
-    )
+    );
 }
 
 export default Categories;

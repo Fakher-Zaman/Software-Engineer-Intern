@@ -38,7 +38,7 @@ export const SideNavbar = () => {
 
 const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boolean }) => {
     const pathname = usePathname();
-    const [subMenuOpen, setSubMenuOpen] = useState(false);
+    const [subMenuOpen, setSubMenuOpen] = useState<boolean>(false);
     const toggleSubMenu = () => {
         setSubMenuOpen(!subMenuOpen);
     };
@@ -56,7 +56,6 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
                                 {item.icon}
                                 {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
                             </div>
-
                             <div className={`flex transform transition-transform duration-300 ${subMenuOpen ? '' : 'rotate-90'}`} style={{ transformOrigin: 'center' }}>
                                 <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />
                             </div>
@@ -71,7 +70,6 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
                                         {item.icon}
                                         {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
                                     </div>
-
                                     <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
                                         <GoDotFill style={{ fontSize: '0.8rem', marginLeft: '10px' }} />
                                     </div>

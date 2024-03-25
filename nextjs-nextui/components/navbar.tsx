@@ -19,7 +19,7 @@ import { useState } from "react";
 
 export const Navbar = () => {
 	const pathname = usePathname();
-	const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
+	const [activeAccordionIndex, setActiveAccordionIndex] = useState<number>(-1);
 
 	const handleSubItemClick = (path: string, index: number) => {
 		// If the path of the clicked item is already active, toggle the accordion

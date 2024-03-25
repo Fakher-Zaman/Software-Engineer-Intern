@@ -5,7 +5,7 @@ const MockTest = () => {
         <section className="text-center text-4xl">
             <h1>Mock Test</h1>
         </section>
-    )
+    );
 }
 
 export default MockTest;

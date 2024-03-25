@@ -4,7 +4,8 @@ const WeeklyReports = () => {
     return (
         <section className="text-center text-4xl">
             <h1>Weekly Reports</h1>
-        </section>)
+        </section>
+    );
 }
 
 export default WeeklyReports;

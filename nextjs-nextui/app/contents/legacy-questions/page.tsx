@@ -5,7 +5,7 @@ const LegacyQuestions = () => {
         <section className="text-center text-4xl">
             <h1>Legacy Questions</h1>
         </section>
-    )
+    );
 }
 
 export default LegacyQuestions;

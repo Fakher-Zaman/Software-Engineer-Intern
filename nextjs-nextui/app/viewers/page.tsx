@@ -5,7 +5,7 @@ const Viewers = () => {
         <section className="text-center text-4xl">
             <h1>Monthly Reports</h1>
         </section>
-    )
+    );
 }
 
 export default Viewers;

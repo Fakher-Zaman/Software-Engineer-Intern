@@ -5,7 +5,7 @@ const Voice3 = () => {
         <section className="text-center text-4xl">
             <h1>Voice Three</h1>
         </section>
-    )
+    );
 }
 
 export default Voice3;

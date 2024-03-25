@@ -5,7 +5,7 @@ const Bundles = () => {
         <section className="text-center text-4xl">
             <h1>Bundles</h1>
         </section>
-    )
+    );
 }
 
 export default Bundles;

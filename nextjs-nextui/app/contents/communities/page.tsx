@@ -5,7 +5,7 @@ const Communities = () => {
         <section className="text-center text-4xl">
             <h1>Communities</h1>
         </section>
-    )
+    );
 }
 
 export default Communities;
