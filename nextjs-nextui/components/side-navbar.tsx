@@ -28,7 +28,7 @@ export const SideNavbar = () => {
             <aside className="max-h-screen overflow-y-auto overflow-x-hidden flex flex-col space-y-6">
                 <div className="flex flex-col md:w-64">
                     {SIDENAV_ITEMS.map((item, idx) => {
-                        return <MenuItem key={idx} item={item} index={idx} isCollapsed={isCollapsed} />;
+                        return <MenuItem key={idx} item={item} isCollapsed={isCollapsed} />;
                     })}
                 </div>
             </aside>
@@ -36,7 +36,7 @@ export const SideNavbar = () => {
     );
 };
 
-const MenuItem = ({ item, index, isCollapsed }: { item: SideNavItem; index: number; isCollapsed: boolean }) => {
+const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boolean }) => {
     const pathname = usePathname();
     const [subMenuOpen, setSubMenuOpen] = useState(false);
     const toggleSubMenu = () => {
