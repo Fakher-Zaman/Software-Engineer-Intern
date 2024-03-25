@@ -86,6 +86,11 @@ export const Navbar = () => {
 												? "primary"
 												: "foreground"
 										}
+										className={
+											pathname === item.path
+												? "border-l-4 border-blue-500 pl-2"
+												: ""
+										}
 										href={item.path}
 										size="lg"
 									>
