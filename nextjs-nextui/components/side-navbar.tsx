@@ -25,7 +25,7 @@ export const SideNavbar = () => {
             >
                 {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
             </button>
-            <aside className="max-h-screen overflow-y-auto overflow-x-hidden flex flex-col space-y-6">
+            <aside className="nav-scroller max-h-screen overflow-y-auto overflow-x-hidden flex flex-col space-y-6">
                 <div className="flex flex-col md:w-64">
                     {SIDENAV_ITEMS.map((item, idx) => {
                         return <MenuItem key={idx} item={item} isCollapsed={isCollapsed} />;
@@ -81,7 +81,7 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
                                         <Link
                                             key={idx}
                                             href={subItem.path}
-                                            className={`flex flex-col text-lg ${subItem.path === pathname ? 'font-bold' : 'hover:text-blue-500 '}`}
+                                            className={`flex flex-col py-1 text-[1rem] ${subItem.path === pathname ? 'font-bold' : 'hover:text-blue-500 '}`}
                                         >
                                             <span>{subItem.title}</span>
                                         </Link>
