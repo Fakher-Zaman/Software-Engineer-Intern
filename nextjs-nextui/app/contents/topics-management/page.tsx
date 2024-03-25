@@ -1,11 +1,11 @@
 import React from 'react';
 
-const page = () => {
+const TopicsManage = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Voice One</h1>
+            <h1>Topics Management</h1>
         </section>
-    );
+    )
 }
 
-export default page;
+export default TopicsManage;

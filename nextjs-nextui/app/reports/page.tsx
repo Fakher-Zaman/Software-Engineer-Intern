@@ -1,11 +1,11 @@
 import React from 'react';
 
-const LegacyQuestions = () => {
+const Reports = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Legacy Questions</h1>
+            <h1>Reports</h1>
         </section>
     );
 }
 
-export default LegacyQuestions;
+export default Reports;

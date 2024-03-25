@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Categories = () => {
+const QuestionManage = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Categories</h1>
+            <h1>Question Management</h1>
         </section>
     );
 }
 
-export default Categories;
+export default QuestionManage;

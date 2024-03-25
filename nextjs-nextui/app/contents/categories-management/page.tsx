@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Subscriptions = () => {
+const CategoriesManage = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Subscriptions</h1>
+            <h1>Categories Management</h1>
         </section>
-    );
+    )
 }
 
-export default Subscriptions;
+export default CategoriesManage;

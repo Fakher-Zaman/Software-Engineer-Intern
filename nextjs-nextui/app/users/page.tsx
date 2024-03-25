@@ -1,11 +1,11 @@
 import React from 'react';
 
-const page = () => {
+const Users = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Profile</h1>
+            <h1>Users</h1>
         </section>
     );
 }
 
-export default page;
+export default Users;

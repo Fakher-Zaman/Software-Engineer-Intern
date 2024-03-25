@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Viewers = () => {
+const Math = () => {
     return (
         <section className="text-center text-4xl">
-            <h1>Monthly Reports</h1>
+            <h1>Math</h1>
         </section>
     );
 }
 
-export default Viewers;
+export default Math;

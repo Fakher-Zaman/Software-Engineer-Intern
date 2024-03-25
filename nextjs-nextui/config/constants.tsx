@@ -19,18 +19,28 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         icon: <MdOutlineDashboardCustomize style={{ fontSize: '1.5rem' }} />,
         submenu: true,
         subMenuItems: [
-            { title: 'Courses', path: '/contents' },
-            { title: 'Live Classes', path: '/contents/live-classes' },
-            { title: 'Mock Test', path: '/contents/mock-test' },
-            { title: 'Test Series', path: '/contents/test-series' },
-            { title: 'Bundles', path: '/contents/bundles' },
-            { title: 'Legacy Question Pool', path: '/contents/legacy-questions' },
-            { title: 'Question Pool', path: '/contents/questions' },
-            { title: 'Subscriptions', path: '/contents/subscriptions' },
-            { title: 'News Feed', path: '/contents/news-feed' },
-            { title: 'Communities', path: '/contents/communities' },
-            { title: 'Categories', path: '/contents/categories' },
+            { title: 'Question', path: '/contents/question-management' },
+            { title: 'Exams', path: '/contents/exams' },
+            { title: 'Categories', path: '/contents/categories-management' },
+            { title: 'Topics', path: '/contents/topics-management' },
+            { title: 'Support', path: '/contents/support' },
+            { title: 'Test', path: '/contents/test' },
         ],
+    },
+    {
+        title: 'Users',
+        path: '/users',
+        icon: <FiUser style={{ fontSize: '1.5rem' }} />,
+    },
+    {
+        title: 'Reports',
+        path: '/reports',
+        icon: <BiShow style={{ fontSize: '1.5rem' }} />,
+    },
+    {
+        title: 'Settings',
+        path: '/account/settings',
+        icon: <TbSettings style={{ fontSize: '1.5rem' }} />,
     },
     {
         title: 'Overview',
@@ -43,7 +53,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         icon: <MdOutlineVolumeUp style={{ fontSize: '1.5rem' }} />,
         submenu: true,
         subMenuItems: [
-            { title: 'Voice One', path: '/top-voices' },
+            { title: 'Voice One', path: '/top-voices/voice-1' },
             { title: 'Voice Two', path: '/top-voices/voice-2' },
             { title: 'Voice Three', path: '/top-voices/voice-3' },
             { title: 'Voice Four', path: '/top-voices/voice-4' },
@@ -51,17 +61,12 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         ],
     },
     {
-        title: 'Profile',
-        path: '/profile',
-        icon: <FiUser style={{ fontSize: '1.5rem' }} />,
-    },
-    {
         title: 'Statistics',
         path: '/statistics',
         icon: <LuBarChart style={{ fontSize: '1.5rem' }} />,
         submenu: true,
         subMenuItems: [
-            { title: 'Annual Stats', path: '/statistics' },
+            { title: 'Annual Stats', path: '/statistics/annual-stats' },
             { title: 'Monthly Stats', path: '/statistics/monthly-stats' },
             { title: 'Weekly Stats', path: '/statistics/weekly-stats' },
         ],
@@ -77,29 +82,14 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         icon: <LuPlusSquare style={{ fontSize: '1.5rem' }} />,
     },
     {
-        title: 'View Reports',
-        path: '/viewers',
-        icon: <BiShow style={{ fontSize: '1.5rem' }} />,
-        submenu: true,
-        subMenuItems: [
-            { title: 'Monthly Reports', path: '/viewers' },
-            { title: 'Weekly Reports', path: '/viewers/weekly-report' },
-        ],
-    },
-    {
         title: 'Certificates',
         path: '/certificates',
         icon: <PiGraduationCapBold style={{ fontSize: '1.5rem' }} />,
         submenu: true,
         subMenuItems: [
-            { title: 'Mathematics', path: '/certificates' },
+            { title: 'Mathematics', path: '/certificates/math' },
             { title: 'Computer Science', path: '/certificates/comp-science' },
             { title: 'Physics', path: '/certificates/physics' },
         ],
-    },
-    {
-        title: 'Settings',
-        path: '/settings',
-        icon: <TbSettings style={{ fontSize: '1.5rem' }} />,
     },
 ];
