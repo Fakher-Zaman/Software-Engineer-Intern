@@ -64,7 +64,7 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
                         <Popover placement="bottom">
                             <PopoverTrigger>
                                 <button
-                                    className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 hover-bg-coolGray w-full ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ' hover:text-blue-500'}`}
+                                    className={`h-11 flex flex-row items-center md:px-6 md:py-1.5 w-full ${pathname.includes(item.path) ? 'border-l-4 border-blue-500' : ' hover:text-blue-500'}`}
                                 >
                                     <div className="flex flex-row space-x-4 items-center">
                                         {item.icon}
