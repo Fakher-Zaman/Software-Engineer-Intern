@@ -43,11 +43,6 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         icon: <TbSettings style={{ fontSize: '1.5rem' }} />,
     },
     {
-        title: 'Overview',
-        path: '/overview',
-        icon: <TbBrowser style={{ fontSize: '1.5rem' }} />,
-    },
-    {
         title: 'Top Voices',
         path: '/top-voices',
         icon: <MdOutlineVolumeUp style={{ fontSize: '1.5rem' }} />,
@@ -61,6 +56,11 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         ],
     },
     {
+        title: 'Overview',
+        path: '/overview',
+        icon: <TbBrowser style={{ fontSize: '1.5rem' }} />,
+    },
+    {
         title: 'Statistics',
         path: '/statistics',
         icon: <LuBarChart style={{ fontSize: '1.5rem' }} />,
@@ -72,16 +72,6 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         ],
     },
     {
-        title: 'Inbox Me',
-        path: '/inbox-me',
-        icon: <LuBox style={{ fontSize: '1.5rem' }} />,
-    },
-    {
-        title: 'Join Now',
-        path: '/join-now',
-        icon: <LuPlusSquare style={{ fontSize: '1.5rem' }} />,
-    },
-    {
         title: 'Certificates',
         path: '/certificates',
         icon: <PiGraduationCapBold style={{ fontSize: '1.5rem' }} />,
@@ -91,5 +81,15 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
             { title: 'Computer Science', path: '/certificates/comp-science' },
             { title: 'Physics', path: '/certificates/physics' },
         ],
+    },
+    {
+        title: 'Inbox Me',
+        path: '/inbox-me',
+        icon: <LuBox style={{ fontSize: '1.5rem' }} />,
+    },
+    {
+        title: 'Join Now',
+        path: '/join-now',
+        icon: <LuPlusSquare style={{ fontSize: '1.5rem' }} />,
     },
 ];
