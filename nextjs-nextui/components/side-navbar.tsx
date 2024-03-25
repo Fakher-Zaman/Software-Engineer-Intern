@@ -57,7 +57,7 @@ const MenuItem = ({ item, isCollapsed }: { item: SideNavItem; isCollapsed: boole
                                 {!isCollapsed && <span className="text-lg  flex">{item.title}</span>}
                             </div>
 
-                            <div className={`flex transition-transform duration-300 ${subMenuOpen ? 'rotate-180' : ''}`}>
+                            <div className={`flex transform transition-transform duration-300 ${subMenuOpen ? '' : 'rotate-90'}`} style={{ transformOrigin: 'center' }}>
                                 <RiArrowDropDownLine style={{ fontSize: '1.7rem' }} />
                             </div>
                         </button>
