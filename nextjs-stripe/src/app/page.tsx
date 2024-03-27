@@ -24,10 +24,10 @@ const products: Product[] = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between sm:p-24 p-10">
       <div className="flex flex-col gap-8">
-        <h1 className="text-3xl text-center">E-Commerce Cart System</h1>
-        <div className="grid grid-cols-3 gap-4">
+        <h1 className="sm:text-3xl text-2xl text-center">E-Commerce Cart System</h1>
+        <div className="grid md:grid-cols-3 gap-4">
           {products.map((product) => {
             return (
               <Product key={product.id} product={product} />
