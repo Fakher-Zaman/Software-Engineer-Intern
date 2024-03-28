@@ -22,9 +22,20 @@ export const POST = async (request: any) => {
                     stripeProduct?.name?.toLowerCase() == product?.name?.toLowerCase();
                 }
             )
+
+            if (stripeProduct == undefined) {
+                const prod = await stripe.products.create({
+                    name: product.name,
+                    default_price_data: {
+                        unit_amount: product.price * 100,
+                        currency: "usd",
+                    },
+                });
+            }
         }
     } catch (error) {
-
+        console.error("Error in creating a new product", error);
+        throw error;
     }
 
     const prods = await stripe.products.list();
