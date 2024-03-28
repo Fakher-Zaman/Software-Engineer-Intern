@@ -38,8 +38,30 @@ export const POST = async (request: any) => {
         throw error;
     }
 
-    const prods = await stripe.products.list();
-    console.log(prods);
+    activeProducts = await getActiveProducts();
+    let stripeItems: any = [];
 
-    return NextResponse.json({ url: "" });
+    for (const product of data) {
+        const stripeProduct = activeProducts?.find(
+            (stripeProduct: any) => {
+                stripeProduct?.name?.toLowerCase() == product?.name?.toLowerCase();
+            }
+        );
+
+        if (stripeProduct) {
+            stripeItems.push({
+                price: stripeProduct?.default_price,
+                quantity: product?.quantity,
+            });
+        }
+    }
+
+    const session = await stripe.checkout.session.create({
+        line_items: stripeItems,
+        mode: "Payment",
+        success_url: "http://localhost:3000/success",
+        cancel_url: "http://localhost:3000/cancel",
+    });
+
+    return NextResponse.json({ url: session.url });
 };

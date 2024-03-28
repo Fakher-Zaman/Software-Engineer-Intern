@@ -32,7 +32,7 @@ const Cart = () => {
         }).then((response) => {
             console.log(response);
             if (response.url) {
-                console.log(response.url);
+                // console.log(response.url);
             }
         })
     };
