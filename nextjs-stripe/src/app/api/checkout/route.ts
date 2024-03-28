@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
-
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 const getActiveProducts = async () => {
     const checkProducts = await stripe.products.list();
-    const availableProducts = checkProducts.data.filter((product: any) => product.active === true);
-
+    const availableProducts = checkProducts.data.filter(
+        (product: any) => product.active === true
+    );
     return availableProducts;
-}
+};
 
 export const POST = async (request: any) => {
     const { products } = await request.json();
@@ -18,10 +18,9 @@ export const POST = async (request: any) => {
     try {
         for (const product of data) {
             const stripeProduct = activeProducts?.find(
-                (stripeProduct: any) => {
-                    stripeProduct?.name?.toLowerCase() == product?.name?.toLowerCase();
-                }
-            )
+                (stripeProduct: any) =>
+                    stripeProduct?.name?.toLowerCase() == product?.name?.toLowerCase()
+            );
 
             if (stripeProduct == undefined) {
                 const prod = await stripe.products.create({
@@ -43,9 +42,7 @@ export const POST = async (request: any) => {
 
     for (const product of data) {
         const stripeProduct = activeProducts?.find(
-            (stripeProduct: any) => {
-                stripeProduct?.name?.toLowerCase() == product?.name?.toLowerCase();
-            }
+            (prod: any) => prod?.name?.toLowerCase() == product?.name?.toLowerCase()
         );
 
         if (stripeProduct) {
@@ -56,9 +53,9 @@ export const POST = async (request: any) => {
         }
     }
 
-    const session = await stripe.checkout.session.create({
+    const session = await stripe.checkout.sessions.create({
         line_items: stripeItems,
-        mode: "Payment",
+        mode: "payment",
         success_url: "http://localhost:3000/success",
         cancel_url: "http://localhost:3000/cancel",
     });
