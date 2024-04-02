@@ -54,10 +54,21 @@ export const POST = async (request: any) => {
     }
 
     const session = await stripe.checkout.sessions.create({
-        line_items: stripeItems,
-        mode: "payment",
-        success_url: "http://localhost:3000/success",
-        cancel_url: "http://localhost:3000/cancel",
+        payment_method_types: ['card', 'klarna'],
+        line_items: [{
+            price_data: {
+                // To accept `klarna`, all line items must have currency: eur, dkk, gbp, nok, sek, usd, czk, aud, nzd, cad, pln, chf
+                currency: 'eur',
+                product_data: {
+                    name: 'T-shirt',
+                },
+                unit_amount: 2000,
+            },
+            quantity: 1,
+        }],
+        mode: 'payment',
+        success_url: 'https://example.com/success',
+        cancel_url: 'https://example.com/cancel',
     });
 
     return NextResponse.json({ url: session.url });
