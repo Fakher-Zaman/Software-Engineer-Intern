@@ -13,7 +13,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
     return (
         <div className="border rounded-lg p-4 shadow-md">
             <h2 className="text-lg font-semibold">{product.name}</h2>
-            <p className="text-gray-400">${product.price.toFixed(2)}</p>
+            <p className="text-gray-400">€{product.price.toFixed(2)}</p>
             <button
                 onClick={() => addToCart(product)}
                 disabled={isProductInCart}

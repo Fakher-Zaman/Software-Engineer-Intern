@@ -53,7 +53,7 @@ const Cart = () => {
                             <div>
                                 <p className="font-semibold">{product.name}</p>
                                 <p className="text-gray-400">
-                                    ${product.price.toFixed(2)} x {product.quantity}
+                                    €{product.price.toFixed(2)} x {product.quantity}
                                 </p>
                             </div>
                             <div className="flex space-x-2">
@@ -79,7 +79,7 @@ const Cart = () => {
                 <>
                     <div className="mt-4">
                         <p className="text-lg font-semibold">
-                            Total Amount: ${totalAmount.toFixed(2)}
+                            Total Amount: €{totalAmount.toFixed(2)}
                         </p>
                     </div>
 

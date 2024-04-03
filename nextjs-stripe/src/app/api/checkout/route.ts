@@ -65,8 +65,8 @@ export const POST = async (request: any) => {
         payment_method_types: ['card', 'klarna'],
         line_items: stripeItems,
         mode: 'payment',
-        success_url: 'https://example.com/success',
-        cancel_url: 'https://example.com/cancel',
+        success_url: "http://localhost:3000/success",
+        cancel_url: "http://localhost:3000/cancel",
     });
 
     return NextResponse.json({ url: session.url });
