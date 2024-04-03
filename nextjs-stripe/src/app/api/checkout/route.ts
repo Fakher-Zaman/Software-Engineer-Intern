@@ -12,6 +12,7 @@ const getActiveProducts = async () => {
 export const POST = async (request: any) => {
     const { products } = await request.json();
     const data: Product[] = products;
+    // console.log(data);
 
     let activeProducts = await getActiveProducts();
 
@@ -25,10 +26,7 @@ export const POST = async (request: any) => {
             if (stripeProduct == undefined) {
                 const prod = await stripe.products.create({
                     name: product.name,
-                    default_price_data: {
-                        unit_amount: product.price * 100,
-                        currency: "usd",
-                    },
+                    default_price_data: product.price
                 });
             }
         }
@@ -45,27 +43,27 @@ export const POST = async (request: any) => {
             (prod: any) => prod?.name?.toLowerCase() == product?.name?.toLowerCase()
         );
 
+        // console.log(stripeProduct);
+
         if (stripeProduct) {
             stripeItems.push({
-                price: stripeProduct?.default_price,
-                quantity: product?.quantity,
+                price_data: {
+                    currency: 'eur',
+                    product_data: {
+                        name: stripeProduct.name // Pass an object with name property
+                    },
+                    unit_amount: product.price * 100, // Convert to cents
+                },
+                quantity: product.quantity,
             });
         }
     }
 
+    // console.log(stripeItems);
+
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card', 'klarna'],
-        line_items: [{
-            price_data: {
-                // To accept `klarna`, all line items must have currency: eur, dkk, gbp, nok, sek, usd, czk, aud, nzd, cad, pln, chf
-                currency: 'eur',
-                product_data: {
-                    name: 'T-shirt',
-                },
-                unit_amount: 2000,
-            },
-            quantity: 1,
-        }],
+        line_items: stripeItems,
         mode: 'payment',
         success_url: 'https://example.com/success',
         cancel_url: 'https://example.com/cancel',
