@@ -7,6 +7,7 @@ import { TextField } from '@/components/Fields'
 import { Logomark } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import qrCode from '@/images/qr-code.svg'
+import { SocialMedia } from './SocialMedia'
 
 function QrCodeBorder(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -36,6 +37,9 @@ export function Footer() {
             <nav className="mt-11 flex gap-8">
               <NavLinks />
             </nav>
+            <div className='mt-12'>
+              <SocialMedia />
+            </div>
           </div>
           <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
             <div className="relative flex h-24 w-24 flex-none items-center justify-center">
@@ -71,7 +75,15 @@ export function Footer() {
             </Button>
           </form>
           <p className="mt-6 text-sm text-gray-500 md:mt-0">
-            &copy; Copyright {new Date().getFullYear()}. All rights reserved.
+            Copyright &copy; 2024 Pelican Gift, Inc. All rights reserved. Pelican offers online self-help solutions
+            for common education saving and planning needs and related educational content. Education
+            savings may implicate both state and federal laws, and education saving and planning needs
+            will differ based on personal circumstance and applicable law. Pelican is not a law firm and its
+            services are not substitutes for an attorney’s advice. The information here is provided for
+            educational purposes only and is not intended to provide, and should not be construed as
+            providing legal or tax advice. This information is general in nature and is not intended to serve
+            as the primary or sole basis for investment or tax-planning decisions. Use of Pelican’s services
+            is subject to the Terms of Service & Privacy Notice.
           </p>
         </div>
       </Container>

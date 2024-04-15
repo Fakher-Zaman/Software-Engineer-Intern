@@ -11,6 +11,7 @@ import {
   motion,
 } from 'framer-motion'
 import { useDebouncedCallback } from 'use-debounce'
+import phoneshot from '@/images/phone-shots/shot-2.png';
 
 import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
@@ -26,6 +27,7 @@ import {
   TransistorLogo,
   TupleLogo,
 } from '@/components/StockLogos'
+import Image from 'next/image'
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -457,25 +459,7 @@ function FeaturesDesktop() {
         </div>
         <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
-            <AnimatePresence
-              initial={false}
-              custom={{ isForwards, changeCount }}
-            >
-              {features.map((feature, featureIndex) =>
-                selectedIndex === featureIndex ? (
-                  <Tab.Panel
-                    static
-                    key={feature.name + changeCount}
-                    className="col-start-1 row-start-1 flex focus:outline-offset-[32px] ui-not-focus-visible:outline-none"
-                  >
-                    <feature.screen
-                      animated
-                      custom={{ isForwards, changeCount }}
-                    />
-                  </Tab.Panel>
-                ) : null,
-              )}
-            </AnimatePresence>
+            <Image src={phoneshot} alt={'shot'}></Image>
           </Tab.Panels>
         </PhoneFrame>
       </div>
