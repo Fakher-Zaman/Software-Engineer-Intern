@@ -7,6 +7,8 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logomark } from '@/components/Logo'
+import peliconLight from "../images/Pelican-horiz-1color.svg";
+import Image from 'next/image'
 
 const plans = [
   {
@@ -27,7 +29,7 @@ const plans = [
       'Optimized tax strategies',
       'Investment strategy review by a registered advisor representative',
     ],
-    logomarkClassName: 'fill-gray-500',
+    logomarkClassName: 'dark',
   },
   {
     name: 'Premium Plan',
@@ -45,7 +47,7 @@ const plans = [
       'Unlimited access to chat-based coaching by financial experts',
       'Progress monitoring and plan adjustments by Pelican’s team',
     ],
-    logomarkClassName: 'fill-cyan-500',
+    logomarkClassName: 'light',
   },
 ]
 
@@ -108,7 +110,11 @@ function Plan({
           featured ? 'text-white' : 'text-gray-900',
         )}
       >
-        <Logomark className={clsx('h-6 w-6 flex-none', logomarkClassName)} />
+        {
+          logomarkClassName === 'dark' ?
+            <Logomark className={clsx('h-6 w-6 flex-none', logomarkClassName)} /> :
+            <Image className='w-36 mt-2' src={peliconLight} alt='pelicon-light' />
+        }
         <span className="ml-4">{name}</span>
       </h3>
       <p
