@@ -175,7 +175,7 @@ export function AppDemo() {
 
   return (
     <>
-      <Image src={phoneShot} alt='shot'></Image>
+      <Image src={phoneShot} alt='shot' />
     </>
   )
 }

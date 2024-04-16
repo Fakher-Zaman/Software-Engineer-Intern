@@ -12,7 +12,7 @@ const plans = [
   {
     name: 'Core Plan',
     featured: false,
-    price: { Monthly: '$4.99/month', Annually: '$70' },
+    price: { Monthly: '$4.99/month', Annually: '$59.99/year' },
     description:
       ' The Ultimate Resource for Parents.',
     button: {
@@ -32,7 +32,7 @@ const plans = [
   {
     name: 'Premium Plan',
     featured: true,
-    price: { Monthly: '$12.99/month', Annually: '$1,990' },
+    price: { Monthly: '$12.99/month', Annually: '$149.99/year' },
     description:
       'Personalized Support for Specific Goals.',
     button: {
@@ -98,7 +98,7 @@ function Plan({
   return (
     <section
       className={clsx(
-        'lg:max-w-[400px] min-h-[520px] mx-auto flex flex-col overflow-hidden rounded-3xl p-6 shadow-lg shadow-gray-900/5',
+        'lg:w-[400px] min-h-[520px] mx-auto flex flex-col overflow-hidden rounded-3xl p-6 shadow-lg shadow-gray-900/5',
         featured ? 'order-first bg-gray-900 lg:order-none' : 'bg-white',
       )}
     >
@@ -258,7 +258,7 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 items-start gap-y-10 sm:mt-20 lg:max-w-[75%] lg:gap-12 lg:grid-cols-2">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mt-20 lg:max-w-4xl lg:grid-cols-2">
           {plans.map((plan) => (
             <Plan key={plan.name} {...plan} activePeriod={activePeriod} />
           ))}

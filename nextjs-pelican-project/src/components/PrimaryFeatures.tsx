@@ -457,9 +457,9 @@ function FeaturesDesktop() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#13B5C8" className="animate-spin-slower" />
         </div>
-        <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
+        <PhoneFrame className="z-10 mx-auto w-full max-w-[366px] ">
           <Tab.Panels as={Fragment}>
-            <Image src={phoneshot} alt={'shot'}></Image>
+            <Image src={phoneshot} alt={'shot'} />
           </Tab.Panels>
         </PhoneFrame>
       </div>
@@ -519,7 +519,7 @@ function FeaturesMobile() {
                 />
               </div>
               <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
-                <feature.screen />
+                <Image src={phoneshot} alt={'shot'} />
               </PhoneFrame>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
