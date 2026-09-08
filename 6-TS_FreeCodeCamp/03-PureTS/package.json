@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "latest"
   }
 }
